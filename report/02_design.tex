@@ -1,0 +1,489 @@
+\section{Design}
+
+\subsection{Incorporating Feedback from Assignment 4A}
+
+The design evolved significantly from the initial Assignment 4A proposal, drawing on three key sources of feedback and inspiration. First, inspired by David Bergman's practical application of optimization to sports analytics, this project integrates three independent datasets, covering the full 2024-2025 FPL season across 38 gameweeks with actual player statistics and prices. This choice ensures the framework tackles real-world challenges and validates outcomes against historical results.
+
+Second, to enhance realism as suggested, the system fully models FPL mechanics. Substitution logic follows automatic rules, accounting for player availability, positional needs, and formation limits. Transfers include weekly accumulation of one free transfer, with four-point penalties for extras. Trading distinguishes buying from selling prices, enforcing the 50\% profit lock and enabling precise budget tracking. All elements respect data availability and quality from the sources.
+
+Third, per recommendations for thorough evaluation, the system adopts two modeling paradigms: Constraint Programming (CP) and Mixed Integer Linear Programming (MILP). It supports multiple backends, such as CBC \cite{forrest2023cbc} (PuLP default \cite{mitchell2011pulp}), GLPK \cite{makhorin2024glpk}, and SCIP \cite{gamrath2025scip} for MILP, plus MiniZinc \cite{nethercote2007minizinc} solvers including CP-SAT \cite{perron2025ortools}, Chuffed \cite{chu2018chuffed}, and Gecode \cite{schulte2023gecode} for CP. This setup allows direct comparison of approaches and solver efficiency.
+
+Additionally, the design simplifies scoring by using conditional expected points, which embed availability likelihood into a single metric per player. This avoids separate stochastic variables for no-shows and probabilities, streamlining the objective. The proposed hybrid MILP/CP decomposition was dropped, as standalone MILP solvers proved efficient, boosting interpretability, accessibility, and simplicity.
+
+\subsection{Scope}
+
+This FPL optimization system adopts a focused scope to balance feasibility and utility, with these core constraints and elements. The model optimizes for a single upcoming gameweek, using current state and next-week predictions only. It ignores prior or multi-week data, cutting complexity without sacrificing relevance. Objectives remain linear, matching FPL scoring and solver capabilities. Non-linear options, like variance-minimizing portfolios, are omitted due to unavailable prediction variances in public data. Predictions serve as external inputs: conditional expected points drive team selection. This decouples optimization from forecasting, supporting diverse sources like models or expert input.
+
+Core FPL elements receive full coverage. Single-gameweek optimization handles squad, transfers, captain, and lineup, guided by next-week predictions. Rule enforcement includes budgets, squad quotas, formations, club limits, and bench/substitution handling. Transfer mechanics cover weekly free transfers, four-point penalties for extras, 50\% profit locks on sales, and per-player price tracking for budgets. Automatic substitutions replace non-starters from bench, validating formations throughout. Captaincy awards double points for captain (vice fallback if absent), assigned post-optimization by expected points. Data handling merges three sources, resolves conflicts via validation, deduplicates fixtures, and normalizes participation. Backtesting simulates the 2024-25 season over 38 weeks, with per-week reports, cumulative metrics, transfer analysis, and rule checks.
+
+For focus and manageability, certain aspects are omitted. Multi-week planning, including rolling horizons for prices, fixtures, or squad value, is not pursued. Chip strategies (Wildcard, Bench Boost, Triple Captain, Free Hit) are excluded, as they demand multi-period analysis. Prediction development receives no attention: no training or evaluation of models; inputs are external. Risk or non-linear goals are absent: no variance penalties, CVaR, or utility curves for manager preferences.
+
+This scope yields a robust, validated framework, sidestepping added complexity from broader features.
+
+\subsection{Design Principles}
+
+Two principles shaped the design. The system excels with precise predictions, prioritizing starting-11 optimization. Scores derive from starters, assuming accurate inputs select reliable players and minimize no-shows. This favors peak performance over uncertainty hedges via intricate benches.
+
+Installation and operation span platforms effortlessly. PuLP (MILP) offers pure-Python ease with versatile backends; MiniZinc (CP) provides a solid Python API. Both avoid platform quirks, broadening access for users and researchers.
+
+\subsection{Technical Challenges During Implementation}
+
+Implementation revealed four primary technical challenges, each addressed through targeted strategies to ensure robustness.
+
+Data integration across three independent sources demanded rigorous reconciliation. Schema inconsistencies—varying naming conventions, ID systems, and structures—required fuzzy matching and manual verification for accurate player identification. Temporal alignment ensured correspondence across gameweeks, while completeness checks prioritized primary sources supplemented by others for full coverage.
+
+Data quality issues necessitated thorough cleaning. Missing values in statistics and prices were imputed or handled judiciously. Duplicates, often from mid-season transfers, underwent deduplication that preserved timelines. Inconsistent formats, such as price notations ("£10.5M" versus 105), were standardized. Validation confirmed essentials like 15-player squads and compliant formations prior to optimization.
+
+Developing the Constraint Programming model in MiniZinc required adaptation to its declarative paradigm, distinct from Python's imperative style. The Python API's nuances in data passing and retrieval demanded precise type conversions. Set operations for constraints like club affiliations proved tricky, especially with intertwined membership and cardinality rules. Limited debugging tools hindered tracing unsatisfiable constraints or errors.
+
+CP solvers faced performance hurdles, rendering them less viable. Timeouts frequently exceeded minutes for even modest instances. Scalability faltered with growing player pools or constraints. Solution times varied unpredictably across cases. By contrast, MILP solvers like CBC and SCIP resolved large instances in seconds, affirming their reliability for this domain.
+
+
+\subsection{Architecture, Algorithms, and Methodologies}
+
+\subsubsection{Notation and Definitions}
+
+\paragraph{Sets, Parameters and Variables}
+\begin{itemize}
+    \item $P$: Set of all players.
+    \item $C$: Set of clubs.
+    \item $G \subset P$: Goalkeepers (GK). 
+    \item $D \subset P$: Defenders (DEF).
+    \item $M \subset P$: Midfielders (MID).
+    \item $F \subset P$: Forwards (FWD).
+    \item $S \subset P$: Set of starting XI players.
+    \item $B \subset P$: Set of bench players.
+    \item $Q = S \oplus B \subset P$: Set of all squad players.
+    % \item $q_i \in [0,1]$: No-show probability for player $i \in P$.
+    \item $p_i \in \mathbb{R}$: Cost of player $i \in P$.
+    \item $u_i \in \{0,1\}$: 1 if player $i \in P$ is unavailable for the upcoming gameweek, 0 if available.
+    \item $y_i^0 \in \{0,1\}$: 1 if player $i$ is in current squad (known state, for Post-GW1).
+    \item $B_{\mathrm{bank}} \in \mathbb{R}^+ \cup \{0\}$: Cash in bank (known state, for Post-GW1).
+    \item $p^0_{\text{buy},i} \in \mathbb{R}^+ \cup \{0\}$: Purchase price paid for player $i \in P$ 
+    \item $sp_i \in \mathbb{R}^+$: Selling price for player $i \in P$.
+    \item $f \in \{0,1,2,3,4,5\}$: Free transfers (1 + banked, $\leq 5$).
+    \item $\mathrm{expected\_points}_i $: Conditional expected points for player $i \in P$ in upcoming gameweek.
+    \item $x_i \in \{0,1\}$: 1 if player $i \in P$ is in the starting XI.
+    \item $c_i \in \{0,1\}$: 1 if player $i \in P$ is captain.
+    \item $y_i \in \{0,1\}$: 1 if player $i \in P$ is in the squad.
+    \item $t_i \in \{0,1\}$: 1 if buy player $i$ (transfer in).
+    \item $s_i \in \{0,1\}$: 1 if sell player $i$ (transfer out).
+    \item $e \in \{0, 1, 2, \ldots, 15\}$: Number of extra transfers beyond $f$ (penalty).
+\end{itemize}
+
+\subsubsection{Pre-GW1 Hierarchical Optimization}
+
+The system adopts a two-stage hierarchical optimization process for squad selection. As team scores derive exclusively from the starting 11 players (unless substitutions), this method prioritizes lineup composition to maximize potential performance. The bench is then optimized with residual resources to ensure adequate contingency coverage.
+
+\textbf{Step 1: Optimize Starters and Captain}
+
+Decision variables: $y_i, x_i, c_i \in \{0,1\}$ for all $i \in P$.
+
+Solve the following optimization problem:
+\begin{equation}
+    \max \quad \sum_{i \in P} \text{expected\_points}_i \cdot (x_i + c_i)
+\end{equation}
+
+subject to constraints:
+\begin{align*}
+    \sum_{i \in P} x_i &= 11, \quad \text{(lineup size)} \\
+    \sum_{i \in G} x_i &= 1, \quad \text{(1 starting GK)} \\
+    3 \leq \sum_{i \in D} x_i &\leq 5, \quad \text{(3-5 starting DEF)} \\
+    2 \leq \sum_{i \in M} x_i &\leq 5, \quad \text{(2-5 starting MID)} \\
+    1 \leq \sum_{i \in F} x_i &\leq 3, \quad \text{(1-3 starting FWD)} \\
+    \sum_{i \in P} c_i &= 1, \quad \text{(exactly 1 captain)} \\
+    c_i &\leq x_i \quad \forall i \in P, \quad \text{(captain must be starter)} \\
+    u_i + x_i &\leq 1 \quad \forall i \in P, \quad \text{(unavailable players cannot be starter)} \\
+    \sum_{i \in P} y_i &= 15, \quad \sum_{i \in G} y_i = 2, \quad \sum_{i \in D} y_i = 5, \\
+    \sum_{i \in M} y_i &= 5, \quad \sum_{i \in F} y_i = 3, \quad \text{(squad quotas)} \\
+    \sum_{i \in P} p_i y_i &\leq 100, \quad \sum_{i \in P_c} y_i \leq 3 \quad \forall c \in C, \quad \text{(budget and club limits)} \\
+    x_i &\leq y_i \quad \forall i \in P \quad \text{(starters must be in squad)}
+\end{align*}
+
+Denote the optimal solution from Step 1 as $ x_i^*, y_i^*, c_i^*$.
+\newpage
+
+\paragraph{Post-hoc: Vice-Captain Assignment}
+
+The vice-captain is assigned post-hoc following the primary optimization, rather than integrated into the model. This simplifies the formulation, as the vice-captain does not influence the objective function.
+
+Let \( S = \{ i \in P \mid x_i^* = 1 \} \) denote the selected starting players. After Step 1, exclude the captain from \( S \) and designate the vice-captain as the remaining starter with the highest expected points. This secures the optimal backup for captain no-shows without affecting the initial optimization.
+
+\textbf{Step 2: Optimize Bench Composition}
+
+Decision variables: $y_j \in \{0,1\}$ for all $j \in P$.
+
+State variable: $x_i^* \in \{0,1\}$ from Step 1 for all $i \in P$.
+
+Solve the following optimization problem:
+\begin{equation}
+    \max \quad \sum_{j \in P} \text{expected\_points}_j \cdot y_j
+\end{equation}
+subject to:
+\begin{align*}
+    \sum_{i \in P} y_i &= 15 \quad \text{(total squad size)} \\
+    \sum_{i \in G} y_i &= 2, \quad \sum_{i \in D} y_i = 5, \quad \sum_{i \in M} y_i = 5, \quad \sum_{i \in F} y_i = 3 \quad \text{(position quotas)} \\
+    \sum_{i \in P} p_i y_i &\leq 100, \quad \sum_{i \in P_c} y_i \leq 3 \quad \forall c \in C \quad \text{(budget and club limits)} \\
+    y_i &= x_i^* = 1 \quad \forall i \in S \quad \text{(fix starters from Step 1)}
+\end{align*}
+
+Denote the optimal solution from step 2 as $y_i^{**}$.
+
+\paragraph{Post-hoc: Bench Position Assignment}
+
+Bench ordering, like vice-captain selection, occurs post-hoc, as it influences the objective only during substitutions. The process prioritizes high-expected-point players for early entry, per FPL substitution rules:
+
+\begin{enumerate}
+    \item Place the backup goalkeeper (non-starting GK) in position 1.
+    \item Rank the three benched outfield players by descending expected points.
+    \item Assign the highest-ranked to position 2 (first substitute), the middle to position 3, and the lowest to position 4 (last substitute).
+\end{enumerate}
+
+This allocates one player per position, with the goalkeeper in 1 and outfielders in 2--4.
+\newpage 
+
+\paragraph{Output for Pre-GW1}
+
+The final output from the Pre-GW1 formulation consists of:
+\begin{itemize}
+    \item Squad composition: $y_i^{**} \in \{0,1\}$ for all $i \in P$ (15 players).
+    \item Starting lineup: $x_i^* \in \{0,1\}$ for all $i \in P$ (11 players).
+    \item Captain: $c_i^* \in \{0,1\}$ for all $i \in P$ (1 player).
+    \item Vice-captain: assigned post-hoc as per above.
+    \item Bench positions: assigned post-hoc as per above.
+\end{itemize}
+
+\paragraph{Initial Condition for State Variables}
+
+After completing GW1 optimization, initialize the state variables for GW2:
+\begin{align*}
+    y_i^0 &\leftarrow y_i^{**} \quad \forall i \in P \quad \text{(GW1 squad becomes initial squad)} \\
+    B_{\mathrm{bank}} &= 100 - \sum_{i \in P} p_i y_i^{**} \quad \text{(remaining cash)} \\
+    f &= 2 \quad \text{(1 free transfer per week, starts with 1 banked)} \\
+    p^0_{\text{buy},i} &= 
+    \begin{cases}
+        p_i & \text{if } y_i^{**} = 1 \quad \text{(GW1 squad members)} \\
+        0 & \text{if } y_i^{**} = 0 \quad \text{(all other players)}
+    \end{cases}
+    \quad \forall i \in P
+\end{align*}
+
+These state variables form the complete initial state for the Post-GW1 formulation.
+\newpage
+\subsubsection{Post-GW1 Single-Stage Optimization}
+
+Post-GW1, the system employs single-stage optimization to select the full 15-player squad simultaneously, omitting separate bench re-optimization. This prevents transfers—free or penalized—from being expended on marginal bench improvements alone. 
+
+\paragraph{Selling Price Calculation}
+
+The current squad \( y_i^0 \) is known.
+For each player $i \in P$ in the current squad ($y_i^0 = 1$), the selling price $sp_i$ implements FPL's 50\% profit lock mechanism:
+\begin{equation*}
+    sp_i = p^0_{\text{buy},i} + 0.5 \cdot \max(0, p_i - p^0_{\text{buy},i})
+\end{equation*}
+rounded up to the nearest 0.1m if there is profit (\( p_i > p^0_{\text{buy},i} \)); otherwise, \( sp_i = p_i \) if there is a loss (\( p_i \leq p^0_{\text{buy},i} \)).
+
+This formulation ensures that players sold at a gain contribute only half their price increase, with the profit locked at 50\%, while players sold at a loss contribute their full current price, realizing losses completely.
+
+\paragraph{Budget Dynamics}
+Only purchases of new players incur costs; retained players impose none, as they are already owned. The budget constraint ensures non-negative cash post-transfers.
+
+From the state update:
+\begin{equation*}
+    B_{\mathrm{bank}}^{\mathrm{new}} = B_{\mathrm{bank}} + \sum_{i \in P} sp_i s_i - \sum_{j \in P} p_j t_j
+\end{equation*}
+
+Requiring $B_{\mathrm{bank}}^{\mathrm{new}} \geq 0$ gives:
+\begin{equation*}
+    B_{\mathrm{bank}} + \sum_{i \in P} sp_i s_i - \sum_{j \in P} p_j t_j \geq 0
+\end{equation*}
+
+Rearranging yields the budget constraint:
+\begin{equation*}
+    \sum_{j \in P} p_j t_j \leq B_{\mathrm{bank}} + \sum_{i \in P} sp_i s_i
+\end{equation*}
+
+where $p_j$ is the current market price for new purchases and $sp_i$ is the locked selling price (with 50\% profit lock) for any sold players.
+
+\textbf{Step 1: Optimize Starters, Captain, and Transfers} 
+
+Decision variables: $x_i, y_i, c_i, t_i, s_i \in \{0,1\}$ for all $i \in P$, and $e \in \{0, 1, 2, \ldots, 15\}$.
+
+State Variables:
+\begin{itemize}
+    \item $y_i^0 \in \{0,1\}$: Current squad composition (15 players)
+    \item $B_{\mathrm{bank}} \in \mathbb{R}^+$: Cash in bank (remaining budget)
+    \item $p^0_{\mathrm{buy},i} \in \mathbb{R}^+ \cup \{0\}$: Purchase price for player $i \in P$ (0 if not in squad)
+    \item $f \in \{0,1,2,3,4,5\}$: Free transfers available (typically $f=2$ for GW2)
+\end{itemize}
+
+Solve the following optimization problem:
+\begin{equation}
+    \max \quad \sum_{i \in P} \text{expected\_points}_i \cdot (x_i + c_i) - 4e
+\end{equation}
+subject to constraints:
+\begin{align*}
+    \sum_{i \in P} x_i &= 11, \quad \text{(lineup size)} \\
+    \sum_{i \in G} x_i &= 1, \quad \text{(1 starting GK)} \\
+    3 \leq \sum_{i \in D} x_i &\leq 5, \quad \text{(3-5 starting DEF)} \\
+    2 \leq \sum_{i \in M} x_i &\leq 5, \quad \text{(2-5 starting MID)} \\
+    1 \leq \sum_{i \in F} x_i &\leq 3, \quad \text{(1-3 starting FWD)} \\
+    \sum_{i \in P} c_i &= 1, \quad \text{(exactly 1 captain)} \\
+    c_i &\leq x_i \quad \forall i \in P, \quad \text{(captain must be starter)} \\
+    u_i + x_i &\leq 1 \quad \forall i \in P, \quad \text{(unavailable players cannot start)} \\
+    \sum_{i \in P} y_i &= 15, \quad \sum_{i \in G} y_i = 2, \quad \sum_{i \in D} y_i = 5, \\
+    \sum_{i \in M} y_i &= 5, \quad \sum_{i \in F} y_i = 3, \quad \text{(squad quotas)} \\
+    \sum_{j \in P} p_j t_j &\leq B_{\mathrm{bank}} + \sum_{i \in P} sp_i s_i, \quad \sum_{i \in P_c} y_i \leq 3 \quad \forall c \in C, \quad \text{(budget and club limits)} \\
+    x_i &\leq y_i \quad \forall i \in P \quad \text{(starters must be in squad)} \\
+    y_i &= y_i^0 + t_i - s_i \quad \forall i \in P \quad \text{(squad update)} \\
+    t_i + s_i &\leq 1 \quad \forall i \in P \quad \text{(no simultaneous buy/sell)} \\
+    t_i &\leq 1 - y_i^0 \quad \forall i \in P \quad \text{(buy only non-squad)} \\
+    s_i &\leq y_i^0 \quad \forall i \in P \quad \text{(sell only current squad)} \\
+    e &\geq \sum_{i \in P} t_i - f \quad \text{(extra transfers)} \\
+    \sum_{i \in P} t_i &\leq 15 \quad \text{(logical upper bound on transfers)}
+\end{align*}
+Denote the optimal solution from Step 1 as $x_i^*, y_i^*, c_i^*, t_i^*, s_i^*, e^*$.
+
+\paragraph{Post-hoc: Vice-Captain and Bench Assignments}
+
+Vice-captain and bench position assignments are performed post-hoc following the same procedures as in Pre-GW1.
+
+\paragraph{Output for Post-GW1}
+
+The final output from the Post-GW1 formulation consists of:
+\begin{itemize}
+    \item Squad composition: $y_i^* \in \{0,1\}$ for all $i \in P$ (15 players, from Step 1).
+    \item Starting lineup: $x_i^* \in \{0,1\}$ for all $i \in P$ (11 players, from Step 1).
+    \item Captain: $c_i^* \in \{0,1\}$ for all $i \in P$ (1 player, from Step 1).
+    \item Vice-captain and Bench positions: assigned post-hoc.
+    \item Transfers made: $t_i^*, s_i^* \in \{0,1\}$ for all $i \in P$ (from Step 1).
+    \item Extra transfers penalty: $e^*$ (from Step 1).
+\end{itemize}
+
+\paragraph{State Update for Next Gameweek}
+
+After completing Step 1, update the state variables to carry forward to the next gameweek using per-player cash calculations:
+
+\textbf{Cash Update:}
+
+Compute the new bank balance based on actual selling proceeds and buying costs:
+\begin{equation}
+    B_{\mathrm{bank}}^{\mathrm{new}} = B_{\mathrm{bank}} + \sum_{i \in P} sp_i s_i^* - \sum_{j \in P} p_j t_j^*
+\end{equation}
+where: $\sum_{i \in P} sp_i s_i^*$: Cash from selling players (using locked selling prices), \\
+$\sum_{j \in P} p_j t_j^*$: Cost of buying players (at current market prices).
+
+
+\textbf{Purchase Price State Update:}
+
+Update the purchase price history for all players:
+\begin{equation}
+    \forall i \in P: \quad
+    \begin{cases}
+        p^0_{\text{buy},i} \leftarrow 0 & \text{if } s_i^* = 1 \quad \text{(sold players - clear history)} \\
+        p^0_{\text{buy},i} \leftarrow p_i & \text{if } t_i^* = 1 \quad \text{(bought players - record purchase)} \\
+        p^0_{\text{buy},i} \text{ unchanged} & \text{otherwise} \quad \text{(retained/non-squad players)}
+    \end{cases}
+\end{equation}
+
+\textbf{Squad State Update:}
+
+Update the state variables for the next gameweek:
+\begin{itemize}
+    \item $y_i^0 \leftarrow y_i^*$ for all $i \in P$ (new squad becomes current squad)
+    \item $B_{\mathrm{bank}} \leftarrow B_{\mathrm{bank}}^{\mathrm{new}}$ (updated cash in bank from equation above)
+    \item $p^0_{\text{buy},i}$ updated as specified (purchase price tracking)
+    \item $f$: Free transfers for next gameweek (1 per week, bankable up to max 5)
+\end{itemize}
+
+The decomposition is solver-independent and serves as an algorithmic blueprint for efficient FPL optimization.
+
+\subsubsection{CP-Based Formulations with High-Level Set Abstraction}
+
+This subsection presents equivalent formulations using declarative set-based abstraction, as implemented in MiniZinc constraint programming models. The set-based abstraction maps directly to the binary formulations presented above.
+
+\paragraph{Sets and Parameters}
+
+Let \( P = \{1, \dots, n\} \) be the set of all players.
+
+Let \( C = \{1, \dots, 20\} \) be the set of clubs.
+
+Let \( \mathcal{P} = \{\text{GK}, \text{DEF}, \text{MID}, \text{FWD}\} \) be the set of positions.
+
+For each position \( p \in \mathcal{P} \), let \( P_p \subseteq P \) be the players available in position \( p \).
+
+For each club \( c \in C \), let \( P_c \subseteq P \) be the players in club \( c \).
+
+Let \( e_i \in \mathbb{R}_{\geq 0} \) be the expected points for player \( i \in P \).
+
+Let \( k_i \in \mathbb{R}_{\geq 0} \) be the cost for player \( i \in P \).
+
+Let \( u_i \in \{0,1\} \) indicate if player \( i \in P \) is unavailable.
+
+Let \( U \in \mathbb{R}_{\geq 0} \) be a logical upper bound on the objective.
+
+Let \( L \in \mathbb{R}_{\leq 0} \) be a logical lower bound on the objective.
+
+\paragraph{Decision Variables}
+
+The following set-based decision variables are common to both Pre-GW1 and Post-GW1 formulations:
+
+Let \( Q \subseteq P \) be the squad set, with \( |Q| = 15 \).
+
+Let \( S \subseteq Q \) be the starters set, with \( |S| = 11 \).
+
+Let \( K \subseteq S \) be the captain set, with \( |K| = 1 \).
+
+For each position \( p \in \mathcal{P} \), let \( Q_p \subseteq P_p \) be the squad partition for \( p \).
+
+For each position \( p \in \mathcal{P} \), let \( S_p \subseteq Q_p \) be the starters partition for \( p \).
+
+\paragraph{Pre-GW1 Optimization}
+
+\textbf{Step 1: Optimize Starters and Captain}
+
+Solve the following optimization problem:
+\begin{equation}
+    \max_{Q, S, K, \{Q_p, S_p\}_{p \in \mathcal{P}}} \quad z = \sum_{i \in S} e_i + \sum_{i \in K} e_i
+\end{equation}
+subject to:
+\begin{align*}
+    0 \leq z &\leq U,
+\end{align*}
+
+\textbf{Cardinalities:}
+\begin{align*}
+    &|Q| = 15, \quad |S| = 11, \quad |K| = 1, \\
+    &|Q_{\text{GK}}| = 2, \quad |Q_{\text{DEF}}| = 5, \quad |Q_{\text{MID}}| = 5, \quad |Q_{\text{FWD}}| = 3, \\
+    &|S_{\text{GK}}| = 1, \quad 3 \leq |S_{\text{DEF}}| \leq 5, \quad 2 \leq |S_{\text{MID}}| \leq 5, \quad 1 \leq |S_{\text{FWD}}| \leq 3,
+\end{align*}
+
+\textbf{Partitions:}
+\begin{align*}
+    &Q = \bigcup_{p \in \mathcal{P}} Q_p, \quad \forall p_1 \neq p_2 \in \mathcal{P} : \, Q_{p_1} \cap Q_{p_2} = \emptyset, \\
+    &S = \bigcup_{p \in \mathcal{P}} S_p, \quad \forall p_1 \neq p_2 \in \mathcal{P} : \, S_{p_1} \cap S_{p_2} = \emptyset, \\
+    &\forall p \in \mathcal{P} : \, Q_p \subseteq P_p, \, S_p \subseteq Q_p,
+\end{align*}
+
+\textbf{Budget:}
+\begin{align*}
+    \sum_{i \in Q} k_i &\leq 100,
+\end{align*}
+
+\textbf{Club Limits:}
+\begin{align*}
+    \forall c \in C &: \, |Q \cap P_c| \leq 3,
+\end{align*}
+
+\textbf{Availability:}
+\begin{align*}
+    \forall i \in P &: \, (u_i = 1) \implies (i \notin S),
+\end{align*}
+
+\textbf{Subsets:}
+\begin{align*}
+    S &\subseteq Q, \quad K \subseteq S.
+\end{align*}
+
+Denote the optimal solution from Step 1 as \( Q^*, S^*, K^*, \{Q_p^*, S_p^*\}_{p \in \mathcal{P}} \).
+
+\textbf{Step 2: Optimize Bench}
+
+Fix \( S^* \) and \( \{S_p^* \mid p \in \mathcal{P}\} \) from Step 1's optimal solution. Then solve:
+\begin{equation}
+    \max_{Q, \{Q_p\}_{p \in \mathcal{P}}} \quad z = \sum_{i \in Q} e_i
+\end{equation}
+subject to:
+\begin{align*}
+    0 \leq z &\leq U, \\
+    S &= S^*, \quad \forall p \in \mathcal{P} : \, S_p = S_p^*, \\
+\end{align*}
+and all other constraints from Step 1.
+
+Denote the optimal solution from Step 2 as \( Q^{**}, \{Q_p^{**}\}_{p \in \mathcal{P}} \).
+
+\textbf{Post-hoc Assignments:}
+
+After solving steps 1 and 2, perform the same post-hoc assignments as described earlier (vice-captain and bench position assignments).
+
+\paragraph{Post-GW1 Optimization with Transfers}
+
+The key design choice for the CP formulation is using explicit binary variables \(t_i, s_i\) for transfers (rather than set differences) to avoid propagation issues, while maintaining high-level set abstractions for squad/starters.
+
+\textbf{Additional State Variables:}
+
+For Post-GW1, the following state variables from the previous gameweek are required:
+
+Let \( y^0_i \in \{0,1\} \) indicate if player \( i \in P \) is in the current squad.
+
+Let \( sp_i \in \mathbb{R}_{\geq 0} \) be the selling price for player \( i \in P \).
+
+Let \( B_{\text{bank}} \in \mathbb{R}_{\geq 0} \) be the cash in bank.
+
+Let \( f \in \{0,1,2,3,4,5\} \) be the number of free transfers available.
+
+\textbf{Additional Decision Variables:}
+
+For each player \( i \in P \), let \( t_i \in \{0,1\} \) indicate transfer in (buy player \(i\)).
+
+For each player \( i \in P \), let \( s_i \in \{0,1\} \) indicate transfer out (sell player \(i\)).
+
+Let \( e \in \{0,1,\dots,15\} \) be the number of extra transfers beyond \(f\).
+
+For each player \( i \in P \), let \( y_i \in \{0,1\} \) indicate if player \(i\) is in the new squad (channeled with set \(Q\)).
+
+\textbf{Optimization Formulation:}
+
+Solve the following optimization problem:
+\begin{equation}
+    \max_{Q, S, K, \{Q_p, S_p\}_{p \in \mathcal{P}}, \{y_i, t_i, s_i\}_{i \in P}, e} \quad z = \sum_{i \in S} e_i + \sum_{i \in K} e_i - 40 \cdot e
+\end{equation}
+subject to:
+\begin{align*}
+    L \leq z &\leq U \quad \text{(precalculated logical bound)},
+\end{align*}
+
+\textbf{Transfer Logic:}
+\begin{align*}
+    &\forall i \in P : \, y_i = y^0_i + t_i - s_i \quad \text{(squad update)}, \\
+    &\forall i \in P : \, t_i + s_i \leq 1 \quad \text{(no buy and sell same player)}, \\
+    &\forall i \in P : \, y^0_i + t_i \leq 1 \quad \text{(no buy if owned)}, \\
+    &\forall i \in P : \, s_i \leq y^0_i \quad \text{(only sell owned)}, \\
+    &e \geq \sum_{i \in P} t_i - f \quad \text{(extra transfers penalty)}, \\
+    &\sum_{i \in P} t_i \leq 15 ,
+\end{align*}
+
+\textbf{Budget with Transfers:}
+\begin{align*}
+    \sum_{i \in P} k_i \cdot t_i &\leq B_{\text{bank}} + \sum_{i \in P} sp_i \cdot s_i,
+\end{align*}
+
+\textbf{Channeling and Subsets:}
+\begin{align*}
+    \forall i \in P : \, (y_i = 1) &\iff (i \in Q), \\
+    S &\subseteq Q, \quad K \subseteq S,
+\end{align*}
+
+\textbf{Cardinalities:}
+\begin{align*}
+    \sum_{i \in P} y_i &= 15, \quad |S| = 11, \quad |K| = 1, \\
+    |Q_{\text{GK}}| &= 2, \quad |Q_{\text{DEF}}| = 5, \quad |Q_{\text{MID}}| = 5, \quad |Q_{\text{FWD}}| = 3, \\
+    |S_{\text{GK}}| &= 1, \quad 3 \leq |S_{\text{DEF}}| \leq 5, \quad 2 \leq |S_{\text{MID}}| \leq 5, \quad 1 \leq |S_{\text{FWD}}| \leq 3,
+\end{align*}
+
+\textbf{Partitions:}
+\begin{align*}
+    &Q = \bigcup_{p \in \mathcal{P}} Q_p, \quad \forall p_1 \neq p_2 \in \mathcal{P} : \, Q_{p_1} \cap Q_{p_2} = \emptyset, \\
+    &S = \bigcup_{p \in \mathcal{P}} S_p, \quad \forall p_1 \neq p_2 \in \mathcal{P} : \, S_{p_1} \cap S_{p_2} = \emptyset, \\
+    & \forall p \in \mathcal{P} : \, Q_p \subseteq P_p, \, S_p \subseteq Q_p,
+\end{align*}
+
+\textbf{Club Limits and Availability:}
+\begin{align*}
+    &\forall c \in C : \, |Q \cap P_c| \leq 3, \\
+    &\forall i \in P : \, u_i = 1 \implies i \notin S.
+\end{align*}
+
+\textbf{Post-hoc Assignments:}
+
+After solving the optimization, perform the same post-hoc assignments as described earlier (vice-captain and bench position assignments). State updates follow the procedure outlined in the Post-GW1 section above.

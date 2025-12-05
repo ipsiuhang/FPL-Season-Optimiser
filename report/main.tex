@@ -1,0 +1,61 @@
+\documentclass[10pt]{article}
+\setlength{\parindent}{0pt}
+\usepackage[margin=1.5cm]{geometry}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage{url}
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+
+% Code listing setup
+\lstset{
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    frame=single,
+    numbers=left,
+    numberstyle=\tiny,
+    commentstyle=\color{gray},
+    keywordstyle=\color{blue},
+    stringstyle=\color{red}
+}
+
+% Page setup
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{CS5929 Assignment 4}
+\lhead{FPL Optimization Report}
+\cfoot{\thepage}
+
+\doublespacing
+
+\title{Open-Source Optimization Framework for Fantasy Premier League: Data Engineering, Multi-Paradigm Modeling, and Backtesting Tools}
+\author{Siu Hang IP \\ Assignment 4 - Final Report}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+\newpage
+
+% Include all sections
+\input{01_introduction}
+\input{04_context_related_work}
+\input{02_design}
+\input{03_implementation}
+\input{05_evaluation}
+\input{06_conclusion}
+
+% Bibliography
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}
