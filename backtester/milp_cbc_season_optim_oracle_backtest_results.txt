@@ -1,0 +1,1905 @@
+================================================================================
+FPL BACKTESTER RESULTS
+================================================================================
+Season: 2024-25
+Optimizer: milp_cbc_season_optim_oracle.json
+================================================================================
+
+
+================================================================================
+GAMEWEEK 1
+================================================================================
+Points: 131
+Cumulative Points: 131
+
+Transfers: None
+
+Captain: Mohamed Salah (ID: 451)
+Vice-Captain: Bukayo Saka (ID: 84)
+Captain Bonus: +14 pts (captain)
+
+Substitutions Made: None
+
+Active Lineup (11 players):
+  GK: Nick Pope - 9pts (90min)
+  DEF: Noussair Mazraoui - 8pts (80min)
+  DEF: Pedro Porro - 9pts (90min)
+  DEF: Trent Alexander-Arnold - 8pts (76min)
+  MID: Bukayo Saka (VC) - 12pts (79min)
+  MID: Joelinton Cássio Apolinário de Lira - 11pts (90min)
+  MID: Mateo Kovačić - 11pts (90min)
+  MID: Mohamed Salah (C) - 14pts (90min)
+  FWD: Danny Welbeck - 12pts (90min)
+  FWD: Kai Havertz - 12pts (90min)
+  FWD: Yoane Wissa - 11pts (83min)
+
+Bench:
+  1. Ederson Santana de Moraes (GK) - 8pts (90min) [✗]
+  2. Amadou Onana (MID) - 10pts (90min) [✗]
+  3. Joël Veltman (DEF) - 8pts (90min) [✗]
+  4. Joško Gvardiol (DEF) - 7pts (90min) [✗]
+
+================================================================================
+GAMEWEEK 2
+================================================================================
+Points: 169
+Cumulative Points: 300
+
+Transfers:
+  IN (10):
+    Thomas Partey (ID: 579, MID, Arsenal)
+    Luis Díaz (ID: 388, MID, Liverpool)
+    Ola Aina (ID: 487, DEF, Nott'm Forest)
+    David Raya Martin (ID: 145, GK, Arsenal)
+    Cole Palmer (ID: 116, MID, Chelsea)
+    Erling Haaland (ID: 180, FWD, Man City)
+    Son Heung-min (ID: 565, MID, Spurs)
+    Max Kilman (ID: 439, DEF, West Ham)
+    Cristian Romero (ID: 124, DEF, Spurs)
+    Noni Madueke (ID: 479, MID, Chelsea)
+  OUT (10):
+    Amadou Onana (ID: 32, MID, Aston Villa)
+    Mohamed Salah (ID: 451, MID, Liverpool)
+    Mateo Kovačić (ID: 422, MID, Man City)
+    Joško Gvardiol (ID: 328, DEF, Man City)
+    Joelinton Cássio Apolinário de Lira (ID: 306, MID, Newcastle)
+    Kai Havertz (ID: 339, FWD, Arsenal)
+    Bukayo Saka (ID: 84, MID, Arsenal)
+    Trent Alexander-Arnold (ID: 595, DEF, Liverpool)
+    Pedro Porro (ID: 503, DEF, Spurs)
+    Nick Pope (ID: 473, GK, Newcastle)
+
+Captain: Noni Madueke (ID: 479)
+Vice-Captain: Cole Palmer (ID: 116)
+Captain Bonus: +20 pts (captain)
+
+Substitutions Made: None
+
+Active Lineup (11 players):
+  GK: David Raya Martin - 10pts (90min)
+  DEF: Cristian Romero - 14pts (90min)
+  DEF: Max Kilman - 12pts (90min)
+  DEF: Ola Aina - 9pts (90min)
+  MID: Cole Palmer (VC) - 17pts (82min)
+  MID: Luis Díaz - 14pts (71min)
+  MID: Noni Madueke (C) - 20pts (90min)
+  MID: Son Heung-min - 16pts (90min)
+  MID: Thomas Partey - 11pts (90min)
+  FWD: Danny Welbeck - 9pts (78min)
+  FWD: Erling Haaland - 17pts (89min)
+
+Bench:
+  1. Ederson Santana de Moraes (GK) - 2pts (90min) [✗]
+  2. Noussair Mazraoui (DEF) - 4pts (90min) [✗]
+  3. Joël Veltman (DEF) - 2pts (90min) [✗]
+  4. Yoane Wissa (FWD) - 2pts (72min) [✗]
+
+================================================================================
+GAMEWEEK 3
+================================================================================
+Points: 140
+Cumulative Points: 440
+
+Transfers:
+  IN (8):
+    Lucas Digne (ID: 386, DEF, Aston Villa)
+    Mohamed Salah (ID: 451, MID, Liverpool)
+    Luis Sinisterra (ID: 390, MID, Bournemouth)
+    Leif Davis (ID: 368, DEF, Ipswich)
+    Bryan Mbeumo (ID: 83, MID, Brentford)
+    Sugawara Yukinari (ID: 570, DEF, Southampton)
+    Alisson Ramses Becker (ID: 28, GK, Liverpool)
+    Dominic Calvert-Lewin (ID: 157, FWD, Everton)
+  OUT (8):
+    Noussair Mazraoui (ID: 482, DEF, Man Utd)
+    Ederson Santana de Moraes (ID: 163, GK, Man City)
+    Danny Welbeck (ID: 139, FWD, Brighton)
+    Cole Palmer (ID: 116, MID, Chelsea)
+    Son Heung-min (ID: 565, MID, Spurs)
+    Max Kilman (ID: 439, DEF, West Ham)
+    Cristian Romero (ID: 124, DEF, Spurs)
+    Noni Madueke (ID: 479, MID, Chelsea)
+
+Captain: Erling Haaland (ID: 180)
+Vice-Captain: Mohamed Salah (ID: 451)
+Captain Bonus: +17 pts (captain)
+
+Substitutions Made: None
+
+Active Lineup (11 players):
+  GK: Alisson Ramses Becker - 8pts (90min)
+  DEF: Leif Davis - 7pts (90min)
+  DEF: Lucas Digne - 7pts (90min)
+  DEF: Sugawara Yukinari - 7pts (90min)
+  MID: Bryan Mbeumo - 14pts (90min)
+  MID: Luis Díaz - 15pts (65min)
+  MID: Luis Sinisterra - 11pts (25min)
+  MID: Mohamed Salah (VC) - 17pts (90min)
+  FWD: Dominic Calvert-Lewin - 12pts (87min)
+  FWD: Erling Haaland (C) - 17pts (90min)
+  FWD: Yoane Wissa - 8pts (90min)
+
+Bench:
+  1. David Raya Martin (GK) - 2pts (90min) [✗]
+  2. Joël Veltman (DEF) - 2pts (71min) [✗]
+  3. Ola Aina (DEF) - 2pts (90min) [✗]
+  4. Thomas Partey (MID) - 1pts (90min) [✗]
+
+================================================================================
+GAMEWEEK 4
+================================================================================
+Points: 147
+Cumulative Points: 587
+
+Transfers:
+  IN (8):
+    Dwight McNeil (ID: 160, MID, Everton)
+    Ollie Watkins (ID: 490, FWD, Aston Villa)
+    Gabriel dos Santos Magalhães (ID: 204, DEF, Arsenal)
+    Robert Sánchez (ID: 525, GK, Chelsea)
+    Matthijs de Ligt (ID: 435, DEF, Man Utd)
+    Diogo Dalot Teixeira (ID: 154, DEF, Man Utd)
+    Mario Lemina (ID: 412, MID, Wolves)
+    Jean-Philippe Mateta (ID: 286, FWD, Crystal Palace)
+  OUT (8):
+    Lucas Digne (ID: 386, DEF, Aston Villa)
+    Mohamed Salah (ID: 451, MID, Liverpool)
+    Luis Díaz (ID: 388, MID, Liverpool)
+    Leif Davis (ID: 368, DEF, Ipswich)
+    David Raya Martin (ID: 145, GK, Arsenal)
+    Yoane Wissa (ID: 630, FWD, Brentford)
+    Sugawara Yukinari (ID: 570, DEF, Southampton)
+    Dominic Calvert-Lewin (ID: 157, FWD, Everton)
+
+Captain: Matthijs de Ligt (ID: 435)
+Vice-Captain: Gabriel dos Santos Magalhães (ID: 204)
+Captain Bonus: +15 pts (captain)
+
+Substitutions Made: None
+
+Active Lineup (11 players):
+  GK: Robert Sánchez - 15pts (90min)
+  DEF: Diogo Dalot Teixeira - 11pts (90min)
+  DEF: Gabriel dos Santos Magalhães (VC) - 15pts (90min)
+  DEF: Joël Veltman - 7pts (90min)
+  DEF: Matthijs de Ligt (C) - 15pts (86min)
+  DEF: Ola Aina - 8pts (90min)
+  MID: Dwight McNeil - 12pts (90min)
+  MID: Mario Lemina - 10pts (90min)
+  FWD: Erling Haaland - 13pts (90min)
+  FWD: Jean-Philippe Mateta - 13pts (90min)
+  FWD: Ollie Watkins - 13pts (83min)
+
+Bench:
+  1. Alisson Ramses Becker (GK) - 2pts (90min) [✗]
+  2. Thomas Partey (MID) - 3pts (90min) [✗]
+  3. Bryan Mbeumo (MID) - 2pts (90min) [✗]
+  4. Luis Sinisterra (MID) - 1pts (22min) [✗]
+
+================================================================================
+GAMEWEEK 5
+================================================================================
+Points: 131
+Cumulative Points: 718
+
+Transfers:
+  IN (5):
+    Luis Díaz (ID: 388, MID, Liverpool)
+    James Maddison (ID: 270, MID, Spurs)
+    Trent Alexander-Arnold (ID: 595, DEF, Liverpool)
+    Tyler Dibling (ID: 598, MID, Southampton)
+    Nicolas Jackson (ID: 476, FWD, Chelsea)
+  OUT (5):
+    Dwight McNeil (ID: 160, MID, Everton)
+    Thomas Partey (ID: 579, MID, Arsenal)
+    Matthijs de Ligt (ID: 435, DEF, Man Utd)
+    Mario Lemina (ID: 412, MID, Wolves)
+    Jean-Philippe Mateta (ID: 286, FWD, Crystal Palace)
+
+Captain: Nicolas Jackson (ID: 476)
+Vice-Captain: Luis Díaz (ID: 388)
+Captain Bonus: +16 pts (captain)
+
+Substitutions Made: None
+
+Active Lineup (11 players):
+  GK: Robert Sánchez - 10pts (90min)
+  DEF: Diogo Dalot Teixeira - 9pts (90min)
+  DEF: Gabriel dos Santos Magalhães - 7pts (90min)
+  DEF: Trent Alexander-Arnold - 11pts (90min)
+  MID: Bryan Mbeumo - 8pts (90min)
+  MID: James Maddison - 12pts (87min)
+  MID: Luis Díaz (VC) - 16pts (71min)
+  MID: Tyler Dibling - 11pts (81min)
+  FWD: Erling Haaland - 9pts (90min)
+  FWD: Nicolas Jackson (C) - 16pts (63min)
+  FWD: Ollie Watkins - 6pts (90min)
+
+Bench:
+  1. Alisson Ramses Becker (GK) - 0pts (0min) [✗]
+  2. Joël Veltman (DEF) - 1pts (90min) [✗]
+  3. Luis Sinisterra (MID) - 1pts (20min) [✗]
+  4. Ola Aina (DEF) - 0pts (90min) [✗]
+
+================================================================================
+GAMEWEEK 6
+================================================================================
+Points: 156
+Cumulative Points: 874
+
+Transfers:
+  IN (8):
+    Dwight McNeil (ID: 160, MID, Everton)
+    Carlos Baleba (ID: 97, MID, Brighton)
+    Rayan Aït-Nouri (ID: 512, DEF, Wolves)
+    Gabriel Martinelli Silva (ID: 203, MID, Arsenal)
+    James Justin (ID: 269, DEF, Leicester)
+    Cole Palmer (ID: 116, MID, Chelsea)
+    Micky van de Ven (ID: 444, DEF, Spurs)
+    Liam Delap (ID: 380, FWD, Ipswich)
+  OUT (8):
+    Luis Díaz (ID: 388, MID, Liverpool)
+    Luis Sinisterra (ID: 390, MID, Bournemouth)
+    Joël Veltman (ID: 327, DEF, Brighton)
+    James Maddison (ID: 270, MID, Spurs)
+    Trent Alexander-Arnold (ID: 595, DEF, Liverpool)
+    Erling Haaland (ID: 180, FWD, Man City)
+    Tyler Dibling (ID: 598, MID, Southampton)
+    Diogo Dalot Teixeira (ID: 154, DEF, Man Utd)
+
+Captain: Cole Palmer (ID: 116)
+Vice-Captain: Dwight McNeil (ID: 160)
+Captain Bonus: +25 pts (captain)
+
+Substitutions Made: None
+
+Active Lineup (11 players):
+  GK: Alisson Ramses Becker - 2pts (90min)
+  DEF: James Justin - 12pts (90min)
+  DEF: Micky van de Ven - 11pts (80min)
+  DEF: Rayan Aït-Nouri - 9pts (90min)
+  MID: Bryan Mbeumo - 9pts (90min)
+  MID: Carlos Baleba - 12pts (90min)
+  MID: Cole Palmer (C) - 25pts (90min)
+  MID: Dwight McNeil (VC) - 15pts (82min)
+  MID: Gabriel Martinelli Silva - 13pts (73min)
+  FWD: Liam Delap - 12pts (90min)
+  FWD: Ollie Watkins - 11pts (83min)
+
+Bench:
+  1. Robert Sánchez (GK) - 2pts (90min) [✗]
+  2. Nicolas Jackson (FWD) - 5pts (78min) [✗]
+  3. Ola Aina (DEF) - 2pts (90min) [✗]
+  4. Gabriel dos Santos Magalhães (DEF) - 1pts (90min) [✗]
+
+================================================================================
+GAMEWEEK 7
+================================================================================
+Points: 148
+Cumulative Points: 1022
+
+Transfers:
+  IN (7):
+    Mateo Kovačić (ID: 422, MID, Man City)
+    Nathan Collins (ID: 464, DEF, Brentford)
+    Bukayo Saka (ID: 84, MID, Arsenal)
+    Jordan Pickford (ID: 313, GK, Everton)
+    Jarrod Bowen (ID: 282, MID, West Ham)
+    Michail Antonio (ID: 443, FWD, West Ham)
+    Facundo Buonanotte (ID: 188, MID, Leicester)
+  OUT (7):
+    Dwight McNeil (ID: 160, MID, Everton)
+    Carlos Baleba (ID: 97, MID, Brighton)
+    Ollie Watkins (ID: 490, FWD, Aston Villa)
+    Gabriel Martinelli Silva (ID: 203, MID, Arsenal)
+    Robert Sánchez (ID: 525, GK, Chelsea)
+    Cole Palmer (ID: 116, MID, Chelsea)
+    Micky van de Ven (ID: 444, DEF, Spurs)
+
+Captain: Michail Antonio (ID: 443)
+Vice-Captain: Bukayo Saka (ID: 84)
+Captain Bonus: +18 pts (captain)
+
+Substitutions Made: None
+
+Active Lineup (11 players):
+  GK: Jordan Pickford - 15pts (90min)
+  DEF: James Justin - 10pts (90min)
+  DEF: Nathan Collins - 10pts (90min)
+  DEF: Rayan Aït-Nouri - 9pts (90min)
+  MID: Bryan Mbeumo - 8pts (90min)
+  MID: Bukayo Saka (VC) - 16pts (90min)
+  MID: Facundo Buonanotte - 11pts (81min)
+  MID: Jarrod Bowen - 12pts (90min)
+  MID: Mateo Kovačić - 15pts (90min)
+  FWD: Liam Delap - 6pts (82min)
+  FWD: Michail Antonio (C) - 18pts (69min)
+
+Bench:
+  1. Alisson Ramses Becker (GK) - 10pts (78min) [✗]
+  2. Gabriel dos Santos Magalhães (DEF) - 2pts (90min) [✗]
+  3. Nicolas Jackson (FWD) - 2pts (80min) [✗]
+  4. Ola Aina (DEF) - 2pts (90min) [✗]
+
+================================================================================
+GAMEWEEK 8
+================================================================================
+Points: 122
+Cumulative Points: 1144
+
+Transfers:
+  IN (8):
+    Mohamed Salah (ID: 451, MID, Liverpool)
+    Cameron Archer (ID: 90, FWD, Southampton)
+    Joško Gvardiol (ID: 328, DEF, Man City)
+    Justin Kluivert (ID: 334, MID, Bournemouth)
+    Matz Sels (ID: 437, GK, Nott'm Forest)
+    Yves Bissouma (ID: 634, MID, Spurs)
+    Michael Keane (ID: 442, DEF, Everton)
+    Curtis Jones (ID: 126, MID, Liverpool)
+  OUT (8):
+    Rayan Aït-Nouri (ID: 512, DEF, Wolves)
+    Mateo Kovačić (ID: 422, MID, Man City)
+    Nathan Collins (ID: 464, DEF, Brentford)
+    Bryan Mbeumo (ID: 83, MID, Brentford)
+    Bukayo Saka (ID: 84, MID, Arsenal)
+    Jordan Pickford (ID: 313, GK, Everton)
+    Jarrod Bowen (ID: 282, MID, West Ham)
+    Liam Delap (ID: 380, FWD, Ipswich)
+
+Captain: Michael Keane (ID: 442)
+Vice-Captain: Curtis Jones (ID: 126)
+Captain Bonus: +14 pts (captain)
+
+Substitutions Made: None
+
+Active Lineup (11 players):
+  GK: Matz Sels - 11pts (90min)
+  DEF: Joško Gvardiol - 10pts (90min)
+  DEF: Michael Keane (C) - 14pts (90min)
+  DEF: Ola Aina - 6pts (90min)
+  MID: Curtis Jones (VC) - 13pts (80min)
+  MID: Facundo Buonanotte - 6pts (90min)
+  MID: Justin Kluivert - 11pts (27min)
+  MID: Mohamed Salah - 12pts (90min)
+  MID: Yves Bissouma - 10pts (80min)
+  FWD: Cameron Archer - 9pts (67min)
+  FWD: Nicolas Jackson - 6pts (90min)
+
+Bench:
+  1. Alisson Ramses Becker (GK) - 0pts (0min) [✗]
+  2. Michail Antonio (FWD) - 2pts (60min) [✗]
+  3. Gabriel dos Santos Magalhães (DEF) - 1pts (90min) [✗]
+  4. James Justin (DEF) - 1pts (90min) [✗]
+
+================================================================================
+GAMEWEEK 9
+================================================================================
+Points: 123
+Cumulative Points: 1267
+
+Transfers:
+  IN (7):
+    Lucas Digne (ID: 386, DEF, Aston Villa)
+    Chris Wood (ID: 109, FWD, Nott'm Forest)
+    Alex Iwobi (ID: 16, MID, Fulham)
+    George Hirst (ID: 209, FWD, Ipswich)
+    Bryan Mbeumo (ID: 83, MID, Brentford)
+    Cole Palmer (ID: 116, MID, Chelsea)
+    Trevoh Chalobah (ID: 596, DEF, Crystal Palace)
+  OUT (7):
+    Cameron Archer (ID: 90, FWD, Southampton)
+    Ola Aina (ID: 487, DEF, Nott'm Forest)
+    Yves Bissouma (ID: 634, MID, Spurs)
+    Michael Keane (ID: 442, DEF, Everton)
+    Michail Antonio (ID: 443, FWD, West Ham)
+    Facundo Buonanotte (ID: 188, MID, Leicester)
+    Curtis Jones (ID: 126, MID, Liverpool)
+
+Captain: Bryan Mbeumo (ID: 83)
+Vice-Captain: Chris Wood (ID: 109)
+Captain Bonus: +15 pts (captain)
+
+Substitutions Made: None
+
+Active Lineup (11 players):
+  GK: Matz Sels - 5pts (90min)
+  DEF: Joško Gvardiol - 9pts (90min)
+  DEF: Lucas Digne - 7pts (70min)
+  DEF: Trevoh Chalobah - 8pts (90min)
+  MID: Alex Iwobi - 11pts (90min)
+  MID: Bryan Mbeumo (C) - 15pts (90min)
+  MID: Cole Palmer - 10pts (90min)
+  MID: Mohamed Salah - 10pts (90min)
+  FWD: Chris Wood (VC) - 13pts (80min)
+  FWD: George Hirst - 11pts (72min)
+  FWD: Nicolas Jackson - 9pts (77min)
+
+Bench:
+  1. Alisson Ramses Becker (GK) - 0pts (0min) [✗]
+  2. Justin Kluivert (MID) - 2pts (63min) [✗]
+  3. Gabriel dos Santos Magalhães (DEF) - 1pts (53min) [✗]
+  4. James Justin (DEF) - 1pts (90min) [✗]
+
+================================================================================
+GAMEWEEK 10
+================================================================================
+Points: 126
+Cumulative Points: 1393
+
+Transfers:
+  IN (6):
+    Milos Kerkez (ID: 448, DEF, Bournemouth)
+    Harry Wilson (ID: 225, MID, Fulham)
+    João Victor Gomes da Silva (ID: 326, MID, Wolves)
+    Ola Aina (ID: 487, DEF, Nott'm Forest)
+    Bruno Borges Fernandes (ID: 80, MID, Man Utd)
+    Dominic Solanke-Mitchell (ID: 158, FWD, Spurs)
+  OUT (6):
+    Lucas Digne (ID: 386, DEF, Aston Villa)
+    Gabriel dos Santos Magalhães (ID: 204, DEF, Arsenal)
+    Justin Kluivert (ID: 334, MID, Bournemouth)
+    Alex Iwobi (ID: 16, MID, Fulham)
+    George Hirst (ID: 209, FWD, Ipswich)
+    Cole Palmer (ID: 116, MID, Chelsea)
+
+Captain: Dominic Solanke-Mitchell (ID: 158)
+Vice-Captain: Ola Aina (ID: 487)
+Captain Bonus: +16 pts (captain)
+
+Substitutions Made: None
+
+Active Lineup (11 players):
+  GK: Matz Sels - 6pts (90min)
+  DEF: Joško Gvardiol - 7pts (90min)
+  DEF: Milos Kerkez - 10pts (90min)
+  DEF: Ola Aina (VC) - 15pts (88min)
+  DEF: Trevoh Chalobah - 7pts (90min)
+  MID: Bruno Borges Fernandes - 10pts (90min)
+  MID: Harry Wilson - 13pts (8min)
+  MID: João Victor Gomes da Silva - 10pts (90min)
+  MID: Mohamed Salah - 9pts (90min)
+  FWD: Chris Wood - 7pts (78min)
+  FWD: Dominic Solanke-Mitchell (C) - 16pts (90min)
+
+Bench:
+  1. Alisson Ramses Becker (GK) - 0pts (0min) [✗]
+  2. Bryan Mbeumo (MID) - 3pts (86min) [✗]
+  3. Nicolas Jackson (FWD) - 1pts (90min) [✗]
+  4. James Justin (DEF) - 0pts (0min) [✗]
+
+================================================================================
+GAMEWEEK 11
+================================================================================
+Points: 136
+Cumulative Points: 1529
+
+Transfers:
+  IN (8):
+    Noussair Mazraoui (ID: 482, DEF, Man Utd)
+    Emile Smith Rowe (ID: 170, MID, Fulham)
+    Matheus Santos Carneiro Da Cunha (ID: 427, FWD, Wolves)
+    James Tarkowski (ID: 274, DEF, Everton)
+    Toti António Gomes (ID: 594, DEF, Wolves)
+    Yoane Wissa (ID: 630, FWD, Brentford)
+    Jordan Pickford (ID: 313, GK, Everton)
+    Liam Delap (ID: 380, FWD, Ipswich)
+  OUT (8):
+    Milos Kerkez (ID: 448, DEF, Bournemouth)
+    João Victor Gomes da Silva (ID: 326, MID, Wolves)
+    Joško Gvardiol (ID: 328, DEF, Man City)
+    Chris Wood (ID: 109, FWD, Nott'm Forest)
+    Alisson Ramses Becker (ID: 28, GK, Liverpool)
+    Trevoh Chalobah (ID: 596, DEF, Crystal Palace)
+    Nicolas Jackson (ID: 476, FWD, Chelsea)
+    Dominic Solanke-Mitchell (ID: 158, FWD, Spurs)
+
+Captain: Bruno Borges Fernandes (ID: 80)
+Vice-Captain: Mohamed Salah (ID: 451)
+Captain Bonus: +17 pts (captain)
+
+Substitutions Made: None
+
+Active Lineup (11 players):
+  GK: Jordan Pickford - 11pts (90min)
+  DEF: James Tarkowski - 8pts (90min)
+  DEF: Noussair Mazraoui - 8pts (90min)
+  DEF: Toti António Gomes - 8pts (90min)
+  MID: Bruno Borges Fernandes (C) - 17pts (90min)
+  MID: Emile Smith Rowe - 11pts (88min)
+  MID: Harry Wilson - 6pts (8min)
+  MID: Mohamed Salah (VC) - 14pts (90min)
+  FWD: Liam Delap - 11pts (69min)
+  FWD: Matheus Santos Carneiro Da Cunha - 12pts (89min)
+  FWD: Yoane Wissa - 13pts (90min)
+
+Bench:
+  1. Matz Sels (GK) - 2pts (90min) [✗]
+  2. Bryan Mbeumo (MID) - 5pts (90min) [✗]
+  3. James Justin (DEF) - 1pts (82min) [✗]
+  4. Ola Aina (DEF) - 1pts (90min) [✗]
+
+================================================================================
+GAMEWEEK 12
+================================================================================
+Points: 153
+Cumulative Points: 1682
+
+Transfers:
+  IN (7):
+    Aaron Wan-Bissaka (ID: 4, DEF, West Ham)
+    João Pedro Junqueira de Jesus (ID: 325, FWD, Brighton)
+    James Maddison (ID: 270, MID, Spurs)
+    Enzo Fernández (ID: 178, MID, Chelsea)
+    Ismaïla Sarr (ID: 244, MID, Crystal Palace)
+    Bukayo Saka (ID: 84, MID, Arsenal)
+    Pedro Porro (ID: 503, DEF, Spurs)
+  OUT (7):
+    Harry Wilson (ID: 225, MID, Fulham)
+    Noussair Mazraoui (ID: 482, DEF, Man Utd)
+    Emile Smith Rowe (ID: 170, MID, Fulham)
+    Bruno Borges Fernandes (ID: 80, MID, Man Utd)
+    Toti António Gomes (ID: 594, DEF, Wolves)
+    Bryan Mbeumo (ID: 83, MID, Brentford)
+    Liam Delap (ID: 380, FWD, Ipswich)
+
+Captain: James Maddison (ID: 270)
+Vice-Captain: Matheus Santos Carneiro Da Cunha (ID: 427)
+Captain Bonus: +16 pts (captain)
+
+Substitutions Made: None
+
+Active Lineup (11 players):
+  GK: Jordan Pickford - 6pts (90min)
+  DEF: Aaron Wan-Bissaka - 15pts (90min)
+  DEF: James Tarkowski - 7pts (90min)
+  DEF: Pedro Porro - 14pts (90min)
+  MID: Bukayo Saka - 13pts (82min)
+  MID: Enzo Fernández - 12pts (90min)
+  MID: Ismaïla Sarr - 13pts (89min)
+  MID: James Maddison (C) - 16pts (88min)
+  MID: Mohamed Salah - 13pts (90min)
+  FWD: João Pedro Junqueira de Jesus - 12pts (63min)
+  FWD: Matheus Santos Carneiro Da Cunha (VC) - 16pts (90min)
+
+Bench:
+  1. Matz Sels (GK) - 2pts (90min) [✗]
+  2. Yoane Wissa (FWD) - 2pts (71min) [✗]
+  3. James Justin (DEF) - 1pts (90min) [✗]
+  4. Ola Aina (DEF) - 0pts (90min) [✗]
+
+================================================================================
+GAMEWEEK 13
+================================================================================
+Points: 172
+Cumulative Points: 1854
+
+Transfers:
+  IN (7):
+    Francisco Evanilson de Lima Barbosa (ID: 194, FWD, Bournemouth)
+    Daniel Muñoz (ID: 135, DEF, Crystal Palace)
+    Justin Kluivert (ID: 334, MID, Bournemouth)
+    Marc Cucurella Saseta (ID: 404, DEF, Chelsea)
+    Cole Palmer (ID: 116, MID, Chelsea)
+    Kevin Schade (ID: 350, MID, Brentford)
+    Joshua Zirkzee (ID: 319, FWD, Man Utd)
+  OUT (7):
+    Aaron Wan-Bissaka (ID: 4, DEF, West Ham)
+    Matheus Santos Carneiro Da Cunha (ID: 427, FWD, Wolves)
+    James Maddison (ID: 270, MID, Spurs)
+    Enzo Fernández (ID: 178, MID, Chelsea)
+    Ismaïla Sarr (ID: 244, MID, Crystal Palace)
+    Yoane Wissa (ID: 630, FWD, Brentford)
+    Pedro Porro (ID: 503, DEF, Spurs)
+
+Captain: Kevin Schade (ID: 350)
+Vice-Captain: Justin Kluivert (ID: 334)
+Captain Bonus: +23 pts (captain)
+
+Substitutions Made: None
+
+Active Lineup (11 players):
+  GK: Matz Sels - 6pts (90min)
+  DEF: Daniel Muñoz - 11pts (90min)
+  DEF: Marc Cucurella Saseta - 11pts (90min)
+  DEF: Ola Aina - 8pts (90min)
+  MID: Bukayo Saka - 18pts (73min)
+  MID: Cole Palmer - 14pts (85min)
+  MID: Justin Kluivert (VC) - 20pts (76min)
+  MID: Kevin Schade (C) - 23pts (69min)
+  MID: Mohamed Salah - 13pts (83min)
+  FWD: Francisco Evanilson de Lima Barbosa - 12pts (76min)
+  FWD: Joshua Zirkzee - 13pts (90min)
+
+Bench:
+  1. Jordan Pickford (GK) - 0pts (90min) [✗]
+  2. João Pedro Junqueira de Jesus (FWD) - 2pts (71min) [✗]
+  3. James Tarkowski (DEF) - 0pts (81min) [✗]
+  4. James Justin (DEF) - -1pts (90min) [✗]
+
+================================================================================
+GAMEWEEK 14
+================================================================================
+Points: 169
+Cumulative Points: 2023
+
+Transfers:
+  IN (9):
+    Bilal El Khannouss (ID: 70, MID, Leicester)
+    Ollie Watkins (ID: 490, FWD, Aston Villa)
+    Jurriën Timber (ID: 333, DEF, Arsenal)
+    William Saliba (ID: 622, DEF, Arsenal)
+    Alex Iwobi (ID: 16, MID, Fulham)
+    Dean Huijsen (ID: 147, DEF, Bournemouth)
+    Ashley Young (ID: 52, DEF, Everton)
+    Kevin De Bruyne (ID: 348, MID, Man City)
+    Noni Madueke (ID: 479, MID, Chelsea)
+  OUT (9):
+    Francisco Evanilson de Lima Barbosa (ID: 194, FWD, Bournemouth)
+    Ola Aina (ID: 487, DEF, Nott'm Forest)
+    Daniel Muñoz (ID: 135, DEF, Crystal Palace)
+    Justin Kluivert (ID: 334, MID, Bournemouth)
+    James Tarkowski (ID: 274, DEF, Everton)
+    Cole Palmer (ID: 116, MID, Chelsea)
+    Bukayo Saka (ID: 84, MID, Arsenal)
+    Marc Cucurella Saseta (ID: 404, DEF, Chelsea)
+    Kevin Schade (ID: 350, MID, Brentford)
+
+Captain: Mohamed Salah (ID: 451)
+Vice-Captain: Alex Iwobi (ID: 16)
+Captain Bonus: +18 pts (captain)
+
+Substitutions Made: None
+
+Active Lineup (11 players):
+  GK: Jordan Pickford - 6pts (90min)
+  DEF: Ashley Young - 15pts (90min)
+  DEF: Dean Huijsen - 15pts (90min)
+  DEF: Jurriën Timber - 14pts (90min)
+  DEF: William Saliba - 15pts (90min)
+  MID: Alex Iwobi (VC) - 15pts (90min)
+  MID: Bilal El Khannouss - 14pts (73min)
+  MID: Kevin De Bruyne - 14pts (73min)
+  MID: Mohamed Salah (C) - 18pts (90min)
+  MID: Noni Madueke - 13pts (71min)
+  FWD: Ollie Watkins - 12pts (64min)
+
+Bench:
+  1. Matz Sels (GK) - 2pts (90min) [✗]
+  2. João Pedro Junqueira de Jesus (FWD) - 5pts (79min) [✗]
+  3. James Justin (DEF) - 2pts (90min) [✗]
+  4. Joshua Zirkzee (FWD) - 1pts (31min) [✗]
+
+================================================================================
+GAMEWEEK 15
+================================================================================
+Points: 133
+Cumulative Points: 2156
+
+Transfers:
+  IN (9):
+    Tariq Lamptey (ID: 576, DEF, Brighton)
+    Dango Ouattara (ID: 130, MID, Bournemouth)
+    Morgan Gibbs-White (ID: 454, MID, Nott'm Forest)
+    Ezri Konsa Ngoyo (ID: 186, DEF, Aston Villa)
+    Chris Wood (ID: 109, FWD, Nott'm Forest)
+    Bryan Mbeumo (ID: 83, MID, Brentford)
+    Cole Palmer (ID: 116, MID, Chelsea)
+    Jamie Vardy (ID: 276, FWD, Leicester)
+    Jarrod Bowen (ID: 282, MID, West Ham)
+  OUT (9):
+    Mohamed Salah (ID: 451, MID, Liverpool)
+    Joshua Zirkzee (ID: 319, FWD, Man Utd)
+    Bilal El Khannouss (ID: 70, MID, Leicester)
+    Ollie Watkins (ID: 490, FWD, Aston Villa)
+    James Justin (ID: 269, DEF, Leicester)
+    Jurriën Timber (ID: 333, DEF, Arsenal)
+    Alex Iwobi (ID: 16, MID, Fulham)
+    Kevin De Bruyne (ID: 348, MID, Man City)
+    Noni Madueke (ID: 479, MID, Chelsea)
+
+Captain: Cole Palmer (ID: 116)
+Vice-Captain: Bryan Mbeumo (ID: 83)
+Captain Bonus: +18 pts (captain)
+
+Substitutions Made: None
+
+Active Lineup (11 players):
+  GK: Matz Sels - 2pts (90min)
+  DEF: Ezri Konsa Ngoyo - 8pts (90min)
+  DEF: Tariq Lamptey - 8pts (90min)
+  DEF: William Saliba - 9pts (90min)
+  MID: Bryan Mbeumo (VC) - 13pts (90min)
+  MID: Cole Palmer (C) - 18pts (90min)
+  MID: Dango Ouattara - 12pts (27min)
+  MID: Jarrod Bowen - 12pts (90min)
+  MID: Morgan Gibbs-White - 13pts (78min)
+  FWD: Chris Wood - 8pts (78min)
+  FWD: Jamie Vardy - 12pts (90min)
+
+Bench:
+  1. Jordan Pickford (GK) - 0pts (0min) [✗]
+  2. Dean Huijsen (DEF) - 2pts (90min) [✗]
+  3. João Pedro Junqueira de Jesus (FWD) - 2pts (70min) [✗]
+  4. Ashley Young (DEF) - 0pts (0min) [✗]
+
+================================================================================
+GAMEWEEK 16
+================================================================================
+Points: 141
+Cumulative Points: 2297
+
+Transfers:
+  IN (7):
+    Lewis Hall (ID: 377, DEF, Newcastle)
+    James Maddison (ID: 270, MID, Spurs)
+    Ismaïla Sarr (ID: 244, MID, Crystal Palace)
+    Son Heung-min (ID: 565, MID, Spurs)
+    Alexander Isak (ID: 22, FWD, Newcastle)
+    Tyrick Mitchell (ID: 601, DEF, Crystal Palace)
+    Amad Diallo (ID: 31, MID, Man Utd)
+  OUT (7):
+    Tariq Lamptey (ID: 576, DEF, Brighton)
+    Dango Ouattara (ID: 130, MID, Bournemouth)
+    João Pedro Junqueira de Jesus (ID: 325, FWD, Brighton)
+    Morgan Gibbs-White (ID: 454, MID, Nott'm Forest)
+    Ezri Konsa Ngoyo (ID: 186, DEF, Aston Villa)
+    Cole Palmer (ID: 116, MID, Chelsea)
+    Jarrod Bowen (ID: 282, MID, West Ham)
+
+Captain: Ismaïla Sarr (ID: 244)
+Vice-Captain: James Maddison (ID: 270)
+Captain Bonus: +17 pts (captain)
+
+Substitutions Made: None
+
+Active Lineup (11 players):
+  GK: Jordan Pickford - 8pts (90min)
+  DEF: Ashley Young - 5pts (90min)
+  DEF: Lewis Hall - 15pts (90min)
+  DEF: Tyrick Mitchell - 11pts (84min)
+  DEF: William Saliba - 6pts (90min)
+  MID: Amad Diallo - 13pts (90min)
+  MID: Bryan Mbeumo - 9pts (90min)
+  MID: Ismaïla Sarr (C) - 17pts (90min)
+  MID: James Maddison (VC) - 15pts (76min)
+  MID: Son Heung-min - 14pts (45min)
+  FWD: Alexander Isak - 11pts (72min)
+
+Bench:
+  1. Matz Sels (GK) - 2pts (90min) [✗]
+  2. Chris Wood (FWD) - 2pts (90min) [✗]
+  3. Dean Huijsen (DEF) - 2pts (90min) [✗]
+  4. Jamie Vardy (FWD) - 1pts (58min) [✗]
+
+================================================================================
+GAMEWEEK 17
+================================================================================
+Points: 179
+Cumulative Points: 2476
+
+Transfers:
+  IN (8):
+    Mohamed Salah (ID: 451, MID, Liverpool)
+    Luis Díaz (ID: 388, MID, Liverpool)
+    Ola Aina (ID: 487, DEF, Nott'm Forest)
+    Morgan Rogers (ID: 455, MID, Aston Villa)
+    Gabriel Fernando de Jesus (ID: 202, FWD, Arsenal)
+    Gonçalo Manuel Ganchinho Guedes (ID: 212, MID, Wolves)
+    Neco Williams (ID: 472, DEF, Nott'm Forest)
+    Dominik Szoboszlai (ID: 159, MID, Liverpool)
+  OUT (8):
+    Chris Wood (ID: 109, FWD, Nott'm Forest)
+    William Saliba (ID: 622, DEF, Arsenal)
+    James Maddison (ID: 270, MID, Spurs)
+    Bryan Mbeumo (ID: 83, MID, Brentford)
+    Ashley Young (ID: 52, DEF, Everton)
+    Ismaïla Sarr (ID: 244, MID, Crystal Palace)
+    Son Heung-min (ID: 565, MID, Spurs)
+    Amad Diallo (ID: 31, MID, Man Utd)
+
+Captain: Mohamed Salah (ID: 451)
+Vice-Captain: Alexander Isak (ID: 22)
+Captain Bonus: +21 pts (captain)
+
+Substitutions Made: None
+
+Active Lineup (11 players):
+  GK: Jordan Pickford - 7pts (90min)
+  DEF: Dean Huijsen - 14pts (90min)
+  DEF: Neco Williams - 11pts (90min)
+  DEF: Ola Aina - 15pts (90min)
+  MID: Dominik Szoboszlai - 17pts (90min)
+  MID: Gonçalo Manuel Ganchinho Guedes - 13pts (73min)
+  MID: Luis Díaz - 13pts (86min)
+  MID: Mohamed Salah (C) - 21pts (86min)
+  MID: Morgan Rogers - 14pts (90min)
+  FWD: Alexander Isak (VC) - 17pts (72min)
+  FWD: Gabriel Fernando de Jesus - 16pts (85min)
+
+Bench:
+  1. Matz Sels (GK) - 7pts (90min) [✗]
+  2. Lewis Hall (DEF) - 7pts (90min) [✗]
+  3. Tyrick Mitchell (DEF) - 3pts (90min) [✗]
+  4. Jamie Vardy (FWD) - 2pts (90min) [✗]
+
+================================================================================
+GAMEWEEK 18
+================================================================================
+Points: 109
+Cumulative Points: 2585
+
+Transfers:
+  IN (3):
+    Cody Gakpo (ID: 115, FWD, Liverpool)
+    Joelinton Cássio Apolinário de Lira (ID: 306, MID, Newcastle)
+    Matheus Santos Carneiro Da Cunha (ID: 427, FWD, Wolves)
+  OUT (3):
+    Gabriel Fernando de Jesus (ID: 202, FWD, Arsenal)
+    Jamie Vardy (ID: 276, FWD, Leicester)
+    Dominik Szoboszlai (ID: 159, MID, Liverpool)
+
+Captain: Joelinton Cássio Apolinário de Lira (ID: 306)
+Vice-Captain: Cody Gakpo (ID: 115)
+Captain Bonus: +13 pts (captain)
+
+Substitutions Made: None
+
+Active Lineup (11 players):
+  GK: Jordan Pickford - 9pts (90min)
+  DEF: Dean Huijsen - 8pts (90min)
+  DEF: Lewis Hall - 6pts (90min)
+  DEF: Neco Williams - 6pts (90min)
+  DEF: Ola Aina - 6pts (90min)
+  DEF: Tyrick Mitchell - 7pts (90min)
+  MID: Joelinton Cássio Apolinário de Lira (C) - 13pts (90min)
+  MID: Mohamed Salah - 9pts (90min)
+  FWD: Alexander Isak - 8pts (90min)
+  FWD: Cody Gakpo (VC) - 12pts (90min)
+  FWD: Matheus Santos Carneiro Da Cunha - 12pts (90min)
+
+Bench:
+  1. Matz Sels (GK) - 8pts (90min) [✗]
+  2. Gonçalo Manuel Ganchinho Guedes (MID) - 3pts (73min) [✗]
+  3. Morgan Rogers (MID) - 2pts (68min) [✗]
+  4. Luis Díaz (MID) - 0pts (0min) [✗]
+
+================================================================================
+GAMEWEEK 19
+================================================================================
+Points: 141
+Cumulative Points: 2726
+
+Transfers:
+  IN (4):
+    Ollie Watkins (ID: 490, FWD, Aston Villa)
+    Trent Alexander-Arnold (ID: 595, DEF, Liverpool)
+    Sávio 'Savinho' Moreira de Oliveira (ID: 572, MID, Man City)
+    Chris Wood (ID: 109, FWD, Nott'm Forest)
+  OUT (4):
+    Cody Gakpo (ID: 115, FWD, Liverpool)
+    Matheus Santos Carneiro Da Cunha (ID: 427, FWD, Wolves)
+    Gonçalo Manuel Ganchinho Guedes (ID: 212, MID, Wolves)
+    Neco Williams (ID: 472, DEF, Nott'm Forest)
+
+Captain: Mohamed Salah (ID: 451)
+Vice-Captain: Trent Alexander-Arnold (ID: 595)
+Captain Bonus: +16 pts (captain)
+
+Substitutions Made: None
+
+Active Lineup (11 players):
+  GK: Matz Sels - 6pts (90min)
+  DEF: Lewis Hall - 12pts (90min)
+  DEF: Ola Aina - 8pts (90min)
+  DEF: Trent Alexander-Arnold (VC) - 15pts (90min)
+  MID: Joelinton Cássio Apolinário de Lira - 10pts (90min)
+  MID: Luis Díaz - 9pts (90min)
+  MID: Mohamed Salah (C) - 16pts (90min)
+  MID: Morgan Rogers - 11pts (90min)
+  MID: Sávio 'Savinho' Moreira de Oliveira - 14pts (90min)
+  FWD: Chris Wood - 12pts (75min)
+  FWD: Ollie Watkins - 12pts (90min)
+
+Bench:
+  1. Jordan Pickford (GK) - 1pts (90min) [✗]
+  2. Alexander Isak (FWD) - 7pts (90min) [✗]
+  3. Tyrick Mitchell (DEF) - 2pts (90min) [✗]
+  4. Dean Huijsen (DEF) - 1pts (90min) [✗]
+
+================================================================================
+GAMEWEEK 20
+================================================================================
+Points: 137
+Cumulative Points: 2863
+
+Transfers:
+  IN (5):
+    Milos Kerkez (ID: 448, DEF, Bournemouth)
+    Raúl Jiménez (ID: 513, FWD, Fulham)
+    Bryan Mbeumo (ID: 83, MID, Brentford)
+    Erling Haaland (ID: 180, FWD, Man City)
+    Ross Barkley (ID: 536, MID, Aston Villa)
+  OUT (5):
+    Luis Díaz (ID: 388, MID, Liverpool)
+    Morgan Rogers (ID: 455, MID, Aston Villa)
+    Ollie Watkins (ID: 490, FWD, Aston Villa)
+    Trent Alexander-Arnold (ID: 595, DEF, Liverpool)
+    Alexander Isak (ID: 22, FWD, Newcastle)
+
+Captain: Bryan Mbeumo (ID: 83)
+Vice-Captain: Erling Haaland (ID: 180)
+Captain Bonus: +19 pts (captain)
+
+Substitutions Made: None
+
+Active Lineup (11 players):
+  GK: Matz Sels - 9pts (90min)
+  DEF: Dean Huijsen - 8pts (90min)
+  DEF: Milos Kerkez - 12pts (90min)
+  DEF: Ola Aina - 6pts (90min)
+  MID: Bryan Mbeumo (C) - 19pts (90min)
+  MID: Mohamed Salah - 7pts (90min)
+  MID: Ross Barkley - 10pts (75min)
+  MID: Sávio 'Savinho' Moreira de Oliveira - 13pts (79min)
+  FWD: Chris Wood - 8pts (87min)
+  FWD: Erling Haaland (VC) - 13pts (83min)
+  FWD: Raúl Jiménez - 13pts (90min)
+
+Bench:
+  1. Jordan Pickford (GK) - 4pts (90min) [✗]
+  2. Lewis Hall (DEF) - 2pts (90min) [✗]
+  3. Tyrick Mitchell (DEF) - 2pts (90min) [✗]
+  4. Joelinton Cássio Apolinário de Lira (MID) - 1pts (90min) [✗]
+
+================================================================================
+GAMEWEEK 21
+================================================================================
+Points: 154
+Cumulative Points: 3017
+
+Transfers:
+  IN (8):
+    Martin Dúbravka (ID: 417, GK, Newcastle)
+    Mitoma Kaoru (ID: 450, MID, Brighton)
+    Antoine Semenyo (ID: 44, MID, Bournemouth)
+    Alex Iwobi (ID: 16, MID, Fulham)
+    Alexander Isak (ID: 22, FWD, Newcastle)
+    Marc Guéhi (ID: 406, DEF, Crystal Palace)
+    Phil Foden (ID: 505, MID, Man City)
+    Amad Diallo (ID: 31, MID, Man Utd)
+  OUT (8):
+    Milos Kerkez (ID: 448, DEF, Bournemouth)
+    Mohamed Salah (ID: 451, MID, Liverpool)
+    Joelinton Cássio Apolinário de Lira (ID: 306, MID, Newcastle)
+    Bryan Mbeumo (ID: 83, MID, Brentford)
+    Erling Haaland (ID: 180, FWD, Man City)
+    Matz Sels (ID: 437, GK, Nott'm Forest)
+    Ross Barkley (ID: 536, MID, Aston Villa)
+    Sávio 'Savinho' Moreira de Oliveira (ID: 572, MID, Man City)
+
+Captain: Amad Diallo (ID: 31)
+Vice-Captain: Alexander Isak (ID: 22)
+Captain Bonus: +20 pts (captain)
+
+Substitutions Made: None
+
+Active Lineup (11 players):
+  GK: Martin Dúbravka - 10pts (90min)
+  DEF: Lewis Hall - 6pts (90min)
+  DEF: Marc Guéhi - 15pts (90min)
+  DEF: Tyrick Mitchell - 6pts (78min)
+  MID: Alex Iwobi - 15pts (84min)
+  MID: Amad Diallo (C) - 20pts (90min)
+  MID: Antoine Semenyo - 12pts (90min)
+  MID: Mitoma Kaoru - 10pts (90min)
+  MID: Phil Foden - 15pts (86min)
+  FWD: Alexander Isak (VC) - 16pts (77min)
+  FWD: Chris Wood - 9pts (89min)
+
+Bench:
+  1. Jordan Pickford (GK) - 1pts (90min) [✗]
+  2. Ola Aina (DEF) - 2pts (90min) [✗]
+  3. Raúl Jiménez (FWD) - 1pts (90min) [✗]
+  4. Dean Huijsen (DEF) - 0pts (90min) [✗]
+
+================================================================================
+GAMEWEEK 22
+================================================================================
+Points: 159
+Cumulative Points: 3176
+
+Transfers:
+  IN (6):
+    Mateo Kovačić (ID: 422, MID, Man City)
+    Justin Kluivert (ID: 334, MID, Bournemouth)
+    Yankuba Minteh (ID: 626, MID, Brighton)
+    Trent Alexander-Arnold (ID: 595, DEF, Liverpool)
+    Alisson Ramses Becker (ID: 28, GK, Liverpool)
+    Jean-Philippe Mateta (ID: 286, FWD, Crystal Palace)
+  OUT (6):
+    Martin Dúbravka (ID: 417, GK, Newcastle)
+    Ola Aina (ID: 487, DEF, Nott'm Forest)
+    Antoine Semenyo (ID: 44, MID, Bournemouth)
+    Alex Iwobi (ID: 16, MID, Fulham)
+    Alexander Isak (ID: 22, FWD, Newcastle)
+    Amad Diallo (ID: 31, MID, Man Utd)
+
+Captain: Justin Kluivert (ID: 334)
+Vice-Captain: Phil Foden (ID: 505)
+Captain Bonus: +22 pts (captain)
+
+Substitutions Made: None
+
+Active Lineup (11 players):
+  GK: Alisson Ramses Becker - 9pts (90min)
+  DEF: Marc Guéhi - 8pts (90min)
+  DEF: Trent Alexander-Arnold - 11pts (90min)
+  DEF: Tyrick Mitchell - 6pts (90min)
+  MID: Justin Kluivert (C) - 22pts (90min)
+  MID: Mateo Kovačić - 13pts (71min)
+  MID: Mitoma Kaoru - 12pts (90min)
+  MID: Phil Foden (VC) - 19pts (62min)
+  MID: Yankuba Minteh - 12pts (68min)
+  FWD: Chris Wood - 12pts (82min)
+  FWD: Jean-Philippe Mateta - 13pts (89min)
+
+Bench:
+  1. Jordan Pickford (GK) - 2pts (90min) [✗]
+  2. Lewis Hall (DEF) - 4pts (65min) [✗]
+  3. Dean Huijsen (DEF) - 2pts (90min) [✗]
+  4. Raúl Jiménez (FWD) - 2pts (70min) [✗]
+
+================================================================================
+GAMEWEEK 23
+================================================================================
+Points: 156
+Cumulative Points: 3332
+
+Transfers:
+  IN (8):
+    Kevin Schade (ID: 350, MID, Brentford)
+    Dango Ouattara (ID: 130, MID, Bournemouth)
+    Emerson Palmieri dos Santos (ID: 168, DEF, West Ham)
+    Cody Gakpo (ID: 115, FWD, Liverpool)
+    Erling Haaland (ID: 180, FWD, Man City)
+    Alexander Isak (ID: 22, FWD, Newcastle)
+    Lisandro Martínez (ID: 382, DEF, Man Utd)
+    Dominik Szoboszlai (ID: 159, MID, Liverpool)
+  OUT (8):
+    Raúl Jiménez (ID: 513, FWD, Fulham)
+    Mitoma Kaoru (ID: 450, MID, Brighton)
+    Mateo Kovačić (ID: 422, MID, Man City)
+    Chris Wood (ID: 109, FWD, Nott'm Forest)
+    Trent Alexander-Arnold (ID: 595, DEF, Liverpool)
+    Marc Guéhi (ID: 406, DEF, Crystal Palace)
+    Phil Foden (ID: 505, MID, Man City)
+    Jean-Philippe Mateta (ID: 286, FWD, Crystal Palace)
+
+Captain: Dango Ouattara (ID: 130)
+Vice-Captain: Cody Gakpo (ID: 115)
+Captain Bonus: +21 pts (captain)
+
+Substitutions Made: None
+
+Active Lineup (11 players):
+  GK: Jordan Pickford - 5pts (90min)
+  DEF: Dean Huijsen - 6pts (90min)
+  DEF: Emerson Palmieri dos Santos - 10pts (74min)
+  DEF: Lisandro Martínez - 15pts (90min)
+  MID: Dango Ouattara (C) - 21pts (90min)
+  MID: Dominik Szoboszlai - 13pts (67min)
+  MID: Justin Kluivert - 13pts (87min)
+  MID: Kevin Schade - 11pts (83min)
+  FWD: Alexander Isak - 13pts (78min)
+  FWD: Cody Gakpo (VC) - 16pts (67min)
+  FWD: Erling Haaland - 12pts (90min)
+
+Bench:
+  1. Alisson Ramses Becker (GK) - 2pts (90min) [✗]
+  2. Lewis Hall (DEF) - 2pts (90min) [✗]
+  3. Tyrick Mitchell (DEF) - 1pts (90min) [✗]
+  4. Yankuba Minteh (MID) - 0pts (16min) [✗]
+
+================================================================================
+GAMEWEEK 24
+================================================================================
+Points: 193
+Cumulative Points: 3525
+
+Transfers:
+  IN (9):
+    Norberto Bercique Gomes Betuncal (ID: 480, FWD, Everton)
+    Mohamed Salah (ID: 451, MID, Liverpool)
+    Morgan Gibbs-White (ID: 454, MID, Nott'm Forest)
+    Daniel Muñoz (ID: 135, DEF, Crystal Palace)
+    Anthony Elanga (ID: 42, MID, Nott'm Forest)
+    Chris Wood (ID: 109, FWD, Nott'm Forest)
+    James Tarkowski (ID: 274, DEF, Everton)
+    Jean-Philippe Mateta (ID: 286, FWD, Crystal Palace)
+    Jean-Ricner Bellegarde (ID: 287, MID, Wolves)
+  OUT (9):
+    Kevin Schade (ID: 350, MID, Brentford)
+    Dango Ouattara (ID: 130, MID, Bournemouth)
+    Emerson Palmieri dos Santos (ID: 168, DEF, West Ham)
+    Justin Kluivert (ID: 334, MID, Bournemouth)
+    Cody Gakpo (ID: 115, FWD, Liverpool)
+    Erling Haaland (ID: 180, FWD, Man City)
+    Alexander Isak (ID: 22, FWD, Newcastle)
+    Lisandro Martínez (ID: 382, DEF, Man Utd)
+    Dominik Szoboszlai (ID: 159, MID, Liverpool)
+
+Captain: Mohamed Salah (ID: 451)
+Vice-Captain: Norberto Bercique Gomes Betuncal (ID: 480)
+Captain Bonus: +29 pts (captain)
+
+Substitutions Made: None
+
+Active Lineup (11 players):
+  GK: Alisson Ramses Becker - 10pts (90min)
+  DEF: Daniel Muñoz - 11pts (90min)
+  DEF: James Tarkowski - 17pts (90min)
+  DEF: Tyrick Mitchell - 6pts (87min)
+  MID: Anthony Elanga - 13pts (90min)
+  MID: Jean-Ricner Bellegarde - 11pts (87min)
+  MID: Mohamed Salah (C) - 29pts (88min)
+  MID: Morgan Gibbs-White - 16pts (71min)
+  FWD: Chris Wood - 17pts (81min)
+  FWD: Jean-Philippe Mateta - 13pts (90min)
+  FWD: Norberto Bercique Gomes Betuncal (VC) - 21pts (88min)
+
+Bench:
+  1. Jordan Pickford (GK) - 10pts (90min) [✗]
+  2. Yankuba Minteh (MID) - 2pts (90min) [✗]
+  3. Lewis Hall (DEF) - 1pts (86min) [✗]
+  4. Dean Huijsen (DEF) - 0pts (90min) [✗]
+
+================================================================================
+GAMEWEEK 25
+================================================================================
+Points: 159
+Cumulative Points: 3684
+
+Transfers:
+  IN (8):
+    Carlos Alcaraz Durán (ID: 96, MID, Everton)
+    Ederson Santana de Moraes (ID: 163, GK, Man City)
+    Luis Díaz (ID: 388, MID, Liverpool)
+    Ollie Watkins (ID: 490, FWD, Aston Villa)
+    Nathan Collins (ID: 464, DEF, Brentford)
+    Trent Alexander-Arnold (ID: 595, DEF, Liverpool)
+    Ryan Christie (ID: 538, MID, Bournemouth)
+    Djed Spence (ID: 156, DEF, Spurs)
+  OUT (8):
+    Morgan Gibbs-White (ID: 454, MID, Nott'm Forest)
+    Daniel Muñoz (ID: 135, DEF, Crystal Palace)
+    Anthony Elanga (ID: 42, MID, Nott'm Forest)
+    James Tarkowski (ID: 274, DEF, Everton)
+    Tyrick Mitchell (ID: 601, DEF, Crystal Palace)
+    Alisson Ramses Becker (ID: 28, GK, Liverpool)
+    Jean-Philippe Mateta (ID: 286, FWD, Crystal Palace)
+    Jean-Ricner Bellegarde (ID: 287, MID, Wolves)
+
+Captain: Mohamed Salah (ID: 451)
+Vice-Captain: Ollie Watkins (ID: 490)
+Captain Bonus: +20 pts (captain)
+
+Substitutions Made: None
+
+Active Lineup (11 players):
+  GK: Ederson Santana de Moraes - 11pts (90min)
+  DEF: Djed Spence - 9pts (90min)
+  DEF: Nathan Collins - 8pts (90min)
+  DEF: Trent Alexander-Arnold - 13pts (64min)
+  MID: Carlos Alcaraz Durán - 13pts (85min)
+  MID: Luis Díaz - 13pts (40min)
+  MID: Mohamed Salah (C) - 20pts (90min)
+  MID: Ryan Christie - 13pts (87min)
+  MID: Yankuba Minteh - 15pts (88min)
+  FWD: Chris Wood - 9pts (90min)
+  FWD: Ollie Watkins (VC) - 15pts (90min)
+
+Bench:
+  1. Jordan Pickford (GK) - 3pts (90min) [✗]
+  2. Norberto Bercique Gomes Betuncal (FWD) - 8pts (90min) [✗]
+  3. Dean Huijsen (DEF) - 2pts (90min) [✗]
+  4. Lewis Hall (DEF) - 0pts (90min) [✗]
+
+================================================================================
+GAMEWEEK 26
+================================================================================
+Points: 145
+Cumulative Points: 3829
+
+Transfers:
+  IN (8):
+    José Malheiro de Sá (ID: 320, GK, Wolves)
+    Aaron Wan-Bissaka (ID: 4, DEF, West Ham)
+    Abdoulaye Doucouré (ID: 5, MID, Everton)
+    Daniel Muñoz (ID: 135, DEF, Crystal Palace)
+    Brennan Johnson (ID: 79, MID, Spurs)
+    Bryan Mbeumo (ID: 83, MID, Brentford)
+    Alexander Isak (ID: 22, FWD, Newcastle)
+    Dominik Szoboszlai (ID: 159, MID, Liverpool)
+  OUT (8):
+    Carlos Alcaraz Durán (ID: 96, MID, Everton)
+    Ederson Santana de Moraes (ID: 163, GK, Man City)
+    Luis Díaz (ID: 388, MID, Liverpool)
+    Ollie Watkins (ID: 490, FWD, Aston Villa)
+    Nathan Collins (ID: 464, DEF, Brentford)
+    Yankuba Minteh (ID: 626, MID, Brighton)
+    Trent Alexander-Arnold (ID: 595, DEF, Liverpool)
+    Ryan Christie (ID: 538, MID, Bournemouth)
+
+Captain: Bryan Mbeumo (ID: 83)
+Vice-Captain: Brennan Johnson (ID: 79)
+Captain Bonus: +14 pts (captain)
+
+Substitutions Made: None
+
+Active Lineup (11 players):
+  GK: José Malheiro de Sá - 9pts (90min)
+  DEF: Aaron Wan-Bissaka - 12pts (90min)
+  DEF: Daniel Muñoz - 13pts (90min)
+  DEF: Djed Spence - 8pts (90min)
+  DEF: Lewis Hall - 9pts (90min)
+  MID: Abdoulaye Doucouré - 12pts (80min)
+  MID: Brennan Johnson (VC) - 14pts (63min)
+  MID: Bryan Mbeumo (C) - 14pts (90min)
+  MID: Dominik Szoboszlai - 13pts (90min)
+  MID: Mohamed Salah - 14pts (90min)
+  FWD: Alexander Isak - 13pts (86min)
+
+Bench:
+  1. Jordan Pickford (GK) - 1pts (90min) [✗]
+  2. Norberto Bercique Gomes Betuncal (FWD) - 6pts (90min) [✗]
+  3. Chris Wood (FWD) - 5pts (90min) [✗]
+  4. Dean Huijsen (DEF) - 2pts (90min) [✗]
+
+================================================================================
+GAMEWEEK 27
+================================================================================
+Points: 140
+Cumulative Points: 3969
+
+Transfers:
+  IN (8):
+    Jaden Philogene (ID: 257, MID, Ipswich)
+    Ederson Santana de Moraes (ID: 163, GK, Man City)
+    Jake O'Brien (ID: 260, DEF, Everton)
+    Christopher Nkunku (ID: 113, MID, Chelsea)
+    Rodrigo Muniz Carvalho (ID: 530, FWD, Fulham)
+    Ismaïla Sarr (ID: 244, MID, Crystal Palace)
+    Levi Colwill (ID: 373, DEF, Chelsea)
+    Marc Cucurella Saseta (ID: 404, DEF, Chelsea)
+  OUT (8):
+    Abdoulaye Doucouré (ID: 5, MID, Everton)
+    Daniel Muñoz (ID: 135, DEF, Crystal Palace)
+    Jordan Pickford (ID: 313, GK, Everton)
+    Brennan Johnson (ID: 79, MID, Spurs)
+    Bryan Mbeumo (ID: 83, MID, Brentford)
+    Dean Huijsen (ID: 147, DEF, Bournemouth)
+    Alexander Isak (ID: 22, FWD, Newcastle)
+    Lewis Hall (ID: 377, DEF, Newcastle)
+
+Captain: Ismaïla Sarr (ID: 244)
+Vice-Captain: Jaden Philogene (ID: 257)
+Captain Bonus: +15 pts (captain)
+
+Substitutions Made: None
+
+Active Lineup (11 players):
+  GK: Ederson Santana de Moraes - 11pts (90min)
+  DEF: Aaron Wan-Bissaka - 7pts (90min)
+  DEF: Jake O'Brien - 10pts (90min)
+  DEF: Levi Colwill - 14pts (90min)
+  DEF: Marc Cucurella Saseta - 15pts (90min)
+  MID: Christopher Nkunku - 12pts (82min)
+  MID: Dominik Szoboszlai - 11pts (90min)
+  MID: Ismaïla Sarr (C) - 15pts (85min)
+  MID: Jaden Philogene (VC) - 15pts (90min)
+  MID: Mohamed Salah - 6pts (90min)
+  FWD: Rodrigo Muniz Carvalho - 9pts (71min)
+
+Bench:
+  1. José Malheiro de Sá (GK) - 2pts (90min) [✗]
+  2. Chris Wood (FWD) - 2pts (84min) [✗]
+  3. Norberto Bercique Gomes Betuncal (FWD) - 2pts (90min) [✗]
+  4. Djed Spence (DEF) - 1pts (23min) [✗]
+
+================================================================================
+GAMEWEEK 28
+================================================================================
+Points: 131
+Cumulative Points: 4100
+
+Transfers:
+  IN (7):
+    Ollie Watkins (ID: 490, FWD, Aston Villa)
+    Darwin Núñez Ribeiro (ID: 141, FWD, Liverpool)
+    Bruno Guimarães Rodriguez Moura (ID: 81, MID, Newcastle)
+    Dean Henderson (ID: 146, GK, Crystal Palace)
+    Jan Paul van Hecke (ID: 278, DEF, Brighton)
+    Callum Hudson-Odoi (ID: 87, MID, Nott'm Forest)
+    Jack Harrison (ID: 250, MID, Everton)
+  OUT (7):
+    Norberto Bercique Gomes Betuncal (ID: 480, FWD, Everton)
+    Jaden Philogene (ID: 257, MID, Ipswich)
+    Ederson Santana de Moraes (ID: 163, GK, Man City)
+    Aaron Wan-Bissaka (ID: 4, DEF, West Ham)
+    Christopher Nkunku (ID: 113, MID, Chelsea)
+    Rodrigo Muniz Carvalho (ID: 530, FWD, Fulham)
+    Dominik Szoboszlai (ID: 159, MID, Liverpool)
+
+Captain: Marc Cucurella Saseta (ID: 404)
+Vice-Captain: Mohamed Salah (ID: 451)
+Captain Bonus: +15 pts (captain)
+
+Substitutions Made: None
+
+Active Lineup (11 players):
+  GK: Dean Henderson - 10pts (90min)
+  DEF: Jan Paul van Hecke - 9pts (90min)
+  DEF: Levi Colwill - 6pts (90min)
+  DEF: Marc Cucurella Saseta (C) - 15pts (90min)
+  MID: Bruno Guimarães Rodriguez Moura - 11pts (87min)
+  MID: Callum Hudson-Odoi - 10pts (86min)
+  MID: Ismaïla Sarr - 11pts (90min)
+  MID: Jack Harrison - 10pts (90min)
+  MID: Mohamed Salah (VC) - 15pts (90min)
+  FWD: Darwin Núñez Ribeiro - 10pts (67min)
+  FWD: Ollie Watkins - 9pts (90min)
+
+Bench:
+  1. José Malheiro de Sá (GK) - 3pts (90min) [✗]
+  2. Chris Wood (FWD) - 2pts (86min) [✗]
+  3. Jake O'Brien (DEF) - 2pts (90min) [✗]
+  4. Djed Spence (DEF) - 1pts (90min) [✗]
+
+================================================================================
+GAMEWEEK 29
+================================================================================
+Points: 148
+Cumulative Points: 4248
+
+Transfers:
+  IN (10):
+    Bernd Leno (ID: 69, GK, Fulham)
+    Anthony Elanga (ID: 42, MID, Nott'm Forest)
+    Jurriën Timber (ID: 333, DEF, Arsenal)
+    Christian Nørgaard (ID: 111, MID, Brentford)
+    Bruno Borges Fernandes (ID: 80, MID, Man Utd)
+    Jørgen Strand Larsen (ID: 336, FWD, Wolves)
+    Tomáš Souček (ID: 592, MID, West Ham)
+    Diogo Dalot Teixeira (ID: 154, DEF, Man Utd)
+    Nikola Milenković (ID: 478, DEF, Nott'm Forest)
+    Jean-Ricner Bellegarde (ID: 287, MID, Wolves)
+  OUT (10):
+    José Malheiro de Sá (ID: 320, GK, Wolves)
+    Mohamed Salah (ID: 451, MID, Liverpool)
+    Chris Wood (ID: 109, FWD, Nott'm Forest)
+    Bruno Guimarães Rodriguez Moura (ID: 81, MID, Newcastle)
+    Ismaïla Sarr (ID: 244, MID, Crystal Palace)
+    Marc Cucurella Saseta (ID: 404, DEF, Chelsea)
+    Jan Paul van Hecke (ID: 278, DEF, Brighton)
+    Callum Hudson-Odoi (ID: 87, MID, Nott'm Forest)
+    Jack Harrison (ID: 250, MID, Everton)
+    Djed Spence (ID: 156, DEF, Spurs)
+
+Captain: Bruno Borges Fernandes (ID: 80)
+Vice-Captain: Anthony Elanga (ID: 42)
+Captain Bonus: +17 pts (captain)
+
+Substitutions Made: None
+
+Active Lineup (11 players):
+  GK: Bernd Leno - 13pts (90min)
+  DEF: Diogo Dalot Teixeira - 11pts (90min)
+  DEF: Jake O'Brien - 10pts (90min)
+  DEF: Jurriën Timber - 9pts (90min)
+  DEF: Nikola Milenković - 11pts (90min)
+  MID: Anthony Elanga (VC) - 16pts (66min)
+  MID: Bruno Borges Fernandes (C) - 17pts (90min)
+  MID: Christian Nørgaard - 10pts (90min)
+  MID: Jean-Ricner Bellegarde - 11pts (68min)
+  MID: Tomáš Souček - 10pts (90min)
+  FWD: Jørgen Strand Larsen - 13pts (89min)
+
+Bench:
+  1. Dean Henderson (GK) - 0pts (0min) [✗]
+  2. Levi Colwill (DEF) - 1pts (90min) [✗]
+  3. Darwin Núñez Ribeiro (FWD) - 0pts (0min) [✗]
+  4. Ollie Watkins (FWD) - 0pts (0min) [✗]
+
+================================================================================
+GAMEWEEK 30
+================================================================================
+Points: 107
+Cumulative Points: 4355
+
+Transfers:
+  IN (6):
+    Morgan Rogers (ID: 455, MID, Aston Villa)
+    Sandro Tonali (ID: 553, MID, Newcastle)
+    Enzo Fernández (ID: 178, MID, Chelsea)
+    Matz Sels (ID: 437, GK, Nott'm Forest)
+    Liam Delap (ID: 380, FWD, Ipswich)
+    Sávio 'Savinho' Moreira de Oliveira (ID: 572, MID, Man City)
+  OUT (6):
+    Bernd Leno (ID: 69, GK, Fulham)
+    Ollie Watkins (ID: 490, FWD, Aston Villa)
+    Christian Nørgaard (ID: 111, MID, Brentford)
+    Bruno Borges Fernandes (ID: 80, MID, Man Utd)
+    Tomáš Souček (ID: 592, MID, West Ham)
+    Jean-Ricner Bellegarde (ID: 287, MID, Wolves)
+
+Captain: Enzo Fernández (ID: 178)
+Vice-Captain: Anthony Elanga (ID: 42)
+Captain Bonus: +11 pts (captain)
+
+Substitutions Made: None
+
+Active Lineup (11 players):
+  GK: Matz Sels - 8pts (90min)
+  DEF: Jurriën Timber - 7pts (76min)
+  DEF: Levi Colwill - 6pts (90min)
+  DEF: Nikola Milenković - 6pts (90min)
+  MID: Anthony Elanga (VC) - 11pts (84min)
+  MID: Enzo Fernández (C) - 11pts (90min)
+  MID: Morgan Rogers - 10pts (87min)
+  MID: Sandro Tonali - 10pts (90min)
+  MID: Sávio 'Savinho' Moreira de Oliveira - 9pts (84min)
+  FWD: Jørgen Strand Larsen - 9pts (90min)
+  FWD: Liam Delap - 9pts (71min)
+
+Bench:
+  1. Dean Henderson (GK) - 2pts (90min) [✗]
+  2. Diogo Dalot Teixeira (DEF) - 2pts (90min) [✗]
+  3. Jake O'Brien (DEF) - 2pts (90min) [✗]
+  4. Darwin Núñez Ribeiro (FWD) - 0pts (15min) [✗]
+
+================================================================================
+GAMEWEEK 31
+================================================================================
+Points: 148
+Cumulative Points: 4503
+
+Transfers:
+  IN (9):
+    Francisco Evanilson de Lima Barbosa (ID: 194, FWD, Bournemouth)
+    Reece James (ID: 514, DEF, Chelsea)
+    André Onana (ID: 39, GK, Man Utd)
+    Tino Livramento (ID: 584, DEF, Newcastle)
+    Brennan Johnson (ID: 79, MID, Spurs)
+    Alex Iwobi (ID: 16, MID, Fulham)
+    Pablo Sarabia (ID: 495, MID, Wolves)
+    Fabian Schär (ID: 187, DEF, Newcastle)
+    Jacob Murphy (ID: 255, MID, Newcastle)
+  OUT (9):
+    Jake O'Brien (ID: 260, DEF, Everton)
+    Sandro Tonali (ID: 553, MID, Newcastle)
+    Anthony Elanga (ID: 42, MID, Nott'm Forest)
+    Jørgen Strand Larsen (ID: 336, FWD, Wolves)
+    Enzo Fernández (ID: 178, MID, Chelsea)
+    Levi Colwill (ID: 373, DEF, Chelsea)
+    Matz Sels (ID: 437, GK, Nott'm Forest)
+    Diogo Dalot Teixeira (ID: 154, DEF, Man Utd)
+    Sávio 'Savinho' Moreira de Oliveira (ID: 572, MID, Man City)
+
+Captain: Brennan Johnson (ID: 79)
+Vice-Captain: Jacob Murphy (ID: 255)
+Captain Bonus: +18 pts (captain)
+
+Substitutions Made: None
+
+Active Lineup (11 players):
+  GK: André Onana - 11pts (90min)
+  DEF: Fabian Schär - 10pts (90min)
+  DEF: Reece James - 9pts (76min)
+  DEF: Tino Livramento - 11pts (90min)
+  MID: Alex Iwobi - 13pts (81min)
+  MID: Brennan Johnson (C) - 18pts (90min)
+  MID: Jacob Murphy (VC) - 16pts (71min)
+  MID: Morgan Rogers - 9pts (90min)
+  MID: Pablo Sarabia - 12pts (25min)
+  FWD: Francisco Evanilson de Lima Barbosa - 13pts (89min)
+  FWD: Liam Delap - 8pts (80min)
+
+Bench:
+  1. Dean Henderson (GK) - 3pts (90min) [✗]
+  2. Darwin Núñez Ribeiro (FWD) - 1pts (23min) [✗]
+  3. Jurriën Timber (DEF) - 1pts (29min) [✗]
+  4. Nikola Milenković (DEF) - 1pts (90min) [✗]
+
+================================================================================
+GAMEWEEK 32
+================================================================================
+Points: 188
+Cumulative Points: 4691
+
+Transfers:
+  IN (9):
+    Rayan Aït-Nouri (ID: 512, DEF, Wolves)
+    Aaron Ramsdale (ID: 3, GK, Southampton)
+    Harvey Barnes (ID: 227, MID, Newcastle)
+    João Pedro Junqueira de Jesus (ID: 325, FWD, Brighton)
+    Abdoulaye Doucouré (ID: 5, MID, Everton)
+    Julio Enciso (ID: 330, MID, Ipswich)
+    Kevin De Bruyne (ID: 348, MID, Man City)
+    Ben Johnson (ID: 62, DEF, Ipswich)
+    Virgil van Dijk (ID: 607, DEF, Liverpool)
+  OUT (9):
+    Reece James (ID: 514, DEF, Chelsea)
+    Morgan Rogers (ID: 455, MID, Aston Villa)
+    Tino Livramento (ID: 584, DEF, Newcastle)
+    André Onana (ID: 39, GK, Man Utd)
+    Brennan Johnson (ID: 79, MID, Spurs)
+    Alex Iwobi (ID: 16, MID, Fulham)
+    Pablo Sarabia (ID: 495, MID, Wolves)
+    Liam Delap (ID: 380, FWD, Ipswich)
+    Nikola Milenković (ID: 478, DEF, Nott'm Forest)
+
+Captain: Harvey Barnes (ID: 227)
+Vice-Captain: Jacob Murphy (ID: 255)
+Captain Bonus: +27 pts (captain)
+
+Substitutions Made: None
+
+Active Lineup (11 players):
+  GK: Aaron Ramsdale - 16pts (90min)
+  DEF: Ben Johnson - 12pts (90min)
+  DEF: Fabian Schär - 16pts (90min)
+  DEF: Rayan Aït-Nouri - 14pts (69min)
+  DEF: Virgil van Dijk - 9pts (90min)
+  MID: Abdoulaye Doucouré - 10pts (90min)
+  MID: Harvey Barnes (C) - 27pts (90min)
+  MID: Jacob Murphy (VC) - 19pts (69min)
+  MID: Julio Enciso - 13pts (75min)
+  MID: Kevin De Bruyne - 12pts (86min)
+  FWD: João Pedro Junqueira de Jesus - 13pts (90min)
+
+Bench:
+  1. Dean Henderson (GK) - 2pts (90min) [✗]
+  2. Francisco Evanilson de Lima Barbosa (FWD) - 2pts (90min) [✗]
+  3. Jurriën Timber (DEF) - 1pts (21min) [✗]
+  4. Darwin Núñez Ribeiro (FWD) - 0pts (0min) [✗]
+
+================================================================================
+GAMEWEEK 33
+================================================================================
+Points: 171
+Cumulative Points: 4862
+
+Transfers:
+  IN (9):
+    Bernardo Veiga de Carvalho e Silva (ID: 68, MID, Man City)
+    Jakub Kiwior (ID: 261, DEF, Arsenal)
+    Oleksandr Zinchenko (ID: 488, DEF, Arsenal)
+    Matheus Luiz Nunes (ID: 426, MID, Man City)
+    Ollie Watkins (ID: 490, FWD, Aston Villa)
+    Leandro Trossard (ID: 367, MID, Arsenal)
+    Bryan Mbeumo (ID: 83, MID, Brentford)
+    Yoane Wissa (ID: 630, FWD, Brentford)
+    Nico O'Reilly (ID: 475, MID, Man City)
+  OUT (9):
+    Rayan Aït-Nouri (ID: 512, DEF, Wolves)
+    Francisco Evanilson de Lima Barbosa (ID: 194, FWD, Bournemouth)
+    Harvey Barnes (ID: 227, MID, Newcastle)
+    João Pedro Junqueira de Jesus (ID: 325, FWD, Brighton)
+    Abdoulaye Doucouré (ID: 5, MID, Everton)
+    Julio Enciso (ID: 330, MID, Ipswich)
+    Jurriën Timber (ID: 333, DEF, Arsenal)
+    Kevin De Bruyne (ID: 348, MID, Man City)
+    Jacob Murphy (ID: 255, MID, Newcastle)
+
+Captain: Leandro Trossard (ID: 367)
+Vice-Captain: Bryan Mbeumo (ID: 83)
+Captain Bonus: +24 pts (captain)
+
+Substitutions Made: None
+
+Active Lineup (11 players):
+  GK: Dean Henderson - 10pts (90min)
+  DEF: Jakub Kiwior - 13pts (90min)
+  DEF: Oleksandr Zinchenko - 11pts (45min)
+  DEF: Virgil van Dijk - 7pts (90min)
+  MID: Bernardo Veiga de Carvalho e Silva - 12pts (90min)
+  MID: Bryan Mbeumo (VC) - 18pts (90min)
+  MID: Leandro Trossard (C) - 24pts (86min)
+  MID: Matheus Luiz Nunes - 16pts (90min)
+  MID: Nico O'Reilly - 13pts (90min)
+  FWD: Ollie Watkins - 12pts (48min)
+  FWD: Yoane Wissa - 11pts (90min)
+
+Bench:
+  1. Aaron Ramsdale (GK) - 3pts (90min) [✗]
+  2. Fabian Schär (DEF) - 5pts (81min) [✗]
+  3. Ben Johnson (DEF) - 0pts (90min) [✗]
+  4. Darwin Núñez Ribeiro (FWD) - 0pts (0min) [✗]
+
+================================================================================
+GAMEWEEK 34
+================================================================================
+Points: 141
+Cumulative Points: 5003
+
+Transfers:
+  IN (10):
+    Dan Burn (ID: 128, DEF, Newcastle)
+    Carlos Baleba (ID: 97, MID, Brighton)
+    Kieran Trippier (ID: 353, DEF, Newcastle)
+    Rayan Aït-Nouri (ID: 512, DEF, Wolves)
+    Matheus Santos Carneiro Da Cunha (ID: 427, FWD, Wolves)
+    Nathan Collins (ID: 464, DEF, Brentford)
+    Alexis Mac Allister (ID: 23, MID, Liverpool)
+    Jarrod Bowen (ID: 282, MID, West Ham)
+    Mark Flekken (ID: 413, GK, Brentford)
+    Ryan Sessegnon (ID: 542, DEF, Fulham)
+  OUT (10):
+    Aaron Ramsdale (ID: 3, GK, Southampton)
+    Bernardo Veiga de Carvalho e Silva (ID: 68, MID, Man City)
+    Jakub Kiwior (ID: 261, DEF, Arsenal)
+    Oleksandr Zinchenko (ID: 488, DEF, Arsenal)
+    Darwin Núñez Ribeiro (ID: 141, FWD, Liverpool)
+    Leandro Trossard (ID: 367, MID, Arsenal)
+    Bryan Mbeumo (ID: 83, MID, Brentford)
+    Fabian Schär (ID: 187, DEF, Newcastle)
+    Ben Johnson (ID: 62, DEF, Ipswich)
+    Virgil van Dijk (ID: 607, DEF, Liverpool)
+
+Captain: Kieran Trippier (ID: 353)
+Vice-Captain: Matheus Santos Carneiro Da Cunha (ID: 427)
+Captain Bonus: +15 pts (captain)
+
+Substitutions Made: None
+
+Active Lineup (11 players):
+  GK: Mark Flekken - 13pts (90min)
+  DEF: Dan Burn - 13pts (90min)
+  DEF: Kieran Trippier (C) - 15pts (90min)
+  DEF: Nathan Collins - 11pts (90min)
+  DEF: Rayan Aït-Nouri - 11pts (76min)
+  DEF: Ryan Sessegnon - 11pts (90min)
+  MID: Alexis Mac Allister - 10pts (82min)
+  MID: Carlos Baleba - 10pts (90min)
+  MID: Jarrod Bowen - 10pts (90min)
+  FWD: Matheus Santos Carneiro Da Cunha (VC) - 15pts (88min)
+  FWD: Yoane Wissa - 7pts (90min)
+
+Bench:
+  1. Dean Henderson (GK) - 0pts (0min) [✗]
+  2. Matheus Luiz Nunes (MID) - 0pts (0min) [✗]
+  3. Nico O'Reilly (MID) - 0pts (0min) [✗]
+  4. Ollie Watkins (FWD) - 0pts (0min) [✗]
+
+================================================================================
+GAMEWEEK 35
+================================================================================
+Points: 122
+Cumulative Points: 5125
+
+Transfers:
+  IN (9):
+    Murillo Santiago Costa dos Santos (ID: 457, DEF, Nott'm Forest)
+    Emiliano Martínez Romero (ID: 172, GK, Aston Villa)
+    Alejandro Garnacho (ID: 14, MID, Man Utd)
+    Dean Huijsen (ID: 147, DEF, Bournemouth)
+    Jamie Vardy (ID: 276, FWD, Leicester)
+    Conor Coady (ID: 119, DEF, Leicester)
+    Youri Tielemans (ID: 631, MID, Aston Villa)
+    Kevin De Bruyne (ID: 348, MID, Man City)
+    Kevin Schade (ID: 350, MID, Brentford)
+  OUT (9):
+    Dan Burn (ID: 128, DEF, Newcastle)
+    Carlos Baleba (ID: 97, MID, Brighton)
+    Rayan Aït-Nouri (ID: 512, DEF, Wolves)
+    Matheus Luiz Nunes (ID: 426, MID, Man City)
+    Ollie Watkins (ID: 490, FWD, Aston Villa)
+    Nathan Collins (ID: 464, DEF, Brentford)
+    Dean Henderson (ID: 146, GK, Crystal Palace)
+    Alexis Mac Allister (ID: 23, MID, Liverpool)
+    Nico O'Reilly (ID: 475, MID, Man City)
+
+Captain: Kevin Schade (ID: 350)
+Vice-Captain: Alejandro Garnacho (ID: 14)
+Captain Bonus: +14 pts (captain)
+
+Substitutions Made: None
+
+Active Lineup (11 players):
+  GK: Emiliano Martínez Romero - 9pts (90min)
+  DEF: Conor Coady - 8pts (90min)
+  DEF: Dean Huijsen - 8pts (90min)
+  DEF: Murillo Santiago Costa dos Santos - 10pts (80min)
+  MID: Alejandro Garnacho (VC) - 12pts (90min)
+  MID: Jarrod Bowen - 9pts (90min)
+  MID: Kevin De Bruyne - 11pts (83min)
+  MID: Kevin Schade (C) - 14pts (71min)
+  MID: Youri Tielemans - 11pts (82min)
+  FWD: Jamie Vardy - 9pts (84min)
+  FWD: Yoane Wissa - 7pts (90min)
+
+Bench:
+  1. Mark Flekken (GK) - 1pts (90min) [✗]
+  2. Kieran Trippier (DEF) - 2pts (90min) [✗]
+  3. Matheus Santos Carneiro Da Cunha (FWD) - 2pts (84min) [✗]
+  4. Ryan Sessegnon (DEF) - 0pts (56min) [✗]
+
+================================================================================
+GAMEWEEK 36
+================================================================================
+Points: 134
+Cumulative Points: 5259
+
+Transfers:
+  IN (7):
+    Dan Burn (ID: 128, DEF, Newcastle)
+    Eberechi Eze (ID: 161, MID, Crystal Palace)
+    Aaron Wan-Bissaka (ID: 4, DEF, West Ham)
+    Morgan Gibbs-White (ID: 454, MID, Nott'm Forest)
+    Daniel Muñoz (ID: 135, DEF, Crystal Palace)
+    Sandro Tonali (ID: 553, MID, Newcastle)
+    Ollie Watkins (ID: 490, FWD, Aston Villa)
+  OUT (7):
+    Kieran Trippier (ID: 353, DEF, Newcastle)
+    Murillo Santiago Costa dos Santos (ID: 457, DEF, Nott'm Forest)
+    Matheus Santos Carneiro Da Cunha (ID: 427, FWD, Wolves)
+    Alejandro Garnacho (ID: 14, MID, Man Utd)
+    Youri Tielemans (ID: 631, MID, Aston Villa)
+    Kevin De Bruyne (ID: 348, MID, Man City)
+    Ryan Sessegnon (ID: 542, DEF, Fulham)
+
+Captain: Eberechi Eze (ID: 161)
+Vice-Captain: Morgan Gibbs-White (ID: 454)
+Captain Bonus: +16 pts (captain)
+
+Substitutions Made: None
+
+Active Lineup (11 players):
+  GK: Mark Flekken - 9pts (90min)
+  DEF: Aaron Wan-Bissaka - 12pts (90min)
+  DEF: Conor Coady - 7pts (90min)
+  DEF: Dan Burn - 11pts (90min)
+  DEF: Daniel Muñoz - 11pts (90min)
+  MID: Eberechi Eze (C) - 16pts (90min)
+  MID: Jarrod Bowen - 8pts (72min)
+  MID: Kevin Schade - 11pts (71min)
+  MID: Morgan Gibbs-White (VC) - 13pts (90min)
+  MID: Sandro Tonali - 11pts (90min)
+  FWD: Ollie Watkins - 9pts (90min)
+
+Bench:
+  1. Emiliano Martínez Romero (GK) - 8pts (90min) [✗]
+  2. Jamie Vardy (FWD) - 5pts (90min) [✗]
+  3. Dean Huijsen (DEF) - 1pts (90min) [✗]
+  4. Yoane Wissa (FWD) - 1pts (90min) [✗]
+
+================================================================================
+GAMEWEEK 37
+================================================================================
+Points: 138
+Cumulative Points: 5397
+
+Transfers:
+  IN (6):
+    Eddie Nketiah (ID: 162, FWD, Crystal Palace)
+    Harvey Elliott (ID: 228, MID, Liverpool)
+    James Justin (ID: 269, DEF, Leicester)
+    Iliman Ndiaye (ID: 240, FWD, Everton)
+    Marc Cucurella Saseta (ID: 404, DEF, Chelsea)
+    Ezri Konsa Ngoyo (ID: 186, DEF, Aston Villa)
+  OUT (6):
+    Dan Burn (ID: 128, DEF, Newcastle)
+    Aaron Wan-Bissaka (ID: 4, DEF, West Ham)
+    Daniel Muñoz (ID: 135, DEF, Crystal Palace)
+    Ollie Watkins (ID: 490, FWD, Aston Villa)
+    Jamie Vardy (ID: 276, FWD, Leicester)
+    Kevin Schade (ID: 350, MID, Brentford)
+
+Captain: Ezri Konsa Ngoyo (ID: 186)
+Vice-Captain: Marc Cucurella Saseta (ID: 404)
+Captain Bonus: +15 pts (captain)
+
+Substitutions Made: None
+
+Active Lineup (11 players):
+  GK: Emiliano Martínez Romero - 6pts (90min)
+  DEF: Conor Coady - 7pts (90min)
+  DEF: Ezri Konsa Ngoyo (C) - 15pts (90min)
+  DEF: James Justin - 12pts (63min)
+  DEF: Marc Cucurella Saseta (VC) - 15pts (90min)
+  MID: Harvey Elliott - 13pts (90min)
+  MID: Jarrod Bowen - 8pts (90min)
+  MID: Morgan Gibbs-White - 11pts (83min)
+  FWD: Eddie Nketiah - 13pts (80min)
+  FWD: Iliman Ndiaye - 13pts (74min)
+  FWD: Yoane Wissa - 10pts (90min)
+
+Bench:
+  1. Mark Flekken (GK) - 2pts (90min) [✗]
+  2. Eberechi Eze (MID) - 6pts (9min) [✗]
+  3. Sandro Tonali (MID) - 2pts (90min) [✗]
+  4. Dean Huijsen (DEF) - 0pts (90min) [✗]
+
+================================================================================
+GAMEWEEK 38
+================================================================================
+Points: 151
+Cumulative Points: 5548
+
+Transfers:
+  IN (9):
+    Kieran Tierney (ID: 352, DEF, Arsenal)
+    Jordan Pickford (ID: 313, GK, Everton)
+    Antoine Semenyo (ID: 44, MID, Bournemouth)
+    Ilkay Gündogan (ID: 241, MID, Man City)
+    Illia Zabarnyi (ID: 242, DEF, Bournemouth)
+    Levi Colwill (ID: 373, DEF, Chelsea)
+    Ross Stewart (ID: 537, FWD, Southampton)
+    Jack Hinshelwood (ID: 251, MID, Brighton)
+    Amad Diallo (ID: 31, MID, Man Utd)
+  OUT (9):
+    Eberechi Eze (ID: 161, MID, Crystal Palace)
+    Harvey Elliott (ID: 228, MID, Liverpool)
+    Morgan Gibbs-White (ID: 454, MID, Nott'm Forest)
+    Sandro Tonali (ID: 553, MID, Newcastle)
+    Emiliano Martínez Romero (ID: 172, GK, Aston Villa)
+    Dean Huijsen (ID: 147, DEF, Bournemouth)
+    Yoane Wissa (ID: 630, FWD, Brentford)
+    Conor Coady (ID: 119, DEF, Leicester)
+    Ezri Konsa Ngoyo (ID: 186, DEF, Aston Villa)
+
+Captain: Antoine Semenyo (ID: 44)
+Vice-Captain: Jack Hinshelwood (ID: 251)
+Captain Bonus: +16 pts (captain)
+
+Substitutions Made: None
+
+Active Lineup (11 players):
+  GK: Jordan Pickford - 11pts (90min)
+  DEF: Illia Zabarnyi - 11pts (90min)
+  DEF: Kieran Tierney - 10pts (62min)
+  DEF: Levi Colwill - 15pts (90min)
+  DEF: Marc Cucurella Saseta - 8pts (90min)
+  MID: Amad Diallo - 13pts (90min)
+  MID: Antoine Semenyo (C) - 16pts (90min)
+  MID: Ilkay Gündogan - 14pts (84min)
+  MID: Jack Hinshelwood (VC) - 15pts (90min)
+  MID: Jarrod Bowen - 13pts (90min)
+  FWD: Ross Stewart - 9pts (69min)
+
+Bench:
+  1. Mark Flekken (GK) - 3pts (90min) [✗]
+  2. Iliman Ndiaye (FWD) - 2pts (75min) [✗]
+  3. Eddie Nketiah (FWD) - 1pts (28min) [✗]
+  4. James Justin (DEF) - 1pts (90min) [✗]
+
+
+================================================================================
+FINAL SUMMARY
+================================================================================
+Total Points: 5548
+Total Transfers: 280
+Average GW Points: 146.00
+Gameweeks Completed: 38
+================================================================================

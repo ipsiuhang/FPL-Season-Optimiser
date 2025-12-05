@@ -1,0 +1,1484 @@
+================================================================================
+FPL BACKTESTER RESULTS
+================================================================================
+Season: 2024-25
+Optimizer: cp_minizinc_chuffed_60sec_season_optim_oracle.json
+================================================================================
+
+
+================================================================================
+GAMEWEEK 1
+================================================================================
+Points: 74
+Cumulative Points: 74
+
+Transfers: None
+
+Captain: Kai Havertz (ID: 339)
+Vice-Captain: Danny Welbeck (ID: 139)
+Captain Bonus: +12 pts (captain)
+
+Substitutions Made (1):
+  Bench 2: Pedro Porro (DEF) - 9pts
+
+Active Lineup (11 players):
+  GK: Alex McCarthy - 2pts (90min)
+  DEF: Adam Smith - 2pts (62min)
+  DEF: Adam Webster - 1pts (14min)
+  DEF: Pedro Porro - 9pts (90min)
+  MID: Abdoulaye Doucouré - 2pts (62min)
+  MID: Abdul Fatawu - 8pts (90min)
+  MID: Adam Wharton - 2pts (73min)
+  MID: Adama Traoré - 3pts (77min)
+  FWD: Chris Wood - 9pts (71min)
+  FWD: Danny Welbeck (VC) - 12pts (90min)
+  FWD: Kai Havertz (C) - 12pts (90min)
+
+Bench:
+  1. Nick Pope (GK) - 9pts (90min) [✗]
+  2. Pedro Porro (DEF) - 9pts (90min) [✓]
+  3. Mitoma Kaoru (MID) - 8pts (88min) [✗]
+  4. Noussair Mazraoui (DEF) - 8pts (80min) [✗]
+
+================================================================================
+GAMEWEEK 2
+================================================================================
+Points: 75
+Cumulative Points: 149
+
+Transfers:
+  IN (7):
+    Aaron Hickey (ID: 2, DEF, Brentford)
+    Aaron Ramsdale (ID: 3, GK, Arsenal)
+    Aaron Wan-Bissaka (ID: 4, DEF, West Ham)
+    Adam Lallana (ID: 8, MID, Southampton)
+    Anthony Gordon (ID: 43, MID, Newcastle)
+    Erling Haaland (ID: 180, FWD, Man City)
+    Nicolas Jackson (ID: 476, FWD, Chelsea)
+  OUT (7):
+    Mitoma Kaoru (ID: 450, MID, Brighton)
+    Noussair Mazraoui (ID: 482, DEF, Man Utd)
+    Adama Traoré (ID: 12, MID, Fulham)
+    Chris Wood (ID: 109, FWD, Nott'm Forest)
+    Kai Havertz (ID: 339, FWD, Arsenal)
+    Pedro Porro (ID: 503, DEF, Spurs)
+    Nick Pope (ID: 473, GK, Newcastle)
+
+Captain: Erling Haaland (ID: 180)
+Vice-Captain: Anthony Gordon (ID: 43)
+Captain Bonus: +17 pts (captain)
+
+Substitutions Made: None
+
+Active Lineup (11 players):
+  GK: Alex McCarthy - 4pts (90min)
+  DEF: Aaron Cresswell - 1pts (1min)
+  DEF: Aaron Wan-Bissaka - 1pts (28min)
+  DEF: Adam Smith - 1pts (4min)
+  MID: Abdoulaye Doucouré - 1pts (56min)
+  MID: Abdul Fatawu - 2pts (90min)
+  MID: Adam Wharton - 2pts (90min)
+  MID: Anthony Gordon (VC) - 10pts (88min)
+  FWD: Danny Welbeck - 9pts (78min)
+  FWD: Erling Haaland (C) - 17pts (89min)
+  FWD: Nicolas Jackson - 10pts (67min)
+
+Bench:
+  1. Aaron Ramsdale (GK) - 0pts (0min) [✗]
+  2. Aaron Hickey (DEF) - 0pts (0min) [✗]
+  3. Adam Lallana (MID) - 0pts (0min) [✗]
+  4. Adam Webster (DEF) - 0pts (0min) [✗]
+
+================================================================================
+GAMEWEEK 3
+================================================================================
+Points: 73
+Cumulative Points: 222
+
+Transfers:
+  IN (2):
+    Adama Traoré (ID: 12, MID, Fulham)
+    Dominic Calvert-Lewin (ID: 157, FWD, Everton)
+  OUT (2):
+    Anthony Gordon (ID: 43, MID, Newcastle)
+    Danny Welbeck (ID: 139, FWD, Brighton)
+
+Captain: Erling Haaland (ID: 180)
+Vice-Captain: Dominic Calvert-Lewin (ID: 157)
+Captain Bonus: +17 pts (captain)
+
+Substitutions Made: None
+
+Active Lineup (10 players):
+  GK: Aaron Ramsdale - 2pts (90min)
+  DEF: Aaron Wan-Bissaka - 1pts (90min)
+  DEF: Adam Smith - 1pts (13min)
+  MID: Abdul Fatawu - 2pts (67min)
+  MID: Adam Lallana - 4pts (8min)
+  MID: Adam Wharton - 2pts (90min)
+  MID: Adama Traoré - 9pts (90min)
+  FWD: Dominic Calvert-Lewin (VC) - 12pts (87min)
+  FWD: Erling Haaland (C) - 17pts (90min)
+  FWD: Nicolas Jackson - 6pts (90min)
+
+Bench:
+  1. Alex McCarthy (GK) - 0pts (0min) [✗]
+  2. Abdoulaye Doucouré (MID) - 1pts (7min) [✗]
+  3. Aaron Cresswell (DEF) - 0pts (0min) [✗]
+  4. Aaron Hickey (DEF) - 0pts (0min) [✗]
+
+================================================================================
+GAMEWEEK 4
+================================================================================
+Points: 68
+Cumulative Points: 290
+
+Transfers:
+  IN (2):
+    Ollie Watkins (ID: 490, FWD, Aston Villa)
+    Jean-Philippe Mateta (ID: 286, FWD, Crystal Palace)
+  OUT (2):
+    Nicolas Jackson (ID: 476, FWD, Chelsea)
+    Dominic Calvert-Lewin (ID: 157, FWD, Everton)
+
+Captain: Ollie Watkins (ID: 490)
+Vice-Captain: Erling Haaland (ID: 180)
+Captain Bonus: +13 pts (captain)
+
+Substitutions Made: None
+
+Active Lineup (10 players):
+  GK: Aaron Ramsdale - 3pts (90min)
+  DEF: Aaron Wan-Bissaka - 2pts (90min)
+  DEF: Adam Smith - 5pts (74min)
+  MID: Abdul Fatawu - 1pts (18min)
+  MID: Adam Lallana - 1pts (27min)
+  MID: Adam Wharton - 2pts (90min)
+  MID: Adama Traoré - 2pts (90min)
+  FWD: Erling Haaland (VC) - 13pts (90min)
+  FWD: Jean-Philippe Mateta - 13pts (90min)
+  FWD: Ollie Watkins (C) - 13pts (83min)
+
+Bench:
+  1. Alex McCarthy (GK) - 0pts (0min) [✗]
+  2. Aaron Cresswell (DEF) - 0pts (0min) [✗]
+  3. Aaron Hickey (DEF) - 0pts (0min) [✗]
+  4. Abdoulaye Doucouré (MID) - 0pts (0min) [✗]
+
+================================================================================
+GAMEWEEK 5
+================================================================================
+Points: 64
+Cumulative Points: 354
+
+Transfers:
+  IN (1):
+    Nicolas Jackson (ID: 476, FWD, Chelsea)
+  OUT (1):
+    Jean-Philippe Mateta (ID: 286, FWD, Crystal Palace)
+
+Captain: Nicolas Jackson (ID: 476)
+Vice-Captain: Erling Haaland (ID: 180)
+Captain Bonus: +16 pts (captain)
+
+Substitutions Made: None
+
+Active Lineup (11 players):
+  GK: Aaron Ramsdale - 3pts (90min)
+  DEF: Aaron Cresswell - 1pts (17min)
+  DEF: Aaron Wan-Bissaka - 1pts (90min)
+  DEF: Adam Smith - 1pts (21min)
+  MID: Abdoulaye Doucouré - 2pts (90min)
+  MID: Adam Lallana - 4pts (58min)
+  MID: Adam Wharton - 1pts (45min)
+  MID: Adama Traoré - 4pts (73min)
+  FWD: Erling Haaland (VC) - 9pts (90min)
+  FWD: Nicolas Jackson (C) - 16pts (63min)
+  FWD: Ollie Watkins - 6pts (90min)
+
+Bench:
+  1. Alex McCarthy (GK) - 0pts (0min) [✗]
+  2. Abdul Fatawu (MID) - 1pts (1min) [✗]
+  3. Aaron Hickey (DEF) - 0pts (0min) [✗]
+  4. Adam Webster (DEF) - 0pts (0min) [✗]
+
+================================================================================
+GAMEWEEK 6
+================================================================================
+Points: 57
+Cumulative Points: 411
+
+Transfers:
+  IN (2):
+    Francisco Evanilson de Lima Barbosa (ID: 194, FWD, Bournemouth)
+    Liam Delap (ID: 380, FWD, Ipswich)
+  OUT (2):
+    Nicolas Jackson (ID: 476, FWD, Chelsea)
+    Erling Haaland (ID: 180, FWD, Man City)
+
+Captain: Liam Delap (ID: 380)
+Vice-Captain: Ollie Watkins (ID: 490)
+Captain Bonus: +12 pts (captain)
+
+Substitutions Made (1):
+  Bench 4: Adam Webster (DEF) - -1pts
+
+Active Lineup (11 players):
+  GK: Aaron Ramsdale - 2pts (90min)
+  DEF: Aaron Wan-Bissaka - 2pts (90min)
+  DEF: Adam Smith - 2pts (90min)
+  DEF: Adam Webster - -1pts (56min)
+  MID: Abdoulaye Doucouré - 2pts (90min)
+  MID: Abdul Fatawu - 1pts (1min)
+  MID: Adam Wharton - 2pts (87min)
+  MID: Adama Traoré - 3pts (68min)
+  FWD: Francisco Evanilson de Lima Barbosa - 9pts (75min)
+  FWD: Liam Delap (C) - 12pts (90min)
+  FWD: Ollie Watkins (VC) - 11pts (83min)
+
+Bench:
+  1. Alex McCarthy (GK) - 0pts (0min) [✗]
+  2. Aaron Cresswell (DEF) - 0pts (0min) [✗]
+  3. Adam Lallana (MID) - 0pts (20min) [✗]
+  4. Adam Webster (DEF) - -1pts (56min) [✓]
+
+================================================================================
+GAMEWEEK 7
+================================================================================
+Points: 71
+Cumulative Points: 482
+
+Transfers:
+  IN (3):
+    Andreas Hoelgebaum Pereira (ID: 34, MID, Fulham)
+    Matheus Santos Carneiro Da Cunha (ID: 427, FWD, Wolves)
+    Michail Antonio (ID: 443, FWD, West Ham)
+  OUT (3):
+    Francisco Evanilson de Lima Barbosa (ID: 194, FWD, Bournemouth)
+    Ollie Watkins (ID: 490, FWD, Aston Villa)
+    Adama Traoré (ID: 12, MID, Fulham)
+
+Captain: Michail Antonio (ID: 443)
+Vice-Captain: Matheus Santos Carneiro Da Cunha (ID: 427)
+Captain Bonus: +18 pts (captain)
+
+Substitutions Made: None
+
+Active Lineup (11 players):
+  GK: Aaron Ramsdale - 2pts (90min)
+  DEF: Aaron Wan-Bissaka - 2pts (90min)
+  DEF: Adam Smith - 2pts (62min)
+  DEF: Adam Webster - 1pts (8min)
+  MID: Abdoulaye Doucouré - 3pts (90min)
+  MID: Abdul Fatawu - 1pts (8min)
+  MID: Adam Wharton - 1pts (59min)
+  MID: Andreas Hoelgebaum Pereira - 8pts (64min)
+  FWD: Liam Delap - 6pts (82min)
+  FWD: Matheus Santos Carneiro Da Cunha (VC) - 9pts (90min)
+  FWD: Michail Antonio (C) - 18pts (69min)
+
+Bench:
+  1. Alex McCarthy (GK) - 0pts (0min) [✗]
+  2. Aaron Cresswell (DEF) - 1pts (7min) [✗]
+  3. Aaron Hickey (DEF) - 0pts (0min) [✗]
+  4. Adam Lallana (MID) - 0pts (0min) [✗]
+
+================================================================================
+GAMEWEEK 8
+================================================================================
+Points: 56
+Cumulative Points: 538
+
+Transfers:
+  IN (4):
+    Iliman Ndiaye (ID: 240, FWD, Everton)
+    Jørgen Strand Larsen (ID: 336, FWD, Wolves)
+    Danny Welbeck (ID: 139, FWD, Brighton)
+    Alejandro Garnacho (ID: 14, MID, Man Utd)
+  OUT (4):
+    Andreas Hoelgebaum Pereira (ID: 34, MID, Fulham)
+    Matheus Santos Carneiro Da Cunha (ID: 427, FWD, Wolves)
+    Liam Delap (ID: 380, FWD, Ipswich)
+    Michail Antonio (ID: 443, FWD, West Ham)
+
+Captain: Alejandro Garnacho (ID: 14)
+Vice-Captain: Danny Welbeck (ID: 139)
+Captain Bonus: +10 pts (captain)
+
+Substitutions Made: None
+
+Active Lineup (9 players):
+  GK: Aaron Ramsdale - 1pts (90min)
+  DEF: Aaron Wan-Bissaka - 0pts (90min)
+  DEF: Adam Smith - 1pts (45min)
+  MID: Abdoulaye Doucouré - 3pts (90min)
+  MID: Abdul Fatawu - 4pts (31min)
+  MID: Alejandro Garnacho (C) - 10pts (90min)
+  FWD: Danny Welbeck (VC) - 9pts (80min)
+  FWD: Iliman Ndiaye - 9pts (80min)
+  FWD: Jørgen Strand Larsen - 9pts (79min)
+
+Bench:
+  1. Alex McCarthy (GK) - 0pts (0min) [✗]
+  2. Aaron Cresswell (DEF) - 0pts (0min) [✗]
+  3. Aaron Hickey (DEF) - 0pts (0min) [✗]
+  4. Adam Lallana (MID) - 0pts (0min) [✗]
+
+================================================================================
+GAMEWEEK 9
+================================================================================
+Points: 61
+Cumulative Points: 599
+
+Transfers:
+  IN (3):
+    George Hirst (ID: 209, FWD, Ipswich)
+    Adama Traoré (ID: 12, MID, Fulham)
+    Chris Wood (ID: 109, FWD, Nott'm Forest)
+  OUT (3):
+    Iliman Ndiaye (ID: 240, FWD, Everton)
+    Jørgen Strand Larsen (ID: 336, FWD, Wolves)
+    Alejandro Garnacho (ID: 14, MID, Man Utd)
+
+Captain: Chris Wood (ID: 109)
+Vice-Captain: George Hirst (ID: 209)
+Captain Bonus: +13 pts (captain)
+
+Substitutions Made (1):
+  Bench 2: Aaron Cresswell (DEF) - 0pts
+
+Active Lineup (11 players):
+  GK: Aaron Ramsdale - 4pts (90min)
+  DEF: Aaron Cresswell - 0pts (1min)
+  DEF: Aaron Wan-Bissaka - 2pts (90min)
+  DEF: Adam Smith - 1pts (60min)
+  MID: Abdoulaye Doucouré - 2pts (79min)
+  MID: Abdul Fatawu - 2pts (90min)
+  MID: Adam Wharton - 3pts (87min)
+  MID: Adama Traoré - 3pts (67min)
+  FWD: Chris Wood (C) - 13pts (80min)
+  FWD: Danny Welbeck - 7pts (72min)
+  FWD: George Hirst (VC) - 11pts (72min)
+
+Bench:
+  1. Alex McCarthy (GK) - 0pts (0min) [✗]
+  2. Aaron Cresswell (DEF) - 0pts (1min) [✓]
+  3. Aaron Hickey (DEF) - 0pts (0min) [✗]
+  4. Adam Lallana (MID) - 0pts (59min) [✗]
+
+================================================================================
+GAMEWEEK 10
+================================================================================
+Points: 67
+Cumulative Points: 666
+
+Transfers:
+  IN (2):
+    Dominic Solanke-Mitchell (ID: 158, FWD, Spurs)
+    Alexander Isak (ID: 22, FWD, Newcastle)
+  OUT (2):
+    George Hirst (ID: 209, FWD, Ipswich)
+    Danny Welbeck (ID: 139, FWD, Brighton)
+
+Captain: Dominic Solanke-Mitchell (ID: 158)
+Vice-Captain: Aaron Ramsdale (ID: 3)
+Captain Bonus: +16 pts (captain)
+
+Substitutions Made: None
+
+Active Lineup (9 players):
+  GK: Aaron Ramsdale (VC) - 9pts (90min)
+  DEF: Aaron Wan-Bissaka - 1pts (90min)
+  DEF: Adam Smith - 2pts (90min)
+  MID: Abdul Fatawu - 2pts (90min)
+  MID: Adam Lallana - 1pts (45min)
+  MID: Adama Traoré - 4pts (25min)
+  FWD: Alexander Isak - 9pts (90min)
+  FWD: Chris Wood - 7pts (78min)
+  FWD: Dominic Solanke-Mitchell (C) - 16pts (90min)
+
+Bench:
+  1. Alex McCarthy (GK) - 0pts (0min) [✗]
+  2. Aaron Cresswell (DEF) - 0pts (0min) [✗]
+  3. Aaron Hickey (DEF) - 0pts (0min) [✗]
+  4. Abdoulaye Doucouré (MID) - 0pts (0min) [✗]
+
+================================================================================
+GAMEWEEK 11
+================================================================================
+Points: 67
+Cumulative Points: 733
+
+Transfers:
+  IN (3):
+    Yoane Wissa (ID: 630, FWD, Brentford)
+    Matheus Santos Carneiro Da Cunha (ID: 427, FWD, Wolves)
+    Alejandro Garnacho (ID: 14, MID, Man Utd)
+  OUT (3):
+    Adama Traoré (ID: 12, MID, Fulham)
+    Chris Wood (ID: 109, FWD, Nott'm Forest)
+    Dominic Solanke-Mitchell (ID: 158, FWD, Spurs)
+
+Captain: Yoane Wissa (ID: 630)
+Vice-Captain: Matheus Santos Carneiro Da Cunha (ID: 427)
+Captain Bonus: +13 pts (captain)
+
+Substitutions Made: None
+
+Active Lineup (9 players):
+  DEF: Aaron Wan-Bissaka - 6pts (66min)
+  DEF: Adam Smith - 0pts (83min)
+  MID: Abdoulaye Doucouré - 3pts (85min)
+  MID: Abdul Fatawu - 2pts (90min)
+  MID: Adam Lallana - 1pts (59min)
+  MID: Alejandro Garnacho - 6pts (33min)
+  FWD: Alexander Isak - 11pts (90min)
+  FWD: Matheus Santos Carneiro Da Cunha (VC) - 12pts (89min)
+  FWD: Yoane Wissa (C) - 13pts (90min)
+
+Bench:
+  1. Aaron Ramsdale (GK) - 0pts (90min) [✗]
+  2. Aaron Cresswell (DEF) - 0pts (0min) [✗]
+  3. Aaron Hickey (DEF) - 0pts (0min) [✗]
+  4. Adam Wharton (MID) - 0pts (0min) [✗]
+
+================================================================================
+GAMEWEEK 12
+================================================================================
+Points: 85
+Cumulative Points: 818
+
+Transfers:
+  IN (3):
+    Alex Iwobi (ID: 16, MID, Fulham)
+    Nicolas Jackson (ID: 476, FWD, Chelsea)
+    João Pedro Junqueira de Jesus (ID: 325, FWD, Brighton)
+  OUT (3):
+    Yoane Wissa (ID: 630, FWD, Brentford)
+    Alejandro Garnacho (ID: 14, MID, Man Utd)
+    Alexander Isak (ID: 22, FWD, Newcastle)
+
+Captain: Matheus Santos Carneiro Da Cunha (ID: 427)
+Vice-Captain: Aaron Wan-Bissaka (ID: 4)
+Captain Bonus: +16 pts (captain)
+
+Substitutions Made: None
+
+Active Lineup (9 players):
+  GK: Alex McCarthy - 3pts (90min)
+  DEF: Aaron Wan-Bissaka (VC) - 15pts (90min)
+  DEF: Adam Smith - 1pts (74min)
+  MID: Abdoulaye Doucouré - 3pts (71min)
+  MID: Adam Lallana - 0pts (36min)
+  MID: Alex Iwobi - 7pts (90min)
+  FWD: João Pedro Junqueira de Jesus - 12pts (63min)
+  FWD: Matheus Santos Carneiro Da Cunha (C) - 16pts (90min)
+  FWD: Nicolas Jackson - 12pts (90min)
+
+Bench:
+  1. Aaron Ramsdale (GK) - 0pts (0min) [✗]
+  2. Aaron Cresswell (DEF) - 0pts (0min) [✗]
+  3. Aaron Hickey (DEF) - 0pts (0min) [✗]
+  4. Abdul Fatawu (MID) - 0pts (0min) [✗]
+
+================================================================================
+GAMEWEEK 13
+================================================================================
+Points: 63
+Cumulative Points: 881
+
+Transfers:
+  IN (3):
+    Jørgen Strand Larsen (ID: 336, FWD, Wolves)
+    Francisco Evanilson de Lima Barbosa (ID: 194, FWD, Bournemouth)
+    Joshua Zirkzee (ID: 319, FWD, Man Utd)
+  OUT (3):
+    Matheus Santos Carneiro Da Cunha (ID: 427, FWD, Wolves)
+    Nicolas Jackson (ID: 476, FWD, Chelsea)
+    João Pedro Junqueira de Jesus (ID: 325, FWD, Brighton)
+
+Captain: Joshua Zirkzee (ID: 319)
+Vice-Captain: Francisco Evanilson de Lima Barbosa (ID: 194)
+Captain Bonus: +13 pts (captain)
+
+Substitutions Made: None
+
+Active Lineup (7 players):
+  DEF: Aaron Wan-Bissaka - 6pts (90min)
+  DEF: Adam Smith - 1pts (90min)
+  MID: Abdoulaye Doucouré - 2pts (90min)
+  MID: Alex Iwobi - 5pts (85min)
+  FWD: Francisco Evanilson de Lima Barbosa (VC) - 12pts (76min)
+  FWD: Joshua Zirkzee (C) - 13pts (90min)
+  FWD: Jørgen Strand Larsen - 11pts (90min)
+
+Bench:
+  1. Aaron Ramsdale (GK) - 0pts (0min) [✗]
+  2. Aaron Cresswell (DEF) - 0pts (0min) [✗]
+  3. Aaron Hickey (DEF) - 0pts (0min) [✗]
+  4. Abdul Fatawu (MID) - 0pts (0min) [✗]
+
+================================================================================
+GAMEWEEK 14
+================================================================================
+Points: 71
+Cumulative Points: 952
+
+Transfers:
+  IN (3):
+    Ollie Watkins (ID: 490, FWD, Aston Villa)
+    Alexander Isak (ID: 22, FWD, Newcastle)
+    Jean-Philippe Mateta (ID: 286, FWD, Crystal Palace)
+  OUT (3):
+    Jørgen Strand Larsen (ID: 336, FWD, Wolves)
+    Francisco Evanilson de Lima Barbosa (ID: 194, FWD, Bournemouth)
+    Joshua Zirkzee (ID: 319, FWD, Man Utd)
+
+Captain: Alex Iwobi (ID: 16)
+Vice-Captain: Ollie Watkins (ID: 490)
+Captain Bonus: +15 pts (captain)
+
+Substitutions Made: None
+
+Active Lineup (7 players):
+  DEF: Aaron Wan-Bissaka - 1pts (90min)
+  DEF: Adam Smith - 6pts (90min)
+  MID: Abdoulaye Doucouré - 3pts (82min)
+  MID: Alex Iwobi (C) - 15pts (90min)
+  FWD: Alexander Isak - 11pts (90min)
+  FWD: Jean-Philippe Mateta - 8pts (90min)
+  FWD: Ollie Watkins (VC) - 12pts (64min)
+
+Bench:
+  1. Aaron Ramsdale (GK) - 0pts (0min) [✗]
+  2. Aaron Cresswell (DEF) - 0pts (0min) [✗]
+  3. Aaron Hickey (DEF) - 0pts (0min) [✗]
+  4. Abdul Fatawu (MID) - 0pts (0min) [✗]
+
+================================================================================
+GAMEWEEK 15
+================================================================================
+Points: 47
+Cumulative Points: 999
+
+Transfers:
+  IN (2):
+    Jamie Vardy (ID: 276, FWD, Leicester)
+    Chris Wood (ID: 109, FWD, Nott'm Forest)
+  OUT (2):
+    Ollie Watkins (ID: 490, FWD, Aston Villa)
+    Jean-Philippe Mateta (ID: 286, FWD, Crystal Palace)
+
+Captain: Jamie Vardy (ID: 276)
+Vice-Captain: Alexander Isak (ID: 22)
+Captain Bonus: +12 pts (captain)
+
+Substitutions Made: None
+
+Active Lineup (7 players):
+  DEF: Aaron Cresswell - 1pts (2min)
+  DEF: Aaron Wan-Bissaka - 2pts (90min)
+  DEF: Adam Smith - 2pts (62min)
+  MID: Alex Iwobi - 2pts (90min)
+  FWD: Alexander Isak (VC) - 8pts (90min)
+  FWD: Chris Wood - 8pts (78min)
+  FWD: Jamie Vardy (C) - 12pts (90min)
+
+Bench:
+  1. Aaron Ramsdale (GK) - 0pts (0min) [✗]
+  2. Aaron Hickey (DEF) - 0pts (0min) [✗]
+  3. Abdoulaye Doucouré (MID) - 0pts (0min) [✗]
+  4. Adam Webster (DEF) - 0pts (0min) [✗]
+
+================================================================================
+GAMEWEEK 16
+================================================================================
+Points: 57
+Cumulative Points: 1056
+
+Transfers:
+  IN (2):
+    Cody Gakpo (ID: 115, FWD, Liverpool)
+    Matheus Santos Carneiro Da Cunha (ID: 427, FWD, Wolves)
+  OUT (2):
+    Jamie Vardy (ID: 276, FWD, Leicester)
+    Chris Wood (ID: 109, FWD, Nott'm Forest)
+
+Captain: Alexander Isak (ID: 22)
+Vice-Captain: Cody Gakpo (ID: 115)
+Captain Bonus: +11 pts (captain)
+
+Substitutions Made: None
+
+Active Lineup (8 players):
+  GK: Alex McCarthy - 1pts (90min)
+  DEF: Aaron Wan-Bissaka - 5pts (90min)
+  DEF: Adam Smith - 6pts (67min)
+  MID: Abdoulaye Doucouré - 3pts (90min)
+  MID: Alex Iwobi - 2pts (90min)
+  FWD: Alexander Isak (C) - 11pts (72min)
+  FWD: Cody Gakpo (VC) - 9pts (69min)
+  FWD: Matheus Santos Carneiro Da Cunha - 9pts (90min)
+
+Bench:
+  1. Aaron Ramsdale (GK) - 0pts (0min) [✗]
+  2. Aaron Cresswell (DEF) - 0pts (0min) [✗]
+  3. Aaron Hickey (DEF) - 0pts (0min) [✗]
+  4. Abdul Fatawu (MID) - 0pts (0min) [✗]
+
+================================================================================
+GAMEWEEK 17
+================================================================================
+Points: 83
+Cumulative Points: 1139
+
+Transfers:
+  IN (2):
+    Gabriel Fernando de Jesus (ID: 202, FWD, Arsenal)
+    Anthony Elanga (ID: 42, MID, Nott'm Forest)
+  OUT (2):
+    Alex Iwobi (ID: 16, MID, Fulham)
+    Cody Gakpo (ID: 115, FWD, Liverpool)
+
+Captain: Alexander Isak (ID: 22)
+Vice-Captain: Gabriel Fernando de Jesus (ID: 202)
+Captain Bonus: +17 pts (captain)
+
+Substitutions Made: None
+
+Active Lineup (8 players):
+  GK: Aaron Ramsdale - 10pts (90min)
+  DEF: Aaron Wan-Bissaka - 2pts (90min)
+  DEF: Adam Smith - 0pts (45min)
+  MID: Abdoulaye Doucouré - 3pts (90min)
+  MID: Anthony Elanga - 9pts (63min)
+  FWD: Alexander Isak (C) - 17pts (72min)
+  FWD: Gabriel Fernando de Jesus (VC) - 16pts (85min)
+  FWD: Matheus Santos Carneiro Da Cunha - 9pts (90min)
+
+Bench:
+  1. Alex McCarthy (GK) - 0pts (0min) [✗]
+  2. Aaron Cresswell (DEF) - 0pts (0min) [✗]
+  3. Aaron Hickey (DEF) - 0pts (0min) [✗]
+  4. Abdul Fatawu (MID) - 0pts (0min) [✗]
+
+================================================================================
+GAMEWEEK 18
+================================================================================
+Points: 67
+Cumulative Points: 1206
+
+Transfers:
+  IN (2):
+    Cody Gakpo (ID: 115, FWD, Liverpool)
+    Alexis Mac Allister (ID: 23, MID, Liverpool)
+  OUT (2):
+    Gabriel Fernando de Jesus (ID: 202, FWD, Arsenal)
+    Anthony Elanga (ID: 42, MID, Nott'm Forest)
+
+Captain: Matheus Santos Carneiro Da Cunha (ID: 427)
+Vice-Captain: Cody Gakpo (ID: 115)
+Captain Bonus: +12 pts (captain)
+
+Substitutions Made: None
+
+Active Lineup (9 players):
+  GK: Aaron Ramsdale - 2pts (90min)
+  DEF: Aaron Cresswell - 1pts (22min)
+  DEF: Aaron Wan-Bissaka - 9pts (90min)
+  MID: Abdoulaye Doucouré - 2pts (90min)
+  MID: Adam Lallana - 1pts (3min)
+  MID: Alexis Mac Allister - 8pts (90min)
+  FWD: Alexander Isak - 8pts (90min)
+  FWD: Cody Gakpo (VC) - 12pts (90min)
+  FWD: Matheus Santos Carneiro Da Cunha (C) - 12pts (90min)
+
+Bench:
+  1. Alex McCarthy (GK) - 0pts (0min) [✗]
+  2. Aaron Hickey (DEF) - 0pts (0min) [✗]
+  3. Abdul Fatawu (MID) - 0pts (0min) [✗]
+  4. Adam Smith (DEF) - 0pts (0min) [✗]
+
+================================================================================
+GAMEWEEK 19
+================================================================================
+Points: 57
+Cumulative Points: 1263
+
+Transfers:
+  IN (3):
+    Gabriel Fernando de Jesus (ID: 202, FWD, Arsenal)
+    Ollie Watkins (ID: 490, FWD, Aston Villa)
+    Chris Wood (ID: 109, FWD, Nott'm Forest)
+  OUT (3):
+    Cody Gakpo (ID: 115, FWD, Liverpool)
+    Matheus Santos Carneiro Da Cunha (ID: 427, FWD, Wolves)
+    Alexander Isak (ID: 22, FWD, Newcastle)
+
+Captain: Ollie Watkins (ID: 490)
+Vice-Captain: Chris Wood (ID: 109)
+Captain Bonus: +12 pts (captain)
+
+Substitutions Made: None
+
+Active Lineup (8 players):
+  GK: Aaron Ramsdale - 3pts (90min)
+  DEF: Aaron Wan-Bissaka - 0pts (90min)
+  MID: Abdoulaye Doucouré - 2pts (90min)
+  MID: Adam Lallana - 1pts (4min)
+  MID: Alexis Mac Allister - 3pts (90min)
+  FWD: Chris Wood (VC) - 12pts (75min)
+  FWD: Gabriel Fernando de Jesus - 12pts (90min)
+  FWD: Ollie Watkins (C) - 12pts (90min)
+
+Bench:
+  1. Alex McCarthy (GK) - 0pts (0min) [✗]
+  2. Aaron Cresswell (DEF) - 0pts (0min) [✗]
+  3. Aaron Hickey (DEF) - 0pts (0min) [✗]
+  4. Abdul Fatawu (MID) - 0pts (0min) [✗]
+
+================================================================================
+GAMEWEEK 20
+================================================================================
+Points: 53
+Cumulative Points: 1316
+
+Transfers:
+  IN (3):
+    Alex Iwobi (ID: 16, MID, Fulham)
+    Raúl Jiménez (ID: 513, FWD, Fulham)
+    Erling Haaland (ID: 180, FWD, Man City)
+  OUT (3):
+    Gabriel Fernando de Jesus (ID: 202, FWD, Arsenal)
+    Ollie Watkins (ID: 490, FWD, Aston Villa)
+    Alexis Mac Allister (ID: 23, MID, Liverpool)
+
+Captain: Raúl Jiménez (ID: 513)
+Vice-Captain: Erling Haaland (ID: 180)
+Captain Bonus: +13 pts (captain)
+
+Substitutions Made: None
+
+Active Lineup (9 players):
+  GK: Aaron Ramsdale - 1pts (90min)
+  DEF: Aaron Wan-Bissaka - 0pts (90min)
+  DEF: Adam Webster - 1pts (24min)
+  MID: Abdoulaye Doucouré - 1pts (90min)
+  MID: Adam Lallana - 1pts (3min)
+  MID: Alex Iwobi - 2pts (62min)
+  FWD: Chris Wood - 8pts (87min)
+  FWD: Erling Haaland (VC) - 13pts (83min)
+  FWD: Raúl Jiménez (C) - 13pts (90min)
+
+Bench:
+  1. Alex McCarthy (GK) - 0pts (0min) [✗]
+  2. Aaron Cresswell (DEF) - 0pts (0min) [✗]
+  3. Aaron Hickey (DEF) - 0pts (0min) [✗]
+  4. Abdul Fatawu (MID) - 0pts (0min) [✗]
+
+================================================================================
+GAMEWEEK 21
+================================================================================
+Points: 88
+Cumulative Points: 1404
+
+Transfers:
+  IN (3):
+    Amad Diallo (ID: 31, MID, Man Utd)
+    Alexander Isak (ID: 22, FWD, Newcastle)
+    Jean-Philippe Mateta (ID: 286, FWD, Crystal Palace)
+  OUT (3):
+    Alex Iwobi (ID: 16, MID, Fulham)
+    Raúl Jiménez (ID: 513, FWD, Fulham)
+    Erling Haaland (ID: 180, FWD, Man City)
+
+Captain: Amad Diallo (ID: 31)
+Vice-Captain: Alexander Isak (ID: 22)
+Captain Bonus: +20 pts (captain)
+
+Substitutions Made: None
+
+Active Lineup (9 players):
+  GK: Aaron Ramsdale - 3pts (90min)
+  DEF: Aaron Cresswell - 1pts (9min)
+  DEF: Aaron Wan-Bissaka - 3pts (90min)
+  DEF: Adam Webster - 6pts (62min)
+  MID: Abdoulaye Doucouré - 2pts (82min)
+  MID: Amad Diallo (C) - 20pts (90min)
+  FWD: Alexander Isak (VC) - 16pts (77min)
+  FWD: Chris Wood - 9pts (89min)
+  FWD: Jean-Philippe Mateta - 8pts (78min)
+
+Bench:
+  1. Alex McCarthy (GK) - 0pts (0min) [✗]
+  2. Aaron Hickey (DEF) - 0pts (0min) [✗]
+  3. Abdul Fatawu (MID) - 0pts (0min) [✗]
+  4. Adam Smith (DEF) - 0pts (0min) [✗]
+
+================================================================================
+GAMEWEEK 22
+================================================================================
+Points: 62
+Cumulative Points: 1466
+
+Transfers:
+  IN (2):
+    Bruno Guimarães Rodriguez Moura (ID: 81, MID, Newcastle)
+    Darwin Núñez Ribeiro (ID: 141, FWD, Liverpool)
+  OUT (2):
+    Alexander Isak (ID: 22, FWD, Newcastle)
+    Amad Diallo (ID: 31, MID, Man Utd)
+
+Captain: Jean-Philippe Mateta (ID: 286)
+Vice-Captain: Chris Wood (ID: 109)
+Captain Bonus: +13 pts (captain)
+
+Substitutions Made: None
+
+Active Lineup (8 players):
+  GK: Aaron Ramsdale - 1pts (90min)
+  DEF: Aaron Cresswell - 1pts (55min)
+  DEF: Aaron Wan-Bissaka - 1pts (90min)
+  MID: Abdoulaye Doucouré - 1pts (90min)
+  MID: Bruno Guimarães Rodriguez Moura - 9pts (90min)
+  FWD: Chris Wood (VC) - 12pts (82min)
+  FWD: Darwin Núñez Ribeiro - 11pts (25min)
+  FWD: Jean-Philippe Mateta (C) - 13pts (89min)
+
+Bench:
+  1. Alex McCarthy (GK) - 0pts (0min) [✗]
+  2. Aaron Hickey (DEF) - 0pts (0min) [✗]
+  3. Abdul Fatawu (MID) - 0pts (0min) [✗]
+  4. Adam Smith (DEF) - 0pts (0min) [✗]
+
+================================================================================
+GAMEWEEK 23
+================================================================================
+Points: 70
+Cumulative Points: 1536
+
+Transfers:
+  IN (4):
+    Cody Gakpo (ID: 115, FWD, Liverpool)
+    Erling Haaland (ID: 180, FWD, Man City)
+    Alejandro Garnacho (ID: 14, MID, Man Utd)
+    Alexander Isak (ID: 22, FWD, Newcastle)
+  OUT (4):
+    Bruno Guimarães Rodriguez Moura (ID: 81, MID, Newcastle)
+    Chris Wood (ID: 109, FWD, Nott'm Forest)
+    Darwin Núñez Ribeiro (ID: 141, FWD, Liverpool)
+    Jean-Philippe Mateta (ID: 286, FWD, Crystal Palace)
+
+Captain: Cody Gakpo (ID: 115)
+Vice-Captain: Alexander Isak (ID: 22)
+Captain Bonus: +16 pts (captain)
+
+Substitutions Made: None
+
+Active Lineup (10 players):
+  GK: Alex McCarthy - 2pts (90min)
+  DEF: Aaron Cresswell - 1pts (90min)
+  DEF: Aaron Wan-Bissaka - 2pts (90min)
+  DEF: Adam Webster - 1pts (1min)
+  MID: Abdoulaye Doucouré - 3pts (77min)
+  MID: Adam Lallana - 1pts (2min)
+  MID: Alejandro Garnacho - 3pts (80min)
+  FWD: Alexander Isak (VC) - 13pts (78min)
+  FWD: Cody Gakpo (C) - 16pts (67min)
+  FWD: Erling Haaland - 12pts (90min)
+
+Bench:
+  1. Aaron Ramsdale (GK) - 0pts (0min) [✗]
+  2. Aaron Hickey (DEF) - 0pts (0min) [✗]
+  3. Abdul Fatawu (MID) - 0pts (0min) [✗]
+  4. Adam Smith (DEF) - 0pts (0min) [✗]
+
+================================================================================
+GAMEWEEK 24
+================================================================================
+Points: 95
+Cumulative Points: 1631
+
+Transfers:
+  IN (4):
+    Norberto Bercique Gomes Betuncal (ID: 480, FWD, Everton)
+    Chris Wood (ID: 109, FWD, Nott'm Forest)
+    Jean-Philippe Mateta (ID: 286, FWD, Crystal Palace)
+    Alexis Mac Allister (ID: 23, MID, Liverpool)
+  OUT (4):
+    Cody Gakpo (ID: 115, FWD, Liverpool)
+    Erling Haaland (ID: 180, FWD, Man City)
+    Alejandro Garnacho (ID: 14, MID, Man Utd)
+    Alexander Isak (ID: 22, FWD, Newcastle)
+
+Captain: Norberto Bercique Gomes Betuncal (ID: 480)
+Vice-Captain: Chris Wood (ID: 109)
+Captain Bonus: +21 pts (captain)
+
+Substitutions Made: None
+
+Active Lineup (9 players):
+  GK: Aaron Ramsdale - 3pts (90min)
+  DEF: Aaron Cresswell - 1pts (86min)
+  MID: Abdoulaye Doucouré - 7pts (90min)
+  MID: Adam Lallana - 1pts (9min)
+  MID: Adam Wharton - 1pts (2min)
+  MID: Alexis Mac Allister - 10pts (75min)
+  FWD: Chris Wood (VC) - 17pts (81min)
+  FWD: Jean-Philippe Mateta - 13pts (90min)
+  FWD: Norberto Bercique Gomes Betuncal (C) - 21pts (88min)
+
+Bench:
+  1. Alex McCarthy (GK) - 0pts (0min) [✗]
+  2. Aaron Hickey (DEF) - 0pts (0min) [✗]
+  3. Abdul Fatawu (MID) - 0pts (0min) [✗]
+  4. Aaron Wan-Bissaka (DEF) - -1pts (90min) [✗]
+
+================================================================================
+GAMEWEEK 25
+================================================================================
+Points: 62
+Cumulative Points: 1693
+
+Transfers:
+  IN (1):
+    Ollie Watkins (ID: 490, FWD, Aston Villa)
+  OUT (1):
+    Jean-Philippe Mateta (ID: 286, FWD, Crystal Palace)
+
+Captain: Ollie Watkins (ID: 490)
+Vice-Captain: Chris Wood (ID: 109)
+Captain Bonus: +15 pts (captain)
+
+Substitutions Made: None
+
+Active Lineup (8 players):
+  GK: Aaron Ramsdale - 2pts (90min)
+  DEF: Aaron Wan-Bissaka - 2pts (90min)
+  DEF: Adam Webster - 6pts (90min)
+  MID: Adam Wharton - 1pts (45min)
+  MID: Alexis Mac Allister - 4pts (85min)
+  FWD: Chris Wood (VC) - 9pts (90min)
+  FWD: Norberto Bercique Gomes Betuncal - 8pts (90min)
+  FWD: Ollie Watkins (C) - 15pts (90min)
+
+Bench:
+  1. Alex McCarthy (GK) - 0pts (0min) [✗]
+  2. Aaron Cresswell (DEF) - 0pts (0min) [✗]
+  3. Aaron Hickey (DEF) - 0pts (0min) [✗]
+  4. Abdoulaye Doucouré (MID) - 0pts (0min) [✗]
+
+================================================================================
+GAMEWEEK 26
+================================================================================
+Points: 84
+Cumulative Points: 1777
+
+Transfers:
+  IN (3):
+    Adama Traoré (ID: 12, MID, Fulham)
+    João Pedro Junqueira de Jesus (ID: 325, FWD, Brighton)
+    Alexander Isak (ID: 22, FWD, Newcastle)
+  OUT (3):
+    Ollie Watkins (ID: 490, FWD, Aston Villa)
+    Chris Wood (ID: 109, FWD, Nott'm Forest)
+    Alexis Mac Allister (ID: 23, MID, Liverpool)
+
+Captain: Alexander Isak (ID: 22)
+Vice-Captain: Aaron Wan-Bissaka (ID: 4)
+Captain Bonus: +13 pts (captain)
+
+Substitutions Made: None
+
+Active Lineup (10 players):
+  GK: Aaron Ramsdale - 1pts (90min)
+  DEF: Aaron Cresswell - 6pts (90min)
+  DEF: Aaron Wan-Bissaka (VC) - 12pts (90min)
+  DEF: Adam Webster - 6pts (90min)
+  MID: Abdoulaye Doucouré - 12pts (80min)
+  MID: Adam Wharton - 1pts (9min)
+  MID: Adama Traoré - 2pts (90min)
+  FWD: Alexander Isak (C) - 13pts (86min)
+  FWD: João Pedro Junqueira de Jesus - 12pts (90min)
+  FWD: Norberto Bercique Gomes Betuncal - 6pts (90min)
+
+Bench:
+  1. Alex McCarthy (GK) - 0pts (0min) [✗]
+  2. Aaron Hickey (DEF) - 0pts (0min) [✗]
+  3. Abdul Fatawu (MID) - 0pts (0min) [✗]
+  4. Adam Smith (DEF) - 0pts (0min) [✗]
+
+================================================================================
+GAMEWEEK 27
+================================================================================
+Points: 62
+Cumulative Points: 1839
+
+Transfers:
+  IN (2):
+    Rodrigo Muniz Carvalho (ID: 530, FWD, Fulham)
+    Danny Welbeck (ID: 139, FWD, Brighton)
+  OUT (2):
+    Norberto Bercique Gomes Betuncal (ID: 480, FWD, Everton)
+    Alexander Isak (ID: 22, FWD, Newcastle)
+
+Captain: Rodrigo Muniz Carvalho (ID: 530)
+Vice-Captain: Aaron Cresswell (ID: 1)
+Captain Bonus: +9 pts (captain)
+
+Substitutions Made: None
+
+Active Lineup (9 players):
+  GK: Aaron Ramsdale - 2pts (90min)
+  DEF: Aaron Cresswell (VC) - 9pts (90min)
+  DEF: Aaron Wan-Bissaka - 7pts (90min)
+  DEF: Adam Webster - 2pts (90min)
+  MID: Adam Wharton - 2pts (77min)
+  MID: Adama Traoré - 7pts (66min)
+  FWD: Danny Welbeck - 7pts (18min)
+  FWD: João Pedro Junqueira de Jesus - 8pts (71min)
+  FWD: Rodrigo Muniz Carvalho (C) - 9pts (71min)
+
+Bench:
+  1. Alex McCarthy (GK) - 0pts (0min) [✗]
+  2. Aaron Hickey (DEF) - 0pts (0min) [✗]
+  3. Abdoulaye Doucouré (MID) - 0pts (0min) [✗]
+  4. Adam Smith (DEF) - 0pts (0min) [✗]
+
+================================================================================
+GAMEWEEK 28
+================================================================================
+Points: 56
+Cumulative Points: 1895
+
+Transfers:
+  IN (3):
+    Ollie Watkins (ID: 490, FWD, Aston Villa)
+    Darwin Núñez Ribeiro (ID: 141, FWD, Liverpool)
+    Alejandro Garnacho (ID: 14, MID, Man Utd)
+  OUT (3):
+    Rodrigo Muniz Carvalho (ID: 530, FWD, Fulham)
+    Danny Welbeck (ID: 139, FWD, Brighton)
+    Adama Traoré (ID: 12, MID, Fulham)
+
+Captain: Darwin Núñez Ribeiro (ID: 141)
+Vice-Captain: João Pedro Junqueira de Jesus (ID: 325)
+Captain Bonus: +10 pts (captain)
+
+Substitutions Made: None
+
+Active Lineup (11 players):
+  GK: Aaron Ramsdale - 2pts (90min)
+  DEF: Aaron Cresswell - 2pts (68min)
+  DEF: Aaron Wan-Bissaka - 2pts (90min)
+  DEF: Adam Webster - 2pts (90min)
+  MID: Abdoulaye Doucouré - 2pts (62min)
+  MID: Adam Lallana - 1pts (19min)
+  MID: Adam Wharton - 2pts (86min)
+  MID: Alejandro Garnacho - 5pts (90min)
+  FWD: Darwin Núñez Ribeiro (C) - 10pts (67min)
+  FWD: João Pedro Junqueira de Jesus (VC) - 9pts (90min)
+  FWD: Ollie Watkins - 9pts (90min)
+
+Bench:
+  1. Alex McCarthy (GK) - 0pts (0min) [✗]
+  2. Aaron Hickey (DEF) - 0pts (0min) [✗]
+  3. Abdul Fatawu (MID) - 0pts (0min) [✗]
+  4. Adam Smith (DEF) - 0pts (0min) [✗]
+
+================================================================================
+GAMEWEEK 29
+================================================================================
+Points: 66
+Cumulative Points: 1961
+
+Transfers:
+  IN (4):
+    Jørgen Strand Larsen (ID: 336, FWD, Wolves)
+    Anthony Elanga (ID: 42, MID, Nott'm Forest)
+    Erling Haaland (ID: 180, FWD, Man City)
+    Yoane Wissa (ID: 630, FWD, Brentford)
+  OUT (4):
+    Ollie Watkins (ID: 490, FWD, Aston Villa)
+    João Pedro Junqueira de Jesus (ID: 325, FWD, Brighton)
+    Darwin Núñez Ribeiro (ID: 141, FWD, Liverpool)
+    Alejandro Garnacho (ID: 14, MID, Man Utd)
+
+Captain: Anthony Elanga (ID: 42)
+Vice-Captain: Jørgen Strand Larsen (ID: 336)
+Captain Bonus: +16 pts (captain)
+
+Substitutions Made: None
+
+Active Lineup (8 players):
+  GK: Aaron Ramsdale - 1pts (90min)
+  DEF: Aaron Wan-Bissaka - 2pts (90min)
+  DEF: Adam Webster - 1pts (90min)
+  MID: Abdoulaye Doucouré - 2pts (67min)
+  MID: Anthony Elanga (C) - 16pts (66min)
+  FWD: Erling Haaland - 7pts (90min)
+  FWD: Jørgen Strand Larsen (VC) - 13pts (89min)
+  FWD: Yoane Wissa - 8pts (90min)
+
+Bench:
+  1. Alex McCarthy (GK) - 0pts (0min) [✗]
+  2. Aaron Cresswell (DEF) - 0pts (0min) [✗]
+  3. Aaron Hickey (DEF) - 0pts (0min) [✗]
+  4. Adam Wharton (MID) - 0pts (0min) [✗]
+
+================================================================================
+GAMEWEEK 30
+================================================================================
+Points: 44
+Cumulative Points: 2005
+
+Transfers:
+  IN (2):
+    Liam Delap (ID: 380, FWD, Ipswich)
+    Alexis Mac Allister (ID: 23, MID, Liverpool)
+  OUT (2):
+    Anthony Elanga (ID: 42, MID, Nott'm Forest)
+    Erling Haaland (ID: 180, FWD, Man City)
+
+Captain: Liam Delap (ID: 380)
+Vice-Captain: Jørgen Strand Larsen (ID: 336)
+Captain Bonus: +9 pts (captain)
+
+Substitutions Made: None
+
+Active Lineup (10 players):
+  GK: Aaron Ramsdale - 2pts (90min)
+  DEF: Aaron Cresswell - 1pts (45min)
+  DEF: Aaron Wan-Bissaka - 2pts (90min)
+  DEF: Adam Smith - 1pts (45min)
+  MID: Abdoulaye Doucouré - 2pts (85min)
+  MID: Adam Wharton - 1pts (85min)
+  MID: Alexis Mac Allister - 3pts (90min)
+  FWD: Jørgen Strand Larsen (VC) - 9pts (90min)
+  FWD: Liam Delap (C) - 9pts (71min)
+  FWD: Yoane Wissa - 5pts (90min)
+
+Bench:
+  1. Alex McCarthy (GK) - 0pts (0min) [✗]
+  2. Aaron Hickey (DEF) - 0pts (0min) [✗]
+  3. Abdul Fatawu (MID) - 0pts (0min) [✗]
+  4. Adam Webster (DEF) - 0pts (0min) [✗]
+
+================================================================================
+GAMEWEEK 31
+================================================================================
+Points: 61
+Cumulative Points: 2066
+
+Transfers:
+  IN (2):
+    Alex Iwobi (ID: 16, MID, Fulham)
+    Francisco Evanilson de Lima Barbosa (ID: 194, FWD, Bournemouth)
+  OUT (2):
+    Yoane Wissa (ID: 630, FWD, Brentford)
+    Alexis Mac Allister (ID: 23, MID, Liverpool)
+
+Captain: Francisco Evanilson de Lima Barbosa (ID: 194)
+Vice-Captain: Alex Iwobi (ID: 16)
+Captain Bonus: +13 pts (captain)
+
+Substitutions Made: None
+
+Active Lineup (9 players):
+  GK: Aaron Ramsdale - 2pts (90min)
+  DEF: Aaron Wan-Bissaka - 1pts (90min)
+  DEF: Adam Smith - 1pts (66min)
+  MID: Abdoulaye Doucouré - 2pts (90min)
+  MID: Adam Wharton - 2pts (81min)
+  MID: Alex Iwobi (VC) - 13pts (81min)
+  FWD: Francisco Evanilson de Lima Barbosa (C) - 13pts (89min)
+  FWD: Jørgen Strand Larsen - 6pts (90min)
+  FWD: Liam Delap - 8pts (80min)
+
+Bench:
+  1. Alex McCarthy (GK) - 0pts (0min) [✗]
+  2. Aaron Cresswell (DEF) - 0pts (0min) [✗]
+  3. Aaron Hickey (DEF) - 0pts (0min) [✗]
+  4. Abdul Fatawu (MID) - 0pts (0min) [✗]
+
+================================================================================
+GAMEWEEK 32
+================================================================================
+Points: 86
+Cumulative Points: 2152
+
+Transfers:
+  IN (3):
+    Adama Traoré (ID: 12, MID, Fulham)
+    João Pedro Junqueira de Jesus (ID: 325, FWD, Brighton)
+    Alexander Isak (ID: 22, FWD, Newcastle)
+  OUT (3):
+    Alex Iwobi (ID: 16, MID, Fulham)
+    Francisco Evanilson de Lima Barbosa (ID: 194, FWD, Bournemouth)
+    Liam Delap (ID: 380, FWD, Ipswich)
+
+Captain: Aaron Ramsdale (ID: 3)
+Vice-Captain: João Pedro Junqueira de Jesus (ID: 325)
+Captain Bonus: +16 pts (captain)
+
+Substitutions Made: None
+
+Active Lineup (9 players):
+  GK: Aaron Ramsdale (C) - 16pts (90min)
+  DEF: Aaron Wan-Bissaka - 1pts (90min)
+  DEF: Adam Smith - 6pts (90min)
+  MID: Abdoulaye Doucouré - 10pts (90min)
+  MID: Adam Wharton - 6pts (56min)
+  MID: Adama Traoré - 1pts (33min)
+  FWD: Alexander Isak - 11pts (74min)
+  FWD: João Pedro Junqueira de Jesus (VC) - 13pts (90min)
+  FWD: Jørgen Strand Larsen - 6pts (69min)
+
+Bench:
+  1. Alex McCarthy (GK) - 0pts (0min) [✗]
+  2. Aaron Cresswell (DEF) - 0pts (0min) [✗]
+  3. Aaron Hickey (DEF) - 0pts (0min) [✗]
+  4. Abdul Fatawu (MID) - 0pts (0min) [✗]
+
+================================================================================
+GAMEWEEK 33
+================================================================================
+Points: 65
+Cumulative Points: 2217
+
+Transfers:
+  IN (3):
+    Ollie Watkins (ID: 490, FWD, Aston Villa)
+    Yoane Wissa (ID: 630, FWD, Brentford)
+    Jean-Philippe Mateta (ID: 286, FWD, Crystal Palace)
+  OUT (3):
+    Jørgen Strand Larsen (ID: 336, FWD, Wolves)
+    João Pedro Junqueira de Jesus (ID: 325, FWD, Brighton)
+    Alexander Isak (ID: 22, FWD, Newcastle)
+
+Captain: Ollie Watkins (ID: 490)
+Vice-Captain: Yoane Wissa (ID: 630)
+Captain Bonus: +12 pts (captain)
+
+Substitutions Made: None
+
+Active Lineup (8 players):
+  GK: Aaron Ramsdale - 3pts (90min)
+  DEF: Adam Smith - 6pts (83min)
+  MID: Abdoulaye Doucouré - 2pts (90min)
+  MID: Adam Wharton - 8pts (68min)
+  MID: Adama Traoré - 1pts (6min)
+  FWD: Jean-Philippe Mateta - 10pts (42min)
+  FWD: Ollie Watkins (C) - 12pts (48min)
+  FWD: Yoane Wissa (VC) - 11pts (90min)
+
+Bench:
+  1. Alex McCarthy (GK) - 0pts (0min) [✗]
+  2. Aaron Cresswell (DEF) - 0pts (0min) [✗]
+  3. Aaron Hickey (DEF) - 0pts (0min) [✗]
+  4. Abdul Fatawu (MID) - 0pts (0min) [✗]
+
+================================================================================
+GAMEWEEK 34
+================================================================================
+Points: 62
+Cumulative Points: 2279
+
+Transfers:
+  IN (3):
+    Rasmus Højlund (ID: 511, FWD, Man Utd)
+    Matheus Santos Carneiro Da Cunha (ID: 427, FWD, Wolves)
+    Alexis Mac Allister (ID: 23, MID, Liverpool)
+  OUT (3):
+    Ollie Watkins (ID: 490, FWD, Aston Villa)
+    Adama Traoré (ID: 12, MID, Fulham)
+    Jean-Philippe Mateta (ID: 286, FWD, Crystal Palace)
+
+Captain: Matheus Santos Carneiro Da Cunha (ID: 427)
+Vice-Captain: Alexis Mac Allister (ID: 23)
+Captain Bonus: +15 pts (captain)
+
+Substitutions Made: None
+
+Active Lineup (8 players):
+  GK: Aaron Ramsdale - 2pts (90min)
+  DEF: Aaron Wan-Bissaka - 1pts (90min)
+  DEF: Adam Smith - 1pts (90min)
+  MID: Abdoulaye Doucouré - 2pts (90min)
+  MID: Alexis Mac Allister (VC) - 10pts (82min)
+  FWD: Matheus Santos Carneiro Da Cunha (C) - 15pts (88min)
+  FWD: Rasmus Højlund - 9pts (90min)
+  FWD: Yoane Wissa - 7pts (90min)
+
+Bench:
+  1. Alex McCarthy (GK) - 0pts (0min) [✗]
+  2. Aaron Cresswell (DEF) - 0pts (0min) [✗]
+  3. Aaron Hickey (DEF) - 0pts (0min) [✗]
+  4. Adam Wharton (MID) - 0pts (0min) [✗]
+
+================================================================================
+GAMEWEEK 35
+================================================================================
+Points: 62
+Cumulative Points: 2341
+
+Transfers:
+  IN (3):
+    Jamie Vardy (ID: 276, FWD, Leicester)
+    Alejandro Garnacho (ID: 14, MID, Man Utd)
+    Alexander Isak (ID: 22, FWD, Newcastle)
+  OUT (3):
+    Rasmus Højlund (ID: 511, FWD, Man Utd)
+    Matheus Santos Carneiro Da Cunha (ID: 427, FWD, Wolves)
+    Alexis Mac Allister (ID: 23, MID, Liverpool)
+
+Captain: Alejandro Garnacho (ID: 14)
+Vice-Captain: Alexander Isak (ID: 22)
+Captain Bonus: +12 pts (captain)
+
+Substitutions Made: None
+
+Active Lineup (8 players):
+  GK: Aaron Ramsdale - 1pts (90min)
+  DEF: Aaron Cresswell - 2pts (87min)
+  DEF: Aaron Wan-Bissaka - 7pts (90min)
+  MID: Adam Wharton - 3pts (60min)
+  MID: Alejandro Garnacho (C) - 12pts (90min)
+  FWD: Alexander Isak (VC) - 9pts (90min)
+  FWD: Jamie Vardy - 9pts (84min)
+  FWD: Yoane Wissa - 7pts (90min)
+
+Bench:
+  1. Alex McCarthy (GK) - 0pts (0min) [✗]
+  2. Aaron Hickey (DEF) - 0pts (0min) [✗]
+  3. Abdoulaye Doucouré (MID) - 0pts (0min) [✗]
+  4. Adam Smith (DEF) - 0pts (0min) [✗]
+
+================================================================================
+GAMEWEEK 36
+================================================================================
+Points: 77
+Cumulative Points: 2418
+
+Transfers:
+  IN (3):
+    Cody Gakpo (ID: 115, FWD, Liverpool)
+    Danny Welbeck (ID: 139, FWD, Brighton)
+    Adama Traoré (ID: 12, MID, Fulham)
+  OUT (3):
+    Yoane Wissa (ID: 630, FWD, Brentford)
+    Alejandro Garnacho (ID: 14, MID, Man Utd)
+    Alexander Isak (ID: 22, FWD, Newcastle)
+
+Captain: Aaron Wan-Bissaka (ID: 4)
+Vice-Captain: Aaron Ramsdale (ID: 3)
+Captain Bonus: +12 pts (captain)
+
+Substitutions Made: None
+
+Active Lineup (10 players):
+  GK: Aaron Ramsdale (VC) - 10pts (90min)
+  DEF: Aaron Cresswell - 5pts (90min)
+  DEF: Aaron Wan-Bissaka (C) - 12pts (90min)
+  DEF: Adam Smith - 1pts (69min)
+  DEF: Adam Webster - 8pts (90min)
+  MID: Abdoulaye Doucouré - 5pts (60min)
+  MID: Adama Traoré - 1pts (27min)
+  FWD: Cody Gakpo - 9pts (65min)
+  FWD: Danny Welbeck - 9pts (90min)
+  FWD: Jamie Vardy - 5pts (90min)
+
+Bench:
+  1. Alex McCarthy (GK) - 0pts (0min) [✗]
+  2. Aaron Hickey (DEF) - 0pts (0min) [✗]
+  3. Abdul Fatawu (MID) - 0pts (0min) [✗]
+  4. Adam Lallana (MID) - 0pts (0min) [✗]
+
+================================================================================
+GAMEWEEK 37
+================================================================================
+Points: 63
+Cumulative Points: 2481
+
+Transfers:
+  IN (2):
+    Iliman Ndiaye (ID: 240, FWD, Everton)
+    Eddie Nketiah (ID: 162, FWD, Crystal Palace)
+  OUT (2):
+    Cody Gakpo (ID: 115, FWD, Liverpool)
+    Danny Welbeck (ID: 139, FWD, Brighton)
+
+Captain: Iliman Ndiaye (ID: 240)
+Vice-Captain: Eddie Nketiah (ID: 162)
+Captain Bonus: +13 pts (captain)
+
+Substitutions Made (1):
+  Bench 4: Adam Webster (DEF) - 0pts
+
+Active Lineup (10 players):
+  GK: Aaron Ramsdale - 1pts (90min)
+  DEF: Aaron Cresswell - 1pts (57min)
+  DEF: Aaron Wan-Bissaka - 1pts (90min)
+  DEF: Adam Smith - 1pts (21min)
+  DEF: Adam Webster - 0pts (90min)
+  MID: Abdoulaye Doucouré - 3pts (64min)
+  MID: Adama Traoré - 9pts (79min)
+  FWD: Eddie Nketiah (VC) - 13pts (80min)
+  FWD: Iliman Ndiaye (C) - 13pts (74min)
+  FWD: Jamie Vardy - 8pts (79min)
+
+Bench:
+  1. Alex McCarthy (GK) - 0pts (0min) [✗]
+  2. Aaron Hickey (DEF) - 0pts (0min) [✗]
+  3. Abdul Fatawu (MID) - 0pts (0min) [✗]
+  4. Adam Webster (DEF) - 0pts (90min) [✓]
+
+================================================================================
+GAMEWEEK 38
+================================================================================
+Points: 50
+Cumulative Points: 2531
+
+Transfers:
+  IN (3):
+    Cody Gakpo (ID: 115, FWD, Liverpool)
+    Erling Haaland (ID: 180, FWD, Man City)
+    Dominic Solanke-Mitchell (ID: 158, FWD, Spurs)
+  OUT (3):
+    Iliman Ndiaye (ID: 240, FWD, Everton)
+    Eddie Nketiah (ID: 162, FWD, Crystal Palace)
+    Jamie Vardy (ID: 276, FWD, Leicester)
+
+Captain: Dominic Solanke-Mitchell (ID: 158)
+Vice-Captain: Cody Gakpo (ID: 115)
+Captain Bonus: +7 pts (captain)
+
+Substitutions Made: None
+
+Active Lineup (10 players):
+  GK: Aaron Ramsdale - 3pts (90min)
+  DEF: Aaron Cresswell - 1pts (1min)
+  DEF: Aaron Wan-Bissaka - 5pts (90min)
+  DEF: Adam Smith - 6pts (90min)
+  DEF: Adam Webster - 5pts (90min)
+  MID: Abdoulaye Doucouré - 1pts (14min)
+  MID: Adama Traoré - 2pts (73min)
+  FWD: Cody Gakpo (VC) - 7pts (90min)
+  FWD: Dominic Solanke-Mitchell (C) - 7pts (65min)
+  FWD: Erling Haaland - 6pts (84min)
+
+Bench:
+  1. Alex McCarthy (GK) - 0pts (0min) [✗]
+  2. Aaron Hickey (DEF) - 0pts (0min) [✗]
+  3. Abdul Fatawu (MID) - 0pts (0min) [✗]
+  4. Adam Lallana (MID) - 0pts (0min) [✗]
+
+
+================================================================================
+FINAL SUMMARY
+================================================================================
+Total Points: 2531
+Total Transfers: 102
+Average GW Points: 66.61
+Gameweeks Completed: 38
+================================================================================
