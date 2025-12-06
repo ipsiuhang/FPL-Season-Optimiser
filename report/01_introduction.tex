@@ -1,9 +1,21 @@
 \section{Introduction}
 
-\subsection{Project Overview}
+Fantasy Premier League (FPL) is a popular online game where participants manage 
+virtual football teams by selecting real Premier League players under budget and 
+compositional constraints, earning points based on actual match performances. This 
+project formalizes FPL team management as a discrete optimization problem and 
+develops open-source tools for systematic decision-making.
 
-The motivation for this project stems from a personal interest in Fantasy Premier League (FPL) and observing fellow players make suboptimal decisions through manual, intuition-based methods. FPL is a popular online fantasy sports game where participants manage virtual football teams by selecting real Premier League players within a budget constraint, earning points based on actual match performances. Each gameweek presents managers with strategic decisions: which players to transfer in or out, who to captain for double points, and how to arrange starting lineups subject to formation rules. Regardless of whether managers rely on intuition, advanced machine learning predictions, or expert analysis, the team selection problem remains a completely separable discrete optimization problem that can be solved mathematically.
+The core challenge combines multiple constraint categories: selecting 15 players 
+within £100 million, satisfying positional quotas and formation rules, limiting 
+club affiliations, and managing weekly transfers with penalty costs. The project 
+implements this optimization using both Mixed Integer Linear Programming (MILP) 
+and Constraint Programming (CP) paradigms with multiple solver backends.
 
-Fantasy Premier League team management presents a discrete optimization problem combining multiple constraint categories and sequential decision-making. The core challenge involves selecting 15 players from the Premier League players within a £100 million budget, subject to positional quotas, formation rules for the starting XI, and club affiliation limits. Each gameweek introduces dynamic decisions: executing transfers, selecting a captain for double points, and arranging lineups subject to automatic substitution rules that replace non-playing starters with bench players.
+For this study, data from three sources was integrated and cleaned to create a 
+comprehensive 2024-25 season dataset. The deliverables include team optimizers 
+(MILP via PuLP and CP via MiniZinc), backtesting infrastructure validating 
+decisions against actual season outcomes, and the cleaned dataset. The complete 
+implementation is publicly available at 
+\url{https://github.com/ipsiuhang/FPL-Season-Optimiser} .
 
-This project seeks to formally define the mathematical structure of FPL team management and demonstrate how optimization techniques can systematically solve this discrete decision problem. By developing open-source optimization and backtesting tools, this work aims to create a valuable resource for students and enthusiasts to both learn about optimization in a relatable domain and apply these techniques to improve their actual FPL team management, without requiring deep, domain-specific expertise. For this study, data from three independent sources was integrated and cleaned, with the process documented in Python notebooks provided for transparency and reproducibility. The project delivers two primary tools subject to this integrated dataset: a team optimizer implementing both Mixed Integer Linear Programming (MILP) and Constraint Programming (CP) approaches with multiple solver backends, and a comprehensive backtesting infrastructure that validates decisions against actual 2024-25 season outcomes. The cleaned, integrated dataset spanning all 38 gameweeks of the 2024-25 season is also provided to support further research and experimentation.

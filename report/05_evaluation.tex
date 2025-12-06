@@ -54,38 +54,68 @@ CP & Gecode & Oracle (60s) & 83 & 2935 & 91 & $\sim$60.0$^*$ \\
 
 \subsection{Results Interpretation}
 
-To contextualize these results, actual FPL manager rankings from the 2024-25 season (sourced from the official FPL community website) indicate that the top-ranked manager amassed 2810 points, with rank 10 at 2754, rank 1000 at 2657, and rank 10,000 at 2599. In the normal scenario, MILP solvers yielded substantially superior totals (CBC: 3152; GLPK: 3206; SCIP: 3232 points), surpassing the elite human benchmark. This discrepancy implies overfitting in the expected points data—likely incorporating post-deadline information unavailable in real-time decision-making. Oracle outcomes (CBC: 5548; GLPK: 5579; SCIP: 5597 points) approximate double the top human performance.
+To contextualize these results, actual FPL manager rankings from 2024-25 indicate 
+the top-ranked manager amassed 2810 points, with rank 10 at 2754, rank 1000 at 2657, 
+and rank 10,000 at 2599. In the normal scenario, MILP solvers yielded substantially 
+superior totals (CBC: 3152; GLPK: 3206; SCIP: 3232 points), surpassing elite human 
+benchmarks. This discrepancy implies overfitting in expected points data, likely 
+incorporating post-deadline information unavailable during real-time decision-making. 
+Oracle outcomes (CBC: 5548; GLPK: 5579; SCIP: 5597 points) approximate double top 
+human performance.
 
-The oracle scenario affirms algorithmic fidelity: with flawless predictions, all three MILP solvers consistently deliver optimal or near-optimal solutions, varying by at most 1\% from one another. Notably, multiple optima per gameweek—especially in bench selection, which indirectly influences budgets and transfers—engender subtle divergences. These propagate as butterfly effects through subsequent gameweeks, accounting for inter-solver point variances despite individual optimality.
+The oracle scenario affirms algorithmic fidelity: with flawless predictions, MILP 
+solvers consistently deliver optimal or near-optimal solutions, varying by at most 
+1\%. Multiple optima per gameweek—especially in bench selection—engender subtle 
+divergences propagating as butterfly effects through subsequent gameweeks, accounting 
+for inter-solver point variances despite individual optimality.
 
 \subsection{Comparative Analysis}
 
 \subsubsection{MILP vs CP Performance}
 
-In the oracle scenario, the leading MILP solver (SCIP: 5597 points) surpassed the top CP solver (CP-SAT with 60-second timeout: 3911 points) by 1686 points. MILP solvers attained these outcomes in under 0.25 seconds on average, whereas CP solvers exhausted the 60-second timeouts without consistently reaching optimality.
-
-CP-SAT resolved GW1 optimally in 57 seconds, illustrating that CP solvers could theoretically achieve full optimality with unconstrained time. Nonetheless, at 240 times the average MILP runtime (0.25 seconds per gameweek), CP's performance renders it impractical for real-time applications. This disparity justifies forgoing the initially proposed hybrid MILP/CP decomposition.
+In the oracle scenario, the leading MILP solver (SCIP: 5597 points) surpassed the 
+top CP solver (CP-SAT with 60-second timeout: 3911 points) by 1686 points. MILP 
+solvers attained these outcomes in under 0.25 seconds average, whereas CP solvers 
+exhausted 60-second timeouts without consistently reaching optimality. CP-SAT 
+resolved GW1 optimally in 57 seconds, illustrating theoretical parity with 
+unconstrained time, but at 240 times average MILP runtime (0.25 seconds), CP 
+performance renders it impractical for real-time applications, justifying the 
+decision to forego hybrid MILP/CP decomposition.
 
 \subsubsection{Transfer Behavior}
 
-Transfer patterns illustrate the influence of prediction quality on optimization strategy. In the oracle scenario, MILP solvers executed 280--291 transfers (averaging 7.4--7.7 per week), compared to 88--92 transfers (averaging 2.3--2.4 per week) in the normal scenario. This disparity stems from prediction scale and confidence, rather than accuracy alone.
-
-Under perfect foresight (oracle), expected point gains from weekly squad adjustments routinely surpass the 4-point transfer penalty, fostering aggressive transfers. Conversely, the conservative expected points in the normal scenario yield marginal or negative net gains for excess transfers, promoting preservation of free allowances. Thus, the optimization adaptively responds to input prediction magnitudes: substantial differentials justify additional transfers, while subdued ones favor restraint.
-
-For CP solvers, transfer counts (74-178) cannot be meaningfully interpreted as the search was incomplete within the timeout limits.
-
+Transfer patterns illustrate prediction quality influence on optimization strategy. 
+In oracle scenarios, MILP solvers executed 280-291 transfers (averaging 7.4-7.7 
+per week) versus 88-92 transfers (averaging 2.3-2.4 per week) in normal scenarios. 
+Under perfect foresight, expected point gains from weekly adjustments routinely 
+surpass the 4-point penalty, fostering aggressive transfers. Conversely, conservative 
+expected points in normal scenarios yield marginal or negative net gains for excess 
+transfers, promoting restraint. The optimization adaptively responds to input 
+prediction magnitudes: substantial differentials justify additional transfers, 
+while subdued ones favor restraint.
 
 \subsection{Success Analysis}
 
-The evaluation demonstrates three key successes:
-
-\textbf{Practical Modeling} The oracle scenario's attainment of roughly double the points of the top human manager demonstrates that the optimization problem does not constitute a bottleneck in the FPL game, enabling substantial performance gains under perfect foresight.
-
-\textbf{Computational Efficiency} MILP solvers resolved instances in under 0.25 seconds consistently, supporting real-time deployment in interactive settings. This performance underscores the tractability of the hierarchical decomposition and transfer dynamics modeling.
+The evaluation demonstrates three key successes. The oracle scenario's attainment 
+of roughly double the points of the top human manager demonstrates that optimization 
+does not constitute a bottleneck, enabling substantial performance gains under 
+perfect foresight. MILP solvers resolved instances in under 0.25 seconds consistently, 
+supporting real-time deployment in interactive settings and underscoring the 
+hierarchical decomposition and transfer dynamics modeling tractability.
 
 \subsection{Limitations and Shortcomings}
 
-\textbf{Constraint Programming Timeout Issues} CP solvers encountered severe timeouts, routinely exhausting the 10--60 second limits without completing searches. Although CP-SAT resolved GW1 optimally in 57 seconds—indicating theoretical feasibility, this latency is untenable for real-time applications demanding sub-second responses. At 240 times MILP's average speed, CP formulations prove unsuitable for production environments.
+Despite its strengths, the project exhibits significant limitations. CP solvers 
+encountered severe timeouts, routinely exhausting 10-60 second limits without 
+completing searches. Although CP-SAT resolved GW1 optimally in 57 seconds—indicating 
+theoretical feasibility—this latency proves untenable for real-time applications 
+demanding sub-second responses, rendering CP formulations unsuitable for production 
+environments.
 
-
-\textbf{Multiple Optima Effects} Multiple optimal solutions exist in each gameweek's optimization, particularly for bench selection. Although bench players do not influence the objective function, they impact budget allocation and subsequent transfer options. Consequently, minor differences in bench composition propagate as cascading effects through later gameweeks. This accounts for the subtle variations in season-long point totals across solvers, each of which identifies optimal solutions on a per-gameweek basis. Absent simultaneous multi-week modeling, such trajectory divergences remain inherent.
+Multiple optimal solutions exist in each gameweek, particularly for bench selection. 
+Although bench players do not influence the objective function, they impact budget 
+allocation and subsequent transfer options. Consequently, minor bench composition 
+differences propagate as cascading effects through later gameweeks, accounting for 
+subtle variations in season-long point totals across solvers, each identifying 
+optimal solutions per gameweek. Absent simultaneous multi-week modeling, such 
+trajectory divergences remain inherent.

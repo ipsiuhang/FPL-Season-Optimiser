@@ -1,47 +1,69 @@
 \section{Conclusion and Critical Appraisal}
 
-This project has developed and evaluated an optimization framework for Fantasy Premier League squad management, leveraging both Mixed Integer Linear Programming (MILP) and Constraint Programming (CP) paradigms. The following discussion critically examines the project's accomplishments, limitations, and prospective directions.
+This project developed and evaluated an optimization framework for Fantasy Premier 
+League squad management, leveraging both Mixed Integer Linear Programming and 
+Constraint Programming paradigms.
 
 \subsection{Summary of Accomplishments}
 
-The project successfully delivered an end-to-end FPL optimization system spanning the complete 2024-25 season (38 gameweeks). The key accomplishments include:
-
-\textbf{Data Engineering}: Integrated and cleaned 27,222 player-gameweek records from three independent sources, reconciling schema inconsistencies, resolving 374 duplicate fixtures, and applying strategies for conflicting measurements.
-
-\textbf{Mathematical Modeling}: Developed comprehensive MILP and CP formulations that precisely model FPL's intricate rules, including squad composition constraints, budget dynamics with 50\% profit lock, hierarchical starter-bench optimization, transfer mechanics with free banking, and automatic substitutions.
-
-\textbf{Multi-Paradigm Implementation}: Achieved successful deployment via PuLP for MILP (with CBC, GLPK, and SCIP backends) and MiniZinc for CP (with CP-SAT, Gecode, and Chuffed backends), facilitating rigorous comparative evaluation.
-
-\textbf{Validation and Evaluation}: Developed complete backtesting infrastructure with dual scenarios—oracle mode yielding approximately double human benchmark performance (5,548--5,597 points versus 2,810 for top manager)—and exhaustive FPL rule validation across all 38 gameweeks.
+The project successfully delivered an end-to-end FPL optimization system spanning 
+the complete 2024-25 season (38 gameweeks). Key accomplishments include integrating 
+and cleaning 27,222 player-gameweek records from three independent sources, 
+reconciling schema inconsistencies and resolving 374 duplicate fixtures; developing 
+comprehensive MILP and CP formulations modeling FPL's intricate rules (squad 
+composition, budget dynamics with 50\% profit lock, hierarchical starter-bench 
+optimization, transfer mechanics with free banking, automatic substitutions); 
+achieving successful deployment via PuLP for MILP (CBC, GLPK, SCIP backends) and 
+MiniZinc for CP (CP-SAT, Gecode, Chuffed backends); and developing complete 
+backtesting infrastructure with dual scenarios—oracle mode yielding approximately 
+double human benchmark performance (5,548-5,597 versus 2,810 points for top manager)—
+and exhaustive FPL rule validation.
 
 \subsection{Strengths of the Approach}
 
-The project demonstrated several notable strengths that contribute to its practical value and methodological rigor.
-
-\textbf{Computational Efficiency}: MILP solvers demonstrated superior computational efficiency, resolving each gameweek optimization in 0.12--0.24 seconds on average. This sub-second latency supports real-time deployment in interactive applications.
-
-\textbf{Cross-Platform Accessibility}: Technology selections emphasize ease of use and cross-platform accessibility. PuLP furnishes a pure-Python MILP environment and accommodates open-source solvers including CBC, GLPK, and SCIP. MiniZinc supplies a well-documented constraint modeling language with Python integration. Both tools deploy effortlessly across Windows, macOS, and Linux, avoiding complex compilations or licensing barriers that might constrain adoption among researchers and practitioners.
-
-\textbf{Modular Architecture}: The implementation's modular architecture supports independent validation and testing. Distinct optimization modules for Pre-GW1 Step 1, Pre-GW1 Step 2, and Post-GW1 enable targeted unit testing of each phase. The utility module (\texttt{utils.py}) encapsulates post-hoc processing, segregating vice-captain and bench ordering logic from the core optimization. The season orchestrator (\texttt{run\_season\_optimizer.py}) oversees state management without entanglement to solver specifics. This separation of concerns expedited development by permitting incremental validation and debugging.
+The project demonstrated notable strengths contributing to its practical value. 
+MILP solvers demonstrated superior computational efficiency, resolving each gameweek 
+in 0.12-0.24 seconds average, supporting real-time deployment. Technology selections 
+emphasize cross-platform accessibility: PuLP furnishes pure-Python MILP environment 
+with open-source solvers (CBC, GLPK, SCIP), while MiniZinc supplies well-documented 
+constraint modeling with Python integration, both deploying effortlessly across 
+Windows, macOS, and Linux without complex compilations or licensing barriers. The 
+modular architecture supports independent validation with distinct optimization 
+modules for Pre-GW1 Steps 1-2 and Post-GW1, utilities for post-hoc processing, and 
+season orchestrator for state management, expediting development through incremental 
+validation.
 
 \subsection{Weaknesses and Limitations}
 
-Despite its strengths, the project exhibits significant limitations that constrain both theoretical performance and practical applicability.
+Despite its strengths, the project exhibits significant limitations. The one-week 
+forward horizon fundamentally constrains efficacy by addressing each gameweek in 
+isolation, overlooking multi-period dynamics including anticipating future price 
+escalations, favorable fixture sequences, and chip deployment timing. CP solvers 
+demonstrated severe performance limitations rendering them impractical: although 
+CP-SAT resolved GW1 optimally in 57 seconds indicating theoretical parity, such 
+latencies preclude real-time deployment requiring sub-second responses.
 
-\textbf{Scope Limitations}: The one-week forward horizon fundamentally constrains optimization efficacy. By addressing each gameweek in isolation—relying exclusively on immediate next-week predictions—the model overlooks multi-period dynamics, such as anticipating future price escalations (e.g., acquiring rising players preemptively), favorable fixture sequences (e.g., conserving transfers for upcoming runs), and chip deployment (e.g., timing the wildcard for unlimited free transfers).
+Data integration uncovered substantial quality challenges in open datasets, including 
+price and expected points discrepancies across sources and complete prediction 
+absences for certain gameweeks. Variability in player participation necessitated 
+imputation for standardization, introducing potential distortions. Multiple optimal 
+solutions for individual gameweeks engendered unanticipated season-long performance 
+variations: diverse bench compositions yield equivalent gameweek scores yet subtly 
+alter budget allocation and future transfer options, precipitating butterfly effects 
+propagating through subsequent gameweeks.
+\subsection{Code and Data Availability}
 
-\textbf{Constraint Programming Performance Gap}: CP solvers demonstrated severe performance limitations, rendering them impractical for this domain. Although CP-SAT resolved GW1 optimally in 57 seconds, indicating theoretical parity with unbounded time, such latencies preclude real-time deployment requiring sub-second responses.
-
-\textbf{Data Quality Challenges}: The data integration phase uncovered substantial quality challenges in the open datasets, including discrepancies in player prices and expected points across sources, as well as complete absences of predictions for certain gameweeks. These inconsistencies, compounded by the lack of centralized quality control in community-maintained repositories, highlighted the inherent difficulties of merging independent data streams. Additionally, variability in player participation across gameweeks necessitated imputation for standardization, which introduced potential distortions in representing actual availability, pricing, and performance dynamics.
-
-\textbf{Multiple Optima and Trajectory Divergence}: Multiple optimal solutions for individual gameweeks engendered unanticipated variations in season-long performance. As bench players do not directly influence the objective function, diverse bench compositions yield equivalent gameweek scores; yet, these choices subtly alter budget allocation and future transfer options, precipitating butterfly effects that propagate through subsequent gameweeks. 
+The complete source code, optimizers, backtesting infrastructure, integrated datasets, 
+and comprehensive documentation are publicly available under the MIT License at 
+\url{https://github.com/ipsiuhang/FPL-Season-Optimiser}, enabling full reproduction 
+and providing a foundation for further research.
 
 \subsection{Future Work and Extensions}
 
-Several directions could extend and improve the current work:
-
-\textbf{Multi-Period Rolling Horizon Optimization}: Extend the one-week horizon to 2--4 weeks via rolling optimization: solve multi-period problems but implement only the first week's decisions, capturing price rises, fixture runs, and chip timing.
-
-\textbf{Risk-Aware or Non-Linear Objective Functions}: Incorporate risk via minimal-variance optimization constraints to model manager preferences on conservative low-variance squads using MINLP/MIQP solvers.
-
-\textbf{Chip Strategy Optimization}: Model FPL chips—Wildcard (unlimited transfers), Bench Boost (bench scoring), Triple Captain (tripled points), Free Hit (temporary squad)—using multi-period binary variables constrained by usage limits.
+Several directions could extend the current work. Multi-period rolling horizon 
+optimization (2-4 weeks) would solve multi-period problems but implement only first 
+week's decisions, capturing price rises, fixture runs, and chip timing. Risk-aware 
+or non-linear objective functions could incorporate minimal-variance constraints 
+modeling manager preferences using MINLP/MIQP solvers. Chip strategy optimization 
+could model FPL chips (Wildcard, Bench Boost, Triple Captain, Free Hit) using 
+multi-period binary variables constrained by usage limits.

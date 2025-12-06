@@ -12,8 +12,16 @@ Becker and Sun (2016)~\cite{becker2016analytical} propose an analytical approach
 Groos (2025)~\cite{groos2025openfpl} introduces OpenFPL, an open-source forecasting method that rivals state-of-the-art Fantasy Premier League services. This ensemble model combines XGBoost and Random Forest, trained on public data from the 2020-21 to 2023-24 seasons, with prospective evaluation on 2024-25. It forecasts points over one- to three-gameweek horizons, excelling in high-return player predictions. This work exemplifies the prediction-focused research strand in FPL analytics, which complements the current project's optimization focus. By treating predictions as external inputs, this project concentrates on the mechanics of team selection, transfers, and substitutions, making the work more accessible as an educational resource and allowing practitioners to integrate predictions from various sources, including statistical models like OpenFPL or expert judgment.
 \subsection{Data Provision and Infrastructure}
 
-The FPL-Elo-Insights GitHub repository~\cite{olbauday2025fpl} offers a comprehensive dataset for the 2024-2025 FPL season, fusing official FPL API data with detailed match statistics, dynamic team Elo ratings, and coverage of cups, friendlies, and European competitions. Organized into directories with high-level summaries and granular gameweek snapshots in CSV format, it aligns data by official FPL IDs, enabling deep analysis of player and team performance. This resource was utilized in the current study for integrating real-season data, addressing challenges in schema inconsistencies and temporal alignment as noted in the implementation.
+The FPL-Elo-Insights repository~\cite{olbauday2025fpl} provides comprehensive 
+datasets for the 2024-25 FPL season, integrating official API data with match 
+statistics and team ratings. Organized by gameweek with standardized player IDs, 
+it served as a primary data source for this study. 
 
-The Fantasy-Premier-League GitHub repository~\cite{vaastav2025fpl} provides CSV datasets for the 2024-25 FPL season, including player statistics, gameweek-specific data, team information, and season histories. It aggregates official FPL data into accessible formats like merged gameweek files, facilitating historical analysis and predictions. Employed in this project as a primary data source, it supported validation against actual outcomes, though updates ceased after the 2024-25 season.
+The Fantasy-Premier-League repository~\cite{vaastav2025fpl} offers CSV datasets 
+with player statistics and gameweek-specific performance data for the 2024-25 
+season, supporting historical analysis and validation against actual outcomes.
 
-The fplcache GitHub repository~\cite{randdalf2024fplcache} maintains a daily cache of Fantasy Premier League bootstrap data from the official API, including player and team details in LZMA-compressed JSON format. It features scripts for caching, diffing files, and extracting player data, aiding in efficient data access and cross-referencing without repeated API calls. This served as an honorable mention in the current study for understanding FPL API structures and supporting data integration efforts.
+The fplcache repository~\cite{randdalf2024fplcache} maintains daily caches of 
+official FPL API data, aiding in understanding API structures for data 
+integration efforts.
+

@@ -20,7 +20,7 @@ The system was implemented primarily in Python 3.10+, leveraging several key tec
 
 High-quality input data forms the foundation of any data-driven optimization system. A primary challenge for this Fantasy Premier League (FPL) team management system was the lack of a single open dataset providing complete time-series player buying prices across the 2024-25 season. FPL prices fluctuate daily by up to £0.1 million due to transfer demand, but available datasets offer only gameweek snapshots without intra-week timing details.
 
-Three complementary open-source sources were integrated for cross-validation. The OLB Dataset (olbauday/FPL-Elo-Insights) supplies player statistics, prices (\texttt{now\_cost}), status, and expected points. The VAA Dataset (vaastav/Fantasy-Premier-League) delivers detailed performance metrics, including minutes played and starting appearances. Randdalf's fplcache caches official FPL API data as a third reference.
+Three complementary open-source sources were integrated for cross-validation. The OLB Dataset supplies player statistics, prices (\texttt{now\_cost}), status, and expected points. The VAA Dataset delivers detailed performance metrics, including minutes played and starting appearances. Randdalf's fplcache caches official FPL API data as a third reference.
 
 This process spanned Gameweeks 1 to 38, producing a unified dataset with 27,222 unique (player, gameweek) records. The subsequent discussion outlines the technical challenges encountered and solutions implemented.
 
@@ -54,13 +54,13 @@ Superset verification confirmed that all 631 distinct IDs in \texttt{playerstats
 
 \paragraph{Step 2: Column Filtering}
 
-The mapped dataset included extraneous variables, so we retained only those vital to the optimization model: \texttt{player\_name}, \texttt{status}, \texttt{chance\_of\_playing\_next\_round}, \texttt{chance\_of\_playing\_this\_round}, \texttt{now\_cost}, \texttt{event\_points} (gameweek-specific FPL points), \texttt{ep\_next} and \texttt{ep\_this} (expected points), and \texttt{gw}.
+The mapped dataset included extraneous variables, thus only those vital to the optimization model were retained: \texttt{player\_name}, \texttt{status}, \texttt{chance\_of\_playing\_next\_round}, \texttt{chance\_of\_playing\_this\_round}, \texttt{now\_cost}, \texttt{event\_points} (gameweek-specific FPL points), \texttt{ep\_next} and \texttt{ep\_this} (expected points), and \texttt{gw}.
 
 A key insight emerged regarding \texttt{total\_points}: in the OLB dataset, it denotes cumulative points from GW1, contrasting with the VAA dataset's gameweek-specific scoring. This semantic distinction informed later validations.
 
 \paragraph{Step 3: Duplicate Verification}
 
-Prior to integration, we assessed data quality by scanning for duplicate (gameweek, player name) pairs, anomalies given the standard one-match-per-club schedule.
+Prior to integration, data quality was assessed by scanning for duplicate (gameweek, player name) pairs, anomalies given the standard one-match-per-club schedule.
 
 Validation revealed zero duplicates across the OLB dataset's 27,658 records, yielding a reliable foundation. This cleanliness facilitated resolution of duplicates later identified in the VAA dataset.
 
@@ -99,7 +99,7 @@ Following independent processing of both datasets, merging required careful hand
 
 \paragraph{Step 1: Hypothesis Testing for Duplicate Validation}
 
-Prior to aggregation, we tested consistency for duplicated players: the summed \texttt{total\_points} from VAA's two matches should equal OLB's \texttt{event\_points}.
+Prior to aggregation, consistency was tested for duplicated players: the summed \texttt{total\_points} from VAA's two matches should equal OLB's \texttt{event\_points}.
 
 \begin{lstlisting}[language=Python, caption={Cross-Dataset Validation}]
 # Sum total_points for duplicated pairs
@@ -189,8 +189,6 @@ The integration phase established a robust foundation for subsequent data cleani
 
 Although data integration merged complementary sources effectively, the resulting \texttt{integrated\_df.csv} (27,222 records, 16 features) harbored conflicting measurements from independent origins. Cleaning addressed three objectives: reconciling discrepancies, ensuring consistency, and forging unified features for optimization.
 
-Systematic discrepancies clustered in select gameweeks, affirming metric reliability while highlighting vulnerabilities. This phase details reconciliation techniques and validation protocols.
-
 \subsubsection{Cost Reconciliation}
 
 Pricing data appeared dually: OLB's \texttt{now\_cost} (scaled ×10) and VAA's \texttt{value}, both denoting £0.1M buying prices, potentially captured at disparate intra-gameweek moments.
@@ -231,9 +229,8 @@ df['ep_reconciled'] = np.where(diff_ep_this <= diff_xP,
                                 df['xP'])
 \end{lstlisting}
 
-This per-record ensemble selected \texttt{ep\_this} in 25,487 cases (93.63\%) and \texttt{xP} in 1,735 (6.37\%), varying by gameweek.
 
-Note: This retrospective method suits backtesting but not prospective use, where outcomes are unknown. It mitigates \texttt{xP} zeros and outliers, outperforming averages or extrema skewed thereby.
+Note: This retrospective method suits backtesting but not prospective use, where outcomes are unknown. 
 
 \subsubsection{Player Set Standardization}
 
@@ -272,7 +269,7 @@ The final dataset provides a clean, consistent foundation for subsequent modelin
 
 \subsection{Phase 3: MILP Model Implementation}
 
-The Mixed-Integer Linear Programming (MILP) implementation converts the mathematical formulation from Section 3 into executable code via the PuLP library in Python. PuLP was chosen for its declarative constraint syntax, compatibility with diverse solvers (CBC, GLPK, SCIP, CPLEX, Gurobi—both open-source and commercial), and integration with Python's data tools (pandas, NumPy). It adheres to the two-phase model: Pre-GW1 optimization for initial squad assembly and Post-GW1 for weekly transfers and lineups.
+The Mixed-Integer Linear Programming (MILP) implementation converts the mathematical formulation from Section 3 into executable code via the PuLP library in Python. PuLP was chosen for its declarative constraint syntax, compatibility with diverse solvers, and integration with Python's data tools. It adheres to the two-phase model: Pre-GW1 optimization for initial squad assembly and Post-GW1 for weekly transfers and lineups.
 
 Modularity structures the code into core elements: optimization modules (\texttt{pre\_gw1\_step1.py}, \texttt{pre\_gw1\_step2.py}, 
 
@@ -282,7 +279,7 @@ Modularity structures the code into core elements: optimization modules (\texttt
 \subsubsection{Data Structures and Flow}
 
 The MILP implementation employs a structured data flow architecture to coordinate optimization decisions while preserving persistent state across gameweeks.
-
+\newpage
 \paragraph{Input Data Structure}
 
 All optimization functions ingest player data through a pandas DataFrame conforming to the specified schema:
@@ -307,13 +304,6 @@ All optimization functions ingest player data through a pandas DataFrame conform
 \end{tabular}
 \end{table}
 
-A fundamental implementation invariant requires each DataFrame to encompass precisely one gameweek, devoid of duplicate \texttt{player\_id} entries. This is enforced via validation at the entry points of all optimization modules: \texttt{pre\_gw1\_step1.py}, \texttt{pre\_gw1\_step2.py}, and \texttt{post\_gw1\_step1.py}.
-
-\begin{lstlisting}[language=Python, caption={Single-Gameweek Validation}]
-if players_df['player_id'].duplicated().any():
-    raise ValueError("More than 1 GW data detected. Each player_id must appear exactly once.")
-\end{lstlisting}
-
 \paragraph{State Variables}
 
 The Post-GW1 optimization sustains four state variables to propagate essential information across gameweeks:
@@ -334,7 +324,7 @@ The Post-GW1 optimization sustains four state variables to propagate essential i
 \end{table}
 
 These state variables are initialized following GW1 optimization and updated thereafter after each gameweek in accordance with the transfer decisions.
-\newpage
+
 \paragraph{Decision Variable Output}
 
 Each optimization yields decision variables as dictionaries mapping player IDs to binary values:
@@ -676,22 +666,27 @@ def get_pulp_solver(solver_name='CBC', msg=0):
 
 \subsubsection{Implementation Results}
 
-The MILP implementation sequentially optimizes all 38 gameweeks, with each phase leveraging state variables from the prior one. Its modular architecture facilitated isolated validation of components, achieving full test coverage for Pre-GW1 and Post-GW1 pipelines.
+The MILP implementation sequentially optimizes all 38 gameweeks with persistent 
+state propagation. Its modular architecture facilitated isolated validation, 
+achieving full test coverage for Pre-GW1 and Post-GW1 pipelines. Optimization 
+across three solvers generated consistent results.
 
-Optimization proceeded across three solvers (CBC, GLPK, SCIP) to verify independence and robustness. All generated consistent results, affirming the mathematical model's accuracy.
-
-The output comprises a standardized JSON file, wherein each gameweek encompasses 12 keys: eight binary decision dictionaries (\texttt{x}, \texttt{y}, \texttt{c}, \texttt{v}, \texttt{b1}, \texttt{b2}, \texttt{b3}, \texttt{b4})—each mapping all 638 player IDs to \{0,1\}—plus four state variables (\texttt{y0} dict, \texttt{p0} dict, \texttt{B\_bank} scalar, \texttt{f} scalar). This uniform structure promotes data consistency across gameweeks and facilitates integration with backtesting and analytical tools.
-
-This implementation underpins backtesting evaluations and comparisons with CP formulations.
+Output comprises standardized JSON files with 12 keys per gameweek: eight binary 
+decision dictionaries (\texttt{x}, \texttt{y}, \texttt{c}, \texttt{v}, 
+\texttt{b1}--\texttt{b4}) mapping 638 player IDs to \{0,1\}, plus four state 
+variables (\texttt{y0}, \texttt{p0}, \texttt{B\_bank}, \texttt{f}), promoting 
+data consistency and integration with backtesting tools.
 
 \subsection{Phase 4: CP MiniZinc Implementation}
 
-The Constraint Programming (CP) formulation, realized in MiniZinc, presents an alternative to MILP for probing varied paradigms and solvers. MiniZinc, a declarative language tailored for constraint satisfaction and optimization, supports this modeling. The implementation accommodates three CP solvers—OR-Tools CP-SAT (default), Gecode, and Chuffed.
-
-The primary rationale for a parallel CP formulation alongside MILP is to evaluate alternative modeling paradigms and corroborate solution integrity across independent solver frameworks. MiniZinc's declarative syntax enables set-based representations and global constraints, while CP solvers emphasize constraint propagation over MILP's linear relaxations.
-
-The CP implementation mirrors the MILP's modular architecture, comprising three optimization modules for Pre-GW1 Step 1, Pre-GW1 Step 2, and Post-GW1 phases. Each module integrates a Python wrapper (\texttt{.py}) for data conversion and solver interfacing with a MiniZinc model (\texttt{.mzn}) for declarative constraint formulation. This bifurcation permits MiniZinc's domain-specific syntax to encode optimization logic, while Python oversees data preparation and result extraction.
-
+TThe Constraint Programming formulation, realized in MiniZinc, provides an alternative 
+paradigm for evaluating different solvers. 
+MiniZinc's declarative syntax enables set-based representations and global constraints, 
+while CP solvers emphasize constraint propagation over MILP's linear relaxations. 
+The implementation mirrors MILP's modular architecture with three optimization 
+modules for Pre-GW1 Steps 1-2 and Post-GW1. Each integrates a Python wrapper for 
+data conversion and solver interfacing with a MiniZinc model for declarative 
+constraint formulation.
 
 \subsubsection{Pre-GW1: Set-Based Formulation}
 
@@ -721,8 +716,6 @@ This formulation encapsulates the problem structure directly: the squad comprise
 
 To enforce FPL positional requirements, the model partitions the squad and starting XI into disjoint position-specific subsets. A partition consists of mutually exclusive subsets that collectively encompass the entire set, assigning each player to exactly one position category.
 
-This structure is maintained through two constraint types: disjointness, ensuring subset exclusivity, and cardinality, specifying subset sizes. Disjointness constraints guarantee that no player appears in multiple position groups:
-
 \begin{lstlisting}[language=Python, caption={Disjoint Partition Constraints (pre\_gw1\_step1.mzn)}]
 % Partition Constraints (disjoint union, subsets of available players)
 constraint forall(p1, p2 in Position where p1 < p2) (disjoint(SquadPartitions[p1], SquadPartitions[p2]));
@@ -733,8 +726,6 @@ constraint forall(p1, p2 in Position where p1 < p2) (disjoint(StarterPartitions[
 constraint Starters = array_union([StarterPartitions[p] | p in Position]);
 constraint forall(p in Position) (StarterPartitions[p] subset SquadPartitions[p]);
 \end{lstlisting}
-
-The \texttt{disjoint()} constraint guarantees that no player appears in multiple position sets, while \texttt{array\_union()} reconstructs the complete squad and starting XI from their position-based partitions.
 
 \paragraph{Cardinality} FPL squad and starting XI composition requirements across four positions are enforced through cardinality constraints on each partition. These are implemented via the \texttt{card()} function, which computes the number of elements in a set:
 
@@ -753,8 +744,6 @@ constraint card(SquadPartitions[FWD]) = 3 /\ 1 <= card(StarterPartitions[FWD]) /
 \paragraph{Integer Arithmetic and Scaling}
 
 The MiniZinc implementation mandates integer arithmetic exclusively. Expected points are scaled by a factor of 10 to eliminate fractions.
-
-The Python data preparation module (\texttt{data\_prep.py}) manages these scalings; post-solving, objective values are rescaled to original units for analysis.
 
 
 \paragraph{Step 2: Bench Optimization}
@@ -782,8 +771,6 @@ constraint forall(i in Players) (
     y[i] = bool2int(y0[i]) + bool2int(t[i]) - bool2int(s[i])
 );
 \end{lstlisting}
-
-This formulation maintains compatibility with the MILP model's transfer semantics while leveraging MiniZinc's boolean type system.
 
 \paragraph{Set-Array Channeling}
 
@@ -920,12 +907,15 @@ Execution encompassed three solvers (OR-Tools CP-SAT—default—Gecode, Chuffed
 
 \subsection{Phase 5: Backtesting and Validation}
 
-The backtesting phase evaluates optimizer performance against actual gameweek outcomes, incorporating basic FPL rule validation as a sanity check. Its core objective is to quantify practical efficacy of optimization strategies, rather than aiding the optimization itself. Users may backtest custom solutions, provided they adhere to standardization (638-player dataset and JSON format).
-
-The backtester ingests season-long outputs (JSON files with 38 gameweek decisions) and emulates gameplay via FPL's substitution rules, captain doubling, and transfer tracking. This yields metrics such as total points, per-gameweek scores, and transfer efficiency, alongside compliance verification.
-
-Implementation comprises three modules: \texttt{fpl\_validator.py} for rule checks, \texttt{fpl\_point\_calculator.py} for substitutions and scoring, and \texttt{backtester.py} for orchestrating the full season. This modularity decouples validation from computation, supporting isolated testing and cross-optimizer reuse.
-
+The backtesting phase evaluates optimizer performance against actual gameweek 
+outcomes, incorporating FPL rule validation as sanity checks. The backtester 
+ingests season-long JSON outputs (38 gameweek decisions) and emulates gameplay 
+via automatic substitutions, captain doubling, and transfer tracking, yielding 
+metrics including total points, per-gameweek scores, and transfer efficiency 
+alongside compliance verification. Implementation comprises three modules: 
+\texttt{fpl\_validator.py} for rule checks, \texttt{fpl\_point\_calculator.py} for substitutions 
+and scoring, and \texttt{backtester.py} for season orchestration, with modularity 
+supporting isolated testing and cross-optimizer reuse.
 \subsubsection{Architecture and Data Flow}
 
 The backtester operates on two core data sources: optimizer output JSON files and the cleaned dataset.
@@ -970,31 +960,34 @@ The \texttt{fpl\_validator.py} module employs a comprehensive single-pass algori
 
 \paragraph{Validation Algorithm}
 
-The validation function ingests gameweek data and decision variables, executing checks in logical sequence. It commences with squad size verification (precisely 15 players), followed by positional composition (2 GK, 5 DEF, 5 MID, 3 FWD). Club affiliation limits are then assessed, counting players per team to enforce a maximum of 3 per club. For the starting XI, it confirms size (exactly 11 players), formation validity (1 GK, 3--5 DEF, 2--5 MID, 1--3 FWD), and bench setup (position 1: GK; positions 2--4: outfield). Concluding checks validate captaincy (captain $\neq$ vice-captain; both starters).
+The \texttt{fpl\_validator.py} module employs single-pass algorithms validating all FPL 
+rules: squad size, positional composition, 
+club limits, starting XI size and formation, bench setup, and captaincy.
 
 \paragraph{Formation Validation During Substitutions}
 
-A dedicated validation function upholds legal formations following automatic substitutions. It assesses potentially incomplete lineups (fewer than 11 players) through positional counts: precisely 1 GK, 3--5 DEF, 2--5 MID, and 1--3 FWD. Integral to the substitution algorithm, it confirms validity after each prospective bench addition, preventing illegal configurations.
+Formation validation during substitutions ensures legality of potentially incomplete lineups 
+by checking positional counts, integral to the substitution 
+algorithm confirming validity after each prospective bench addition.
 
 \subsubsection{Points Calculation}
 
-The \texttt{fpl\_point\_calculator.py} module implements FPL's automatic substitution mechanism and captain doubling rules.
-
-\paragraph{Captain Bonus Application}
-
-Following substitutions, the final active lineup determines the base points as the sum of all active players' scores. Captain doubling then applies, with fallback to the vice-captain: if the captain played (non-zero minutes and active), their points are added once more to the total. Otherwise, if the vice-captain played, their points receive the doubling instead. This ensures precisely one bonus, favoring the captain but defaulting to the vice-captain as needed.
+The \texttt{fpl\_point\_calculator.py} module implements automatic substitution and captain 
+doubling. Following substitutions, the final active lineup yields base points as 
+the sum of all active player scores. Captain doubling then applies with fallback: 
+if the captain played (non-zero minutes, active), their points add once more; 
+otherwise if vice-captain played, their points receive doubling, ensuring precisely 
+one bonus.
 
 \subsubsection{Season Orchestration}
 
-The \texttt{backtester.py} module orchestrates season-long processing across all 38 gameweeks.
-
-\paragraph{Gameweek Processing Loop}
-
-For each gameweek, the backtester follows a standardized workflow: extracting team selections from binary dictionaries (squad, starters, captain, vice-captain, bench positions), retrieving actual performance data from the cleaned dataset, validating selections against FPL rules, and computing points via automatic substitutions. Cumulative points are tracked season-long.
-
-\paragraph{Transfer Detection}
-
-Transfers are identified by comparing consecutive gameweek squads: bought players appear in the current squad but not the previous, while sold players appear in the previous but not the current. Set difference operations facilitate this detection efficiently.
+The \texttt{backtester.py} module orchestrates season-long processing across 38 gameweeks. 
+For each gameweek, it extracts team selections from binary dictionaries, retrieves 
+actual performance data, validates selections against FPL rules, and computes 
+points via automatic substitutions, tracking cumulative points season-long. 
+Transfers are identified via set difference between consecutive gameweek squads: 
+bought players appear in current but not previous squad, while sold players appear 
+in previous but not current. 
 
 \begin{lstlisting}[language=Python, caption={Transfer Detection Algorithm}]
 def detect_transfers(current_squad: List[int], 
@@ -1009,11 +1002,17 @@ def detect_transfers(current_squad: List[int],
 
 \paragraph{Output Generation}
 
-For each gameweek, the backtester produces detailed formatted output commencing with a header denoting the gameweek number, followed by points scored that week and cumulative totals. The transfer section enumerates incoming players (if applicable), detailing their name, ID, position, and team. Subsequent sections cover captain and substitution particulars, an active lineup breakdown with per-player points, and bench status indicating utilized or idle reserves. Upon completing all 38 gameweeks, a final summary delivers season aggregates: total points, transfer count, average points per gameweek, and verification of full-season execution.
+Output generation produces detailed formatted reports 
+per gameweek (header with points, transfers in/out with player details, captain 
+and substitution specifics, active lineup breakdown, bench status), culminating 
+in season summaries (total points, transfer count, averages, full-season verification).
 
 \subsubsection{Technical Challenges and Solutions}
 
-The backtester joins optimizer decisions (via player IDs) with actual performance data from \texttt{cleaned\_data.csv}, where ID mismatches would precipitate lookup failures. It relies on the uniform \texttt{player\_id} scheme from data cleaning, assigning identical IDs to all 638 players across outputs and the dataset. This permits direct DataFrame filtering for gameweek data, followed by squad-specific extraction from decisions. For external users, adherence to this 638-player mapping is requisite; alternatively, forking the repository and implementing extensions is advised to accommodate custom datasets.
+The backtester relies on uniform \texttt{player\_id} schemes from data cleaning (638 players) 
+to join optimizer decisions with actual performance data from \texttt{cleaned\_data.csv}, 
+permitting direct DataFrame filtering and squad extraction. External users must 
+adhere to this mapping or fork the repository for custom dataset extensions.
 
 \subsubsection{Implementation Results}
 

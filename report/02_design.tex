@@ -2,23 +2,46 @@
 
 \subsection{Incorporating Feedback from Assignment 4A}
 
-The design evolved significantly from the initial Assignment 4A proposal, drawing on three key sources of feedback and inspiration. First, inspired by David Bergman's practical application of optimization to sports analytics, this project integrates three independent datasets, covering the full 2024-2025 FPL season across 38 gameweeks with actual player statistics and prices. This choice ensures the framework tackles real-world challenges and validates outcomes against historical results.
+The design evolved from the Assignment 4A proposal based on three feedback areas. 
+First, inspired by David Bergman's sports analytics work, the project integrates 
+three independent datasets covering the full 2024-25 FPL season with actual player statistics and prices, enabling real-world validation against 
+historical results.
 
-Second, to enhance realism as suggested, the system fully models FPL mechanics. Substitution logic follows automatic rules, accounting for player availability, positional needs, and formation limits. Transfers include weekly accumulation of one free transfer, with four-point penalties for extras. Trading distinguishes buying from selling prices, enforcing the 50\% profit lock and enabling precise budget tracking. All elements respect data availability and quality from the sources.
+Second, the system fully models FPL mechanics to enhance realism: automatic 
+substitutions accounting for player availability and formation constraints; 
+transfer accumulation; and 
+buy/sell price differentiation with profit lock for precise budget tracking.
 
-Third, per recommendations for thorough evaluation, the system adopts two modeling paradigms: Constraint Programming (CP) and Mixed Integer Linear Programming (MILP). It supports multiple backends, such as CBC \cite{forrest2023cbc} (PuLP default \cite{mitchell2011pulp}), GLPK \cite{makhorin2024glpk}, and SCIP \cite{gamrath2025scip} for MILP, plus MiniZinc \cite{nethercote2007minizinc} solvers including CP-SAT \cite{perron2025ortools}, Chuffed \cite{chu2018chuffed}, and Gecode \cite{schulte2023gecode} for CP. This setup allows direct comparison of approaches and solver efficiency.
+Third, the system implements both Constraint Programming and Mixed Integer Linear 
+Programming paradigms for thorough evaluation. MILP solvers include CBC 
+\cite{forrest2023cbc} (PuLP default \cite{mitchell2011pulp}), GLPK 
+\cite{makhorin2024glpk}, and SCIP \cite{gamrath2025scip}. CP solvers via 
+MiniZinc \cite{nethercote2007minizinc} include CP-SAT \cite{perron2025ortools}, 
+Chuffed \cite{chu2018chuffed}, and Gecode \cite{schulte2023gecode}, enabling 
+direct comparison of approaches and solver efficiency.
 
-Additionally, the design simplifies scoring by using conditional expected points, which embed availability likelihood into a single metric per player. This avoids separate stochastic variables for no-shows and probabilities, streamlining the objective. The proposed hybrid MILP/CP decomposition was dropped, as standalone MILP solvers proved efficient, boosting interpretability, accessibility, and simplicity.
+The design uses conditional expected points rather than separate stochastic variables for no-shows, 
+simplifying the objective. The initially proposed hybrid MILP/CP decomposition 
+was dropped as standalone MILP solvers proved sufficiently efficient.
 
 \subsection{Scope}
 
-This FPL optimization system adopts a focused scope to balance feasibility and utility, with these core constraints and elements. The model optimizes for a single upcoming gameweek, using current state and next-week predictions only. It ignores prior or multi-week data, cutting complexity without sacrificing relevance. Objectives remain linear, matching FPL scoring and solver capabilities. Non-linear options, like variance-minimizing portfolios, are omitted due to unavailable prediction variances in public data. Predictions serve as external inputs: conditional expected points drive team selection. This decouples optimization from forecasting, supporting diverse sources like models or expert input.
+This FPL optimization system adopts a focused scope balancing feasibility and 
+utility. The model optimizes single gameweeks using current state and next-week 
+predictions only, with linear objectives matching FPL scoring. Predictions serve 
+as external conditional expected points, decoupling optimization from forecasting 
+and supporting diverse input sources including statistical models or expert 
+judgment.
 
-Core FPL elements receive full coverage. Single-gameweek optimization handles squad, transfers, captain, and lineup, guided by next-week predictions. Rule enforcement includes budgets, squad quotas, formations, club limits, and bench/substitution handling. Transfer mechanics cover weekly free transfers, four-point penalties for extras, 50\% profit locks on sales, and per-player price tracking for budgets. Automatic substitutions replace non-starters from bench, validating formations throughout. Captaincy awards double points for captain (vice fallback if absent), assigned post-optimization by expected points. Data handling merges three sources, resolves conflicts via validation, deduplicates fixtures, and normalizes participation. Backtesting simulates the 2024-25 season over 38 weeks, with per-week reports, cumulative metrics, transfer analysis, and rule checks.
+The system fully implements core FPL elements: squad selection, budget constraints, transfer mechanics, starting lineup formation, automatic substitutions, and captaincy. Data integration merges three sources with conflict resolution and 
+duplicate handling. Backtesting simulates the complete 2024-25 season with detailed per-week reports and cumulative metrics.
 
-For focus and manageability, certain aspects are omitted. Multi-week planning, including rolling horizons for prices, fixtures, or squad value, is not pursued. Chip strategies (Wildcard, Bench Boost, Triple Captain, Free Hit) are excluded, as they demand multi-period analysis. Prediction development receives no attention: no training or evaluation of models; inputs are external. Risk or non-linear goals are absent: no variance penalties, CVaR, or utility curves for manager preferences.
+For tractability, multi-week rolling horizons, FPL chips (Wildcard, Bench Boost, 
+Triple Captain, Free Hit), prediction model development, and risk-based or 
+non-linear objectives (variance penalties, CVaR, utility curves) are excluded. 
+This scope delivers a robust single-gameweek framework without the complexity of 
+multi-period planning.
 
-This scope yields a robust, validated framework, sidestepping added complexity from broader features.
 
 \subsection{Design Principles}
 
@@ -28,15 +51,25 @@ Installation and operation span platforms effortlessly. PuLP (MILP) offers pure-
 
 \subsection{Technical Challenges During Implementation}
 
-Implementation revealed four primary technical challenges, each addressed through targeted strategies to ensure robustness.
+Implementation encountered four primary challenges addressed through targeted 
+strategies. Data integration across three sources required reconciliation of 
+schema inconsistencies via 
+fuzzy matching and manual verification, with temporal alignment ensuring gameweek 
+correspondence and completeness checks prioritizing primary sources.
 
-Data integration across three independent sources demanded rigorous reconciliation. Schema inconsistencies—varying naming conventions, ID systems, and structures—required fuzzy matching and manual verification for accurate player identification. Temporal alignment ensured correspondence across gameweeks, while completeness checks prioritized primary sources supplemented by others for full coverage.
+Data quality issues demanded systematic cleaning: missing values were imputed, 
+duplicates from mid-season transfers underwent timeline-preserving deduplication, 
+inconsistent formats were standardized.
 
-Data quality issues necessitated thorough cleaning. Missing values in statistics and prices were imputed or handled judiciously. Duplicates, often from mid-season transfers, underwent deduplication that preserved timelines. Inconsistent formats, such as price notations ("£10.5M" versus 105), were standardized. Validation confirmed essentials like 15-player squads and compliant formations prior to optimization.
+Constraint Programming model development in MiniZinc required adapting to its 
+declarative paradigm, managing Python API type conversions for data passing, 
+handling complex set operations for constraints like club affiliations with 
+intertwined membership and cardinality rules, while limited debugging tools 
+complicated tracing unsatisfiable constraints.
 
-Developing the Constraint Programming model in MiniZinc required adaptation to its declarative paradigm, distinct from Python's imperative style. The Python API's nuances in data passing and retrieval demanded precise type conversions. Set operations for constraints like club affiliations proved tricky, especially with intertwined membership and cardinality rules. Limited debugging tools hindered tracing unsatisfiable constraints or errors.
-
-CP solvers faced performance hurdles, rendering them less viable. Timeouts frequently exceeded minutes for even modest instances. Scalability faltered with growing player pools or constraints. Solution times varied unpredictably across cases. By contrast, MILP solvers like CBC and SCIP resolved large instances in seconds, affirming their reliability for this domain.
+CP solver performance proved problematic: timeouts frequently exceeded minutes 
+even for modest instances, scalability suffered with larger player pools, and 
+solution times varied unpredictably. 
 
 
 \subsection{Architecture, Algorithms, and Methodologies}
